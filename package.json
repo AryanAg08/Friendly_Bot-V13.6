@@ -1,0 +1,30 @@
+{
+  "name": "friendly_bot-v13.6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AryanAg08/Friendly_Bot-V13.6.git"
+  },
+  "keywords": [],
+  "author": "AryanAg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AryanAg08/Friendly_Bot-V13.6/issues"
+  },
+  "homepage": "https://github.com/AryanAg08/Friendly_Bot-V13.6#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.13.0",
+    "@discordjs/rest": "^0.4.1",
+    "discord-api-types": "^0.32.1",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.1",
+    "fs": "^0.0.1-security",
+    "mongoose": "^6.3.3"
+  }
+}
