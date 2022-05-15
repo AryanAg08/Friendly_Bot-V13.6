@@ -6,13 +6,14 @@ module.exports = (client) => {
     const commands = [];
     const commandFiles = fs.readdirSync(path.join(__dirname, './commands')).filter(file => file.endsWith('.js'));
 
-    const clientId = '788504398912290887'; // 790503195620671498  --> Friendly_bot
-    const guildId = "836198222594703401";
+    const clientId = '788504398912290887';
+    const guildId = '836198222594703401';
 
     for (const file of commandFiles) {
         const command = require(`./commands/${file}`);
 
         //client.commands.set(command.data.name, command);
+        console.log(`Enabling slash cmd ${file}`)
 
         commands.push(command.data.toJSON());
     }

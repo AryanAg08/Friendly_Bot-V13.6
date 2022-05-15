@@ -73,7 +73,7 @@ module.exports = (client, commandOptions) => {
     }
 
     // Listen for messages
-    client.on('message', async (message) => {
+    client.on('messageCreate', async (message) => {
         const { member, content, guild, channel } = message
 
         // const prefix = guildPrefixes[guild.id] || globalPrefix
@@ -109,22 +109,7 @@ module.exports = (client, commandOptions) => {
                         new: true,
                     })
                     console.log(count)
-                    // A command has been ran
 
-                    // Ensure we are in the right channel
-                    /** if (requiredChannel !== channel.name) {
-                       //<#ID>
-                       const foundChannel = guild.channels.cache.find((channel) => {
-                         return channel.name === requiredChannel
-                       })
-             
-                       message.reply(
-                         `You can only run this command inside of <#${foundChannel.id}>.`
-                       )
-                       return
-                     }
-              */
-                    // Ensure the user has the required permissions
                     for (const permission of permissions) {
                         if (!member.permissions.has(permission)) {
                             message.reply(permissionError)

@@ -19,12 +19,14 @@ const features = require("./src/Features/load-features");
 const commands = require("./src/Commands/load-commands");
 const globalSlash = require("./src/Global-slash-Cmds/load-slash");
 const mongo = require("./src/utils/mongo");
+const Global = require("./src/utils/Slash-Integration")
 
 client.commands = new Collection();
 
 features(client);
 commands(client);
 globalSlash(client);
+Global(client);
 
 client.on('ready', async () => {
     await mongo();
