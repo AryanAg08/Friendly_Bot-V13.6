@@ -6,3 +6,8 @@ module.exports = {
         .setDescription('Check your amazing dashbaord we have created for you 🥰')
     ,
 };
+
+/**
+ * Categories: 
+ * 1] 
+ */

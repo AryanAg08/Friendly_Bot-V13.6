@@ -6,7 +6,7 @@ module.exports = {
         .setDescription('Wanna create a customised cmd for your server 👀')
         .addStringOption((option) =>
             option
-                .setName("cmd-name")
+                .setName("cmd-info")
                 .setDescription("please write a descrption about the cmd you want!!")
                 .setRequired(true)
         ),

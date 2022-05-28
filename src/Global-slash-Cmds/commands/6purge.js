@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('purge' || 'clear')
+        .setName('purge')
         .setDescription('Deletes messages from a certain chat!!')
         .addIntegerOption((option) =>
             option

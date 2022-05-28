@@ -8,6 +8,12 @@ module.exports = {
             subcommand
                 .setName('close')
                 .setDescription(`closes the support channel!!`)
+                .addUserOption((option) =>
+                    option
+                        .setName("ticket-user")
+                        .setDescription("please metion user")
+                        .setRequired(true)
+                )
         )
         .addSubcommand((subcommand) =>
             subcommand

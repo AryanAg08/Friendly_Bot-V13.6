@@ -1,9 +1,19 @@
 module.exports = (client) => {
+    const A1 = require("../../models/3server-registered");
     client.on('guildCreate', async (guild) => {
 
         const Channel = guild.channels.cache.find(channel => channel.type === "GUILD_TEXT" && channel.permissionsFor(guild.me).has("SEND_MESSAGES"));
 
         const Icon = guild.iconURL()
+        const A2 = await A1.findOneAndUpdate({
+            GuildID: guild.id,
+        }, {
+            GuildID: guild.id,
+        }, {
+            upsert: true,
+            new: true
+        })
+        console.log(A2);
 
         const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
         const Try = new MessageEmbed()
@@ -39,3 +49,21 @@ module.exports = (client) => {
         chan.send(`New guild added \n> **${guild.name}** \n> **Members: ${member}**`);
     })
 }
+
+
+// Deafault new server settings will 
+/** 
+ * Stats = false
+ * Schedule = true (reply)
+ * Logs = true [in system channel]
+ * Forest Session = true (reply)
+ * Prefix = ! [can be changed]
+ * welcome = false
+ * Vc study time = false
+ * warning = true
+ * Todo = true (reply)
+ * Quote = true
+ * Tickets = false
+ * Google = true [NSFW channels only]
+ * poll = true (reply)
+ */

@@ -7,10 +7,14 @@
 1. /setup count 
   > options Stats 
   >>> Category:   ✅
-    >> Member-count 
-    >> Bots
-   >>> options Schedule Channel 
-       >> Channel = schedulechannel
+    >> Member-count  -- total one  ✅
+    >> Bots ✅
+    - Extra [make_a-seperate_cmd]
+        >> Role count
+        >> Online Members
+        >> VC members
+   >>> options Schedule Channel ✅
+       >> Channel = schedulechannel ✅
   >>> Tickets category and embed!! === Embed && Category ✅
         >> 
   >>> Logs Channel === Channel ✅
@@ -21,7 +25,7 @@
        >> Channel = bdaychannel
        >> Role = bdayrole
   >>> Prefix  == String ✅
-       >> String = newprefix
+       >> String = newprefix ✅
   >>> welcome channel === Channel ✅
        >> channel = welcomechannel
        >> role = autorole
@@ -103,3 +107,83 @@ For Vvvc Study time
    -> support contact ✅
    ->  Dashboard ✅
    -> Create cmd ✅
+
+
+
+
+   # After giving finishing touch check the mongo!! And tranfer data to respective Schemas!!
+    1. Schedule Channel
+    2. Ticket 
+
+
+
+    # Guild Info 
+    ```
+       Guild {
+  id: '806504713935781958',
+  name: 'Friendly Bot',
+  icon: 'a237743f87780e98fd0d2750b830aebb',
+  features: [
+    'MEMBER_VERIFICATION_GATE_ENABLED',
+    'THREADS_ENABLED',
+    'WELCOME_SCREEN_ENABLED',
+    'PREVIEW_ENABLED',
+    'COMMUNITY',
+    'NEWS',
+    'NEW_THREAD_PERMISSIONS'
+  ],
+  commands: <ref *1> GuildApplicationCommandManager {
+    permissions: ApplicationCommandPermissionsManager {
+      manager: [Circular *1],
+      guild: [Circular *2],
+      guildId: '806504713935781958',
+      commandId: null
+    },
+    guild: [Circular *2]
+  },
+  members: GuildMemberManager { guild: [Circular *2] },
+  channels: GuildChannelManager { guild: [Circular *2] },
+  bans: GuildBanManager { guild: [Circular *2] },
+  roles: RoleManager { guild: [Circular *2] },
+  presences: PresenceManager {},
+  voiceStates: VoiceStateManager { guild: [Circular *2] },
+  stageInstances: StageInstanceManager { guild: [Circular *2] },
+  invites: GuildInviteManager { guild: [Circular *2] },
+  scheduledEvents: GuildScheduledEventManager { guild: [Circular *2] },
+  available: true,
+  shardId: 0,
+  splash: null,
+  banner: null,
+  description: null,
+  verificationLevel: 'LOW',
+  vanityURLCode: null,
+  nsfwLevel: 'DEFAULT',
+  discoverySplash: null,
+  memberCount: 61,
+  large: true,
+  premiumProgressBarEnabled: true,
+  applicationId: null,
+  afkTimeout: 300,
+  afkChannelId: null,
+  systemChannelId: '806918117816926269',
+  premiumTier: 'NONE',
+  premiumSubscriptionCount: 0,
+  explicitContentFilter: 'ALL_MEMBERS',
+  mfaLevel: 'NONE',
+  joinedTimestamp: 1652471334717,
+  defaultMessageNotifications: 'ONLY_MENTIONS',
+  systemChannelFlags: SystemChannelFlags { bitfield: 0 },
+  maximumMembers: 500000,
+  maximumPresences: null,
+  approximateMemberCount: null,
+  approximatePresenceCount: null,
+  vanityURLUses: null,
+  rulesChannelId: '806916171462606878',
+  publicUpdatesChannelId: '806918117816926269',
+  preferredLocale: 'en-US',
+  ownerId: '693351718263455755',
+  emojis: GuildEmojiManager { guild: [Circular *2] },
+  stickers: GuildStickerManager { guild: [Circular *2] }
+}
+
+    ```

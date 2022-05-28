@@ -74,13 +74,7 @@ module.exports = {
                     option
                         .setName('bday-channel')
                         .setDescription('select bday wishes channel!!')
-                        .setRequired(false)
-                )
-                .addStringOption((option) =>
-                    option
-                        .setName("wish-wish")
-                        .setDescription('set a custom bday message!')
-                        .setRequired(false)
+                        .setRequired(true)
                 )
                 .addRoleOption((option) =>
                     option
@@ -104,6 +98,14 @@ module.exports = {
             subcommand
                 .setName("welcome")
                 .setDescription('Set welcome channel and autom role to give user which joins the server!!')
+                .addIntegerOption((option) =>
+                    option
+                        .setName('welcome-dm')
+                        .setDescription('If you wanna set welcome direct messages to users!! 1- for YES 2 for NO')
+                        .setRequired(true)
+                        .setMaxValue(2)
+                        .setMinValue(1)
+                )
                 .addChannelOption((option) =>
                     option
                         .setName('welcome-channel')
@@ -113,14 +115,20 @@ module.exports = {
                 .addRoleOption((option) =>
                     option
                         .setName('auto-role')
-                        .setDescription('role guven to users automatically when joining server!')
+                        .setDescription('role given to users automatically when joining server!')
                         .setRequired(false)
                 )
+                .addStringOption((option) =>
+                    option
+                        .setName('welcome-message')
+                        .setDescription('Set a welcome message for newcomers!!')
+                )
+
         )
         .addSubcommand((subcommand) =>
             subcommand
                 .setName('enable-commands')
-                .setDescription('enable functions for your server!!')
+                .setDescription('Functions list for your server!!')
         )
         .addSubcommand((subcommand) =>
             subcommand

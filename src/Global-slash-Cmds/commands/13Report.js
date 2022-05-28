@@ -13,7 +13,7 @@ module.exports = {
         .addStringOption((option) =>
             option
                 .setName("appreciate")
-                .setDescription("Wanna appreciate our dev!! Sent us your valuble feedback💝")
+                .setDescription("Loved our bot services!! Sent us your valuble feedback💝")
                 .setRequired(false)
         )
 };

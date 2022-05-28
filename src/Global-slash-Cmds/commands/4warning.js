@@ -6,18 +6,19 @@ module.exports = {
         .setDescription(`Warning system!!`)
         .addSubcommand((subcommand) =>
             subcommand
-                .setName('help')
-                .setDescription(`get info about command!!`)
-        )
-        .addSubcommand((subcommand) =>
-            subcommand
-                .setName('user')
+                .setName('warn-user')
                 .setDescription(`Warn respective user`)
                 .addUserOption((option) =>
                     option
                         .setName("target")
                         .setDescription("select user to warn")
                         .setRequired(true)
+                )
+                .addStringOption((option) =>
+                    option
+                        .setName('warn-reason')
+                        .setDescription("Specify the reason to warn!!")
+                        .setRequired(false)
                 )
         )
         .addSubcommand((subcommand) =>
@@ -28,6 +29,7 @@ module.exports = {
                     option
                         .setName('stat-user')
                         .setDescription('Select user!!')
+
                 )
         )
 }

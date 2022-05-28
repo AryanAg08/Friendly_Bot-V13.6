@@ -18,7 +18,7 @@ module.exports = {
                         .setName('day')
                         .setDescription('Day!!')
                         .setRequired(true)
-                        .setMinValue(1)
+                        .setMinValue(01)
                         .setMaxValue(31)
                 )
                 .addIntegerOption((option) =>
@@ -26,14 +26,14 @@ module.exports = {
                         .setName("month")
                         .setDescription("Month!!")
                         .setRequired(true)
-                        .setMinValue(1)
+                        .setMinValue(01)
                         .setMaxValue(12)
                 )
                 .addIntegerOption((option) =>
                     option
                         .setName("year")
                         .setDescription("Year!!")
-                        .setRequired(false)
+                        .setRequired(true)
                         .setMinValue(1900)
                         .setMaxValue(2022)
                 )
@@ -42,11 +42,13 @@ module.exports = {
             subcommand
                 .setName('list')
                 .setDescription('Shows the current list or the month list you asked for!!')
-                .addStringOption((option) =>
+                .addIntegerOption((option) =>
                     option
                         .setName('month-bday')
                         .setDescription("Name of the month or its number notation in MM!!")
                         .setRequired(false)
+                        .setMaxValue(12)
+                        .setMinValue(1)
                 )
         )
 };
