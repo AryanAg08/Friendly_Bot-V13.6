@@ -9,6 +9,18 @@ module.exports = {
                 .setName('stats')
                 .setDescription(`Create 2 default vc count.`)
         )
+
+        .addSubcommand((subcommand) => 
+        subcommand
+        .setName('support')
+        .setDescription("Setup your server's support channel category!!")
+        .addChannelOption((option) => 
+             option
+             .setName("category")
+             .setDescription('Select only category!!')
+             .setRequired(true)
+        )
+        )
         .addSubcommand((subcommand) =>
             subcommand
                 .setName('schedule')

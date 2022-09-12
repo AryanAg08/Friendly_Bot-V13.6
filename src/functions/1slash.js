@@ -7,7 +7,7 @@ const S6 = require("../models/7welcome");
 const S7 = require("../models/8vc-study");
 const S8 = require("../models/11todo");
 const S9 = require("../models/12Todo");
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 
 async function help(interaction) {
     const HelpEmbed = new MessageEmbed()
@@ -33,6 +33,33 @@ async function help(interaction) {
         )
 
     await interaction.reply({ embeds: [HelpEmbed] });
+
+}
+
+async function SetupSupport(interaction) {
+
+    const cat = interaction.options.getChannel("category").id;
+    console.log(cat)
+
+    const TTT = require("../models/9Ticket");
+    const TT2 = await S1.findOneAndUpdate({
+        GuildID: interaction.guild.id,
+    },{
+        GuildID: interaction.guild.id,
+        Ticket: "YES",
+    },{
+        upsert: true,
+        new: true,
+    })
+    const TTT1 = await TTT.findOneAndUpdate({
+        GG: interaction.guild.id,
+    },{
+        Cat: `${cat}`,
+    },{
+        upsert: true,
+        new: true,
+    })
+    await interaction.reply(`**<#${cat}>** Category is now set for support Channels/Tickets!!`);
 
 }
 
@@ -109,7 +136,7 @@ async function SetupSchedule(interaction) {
     const ScheduleEmbed = new MessageEmbed()
         .setColor('#e7b90b')
         .setTitle(`Hello this channel is set for all Schedule!! \n Fore more help use !help`)
-        .setDescription(`Here you can post your to-do for daily Purpose!! \n **!schedule 1.Drawing \n 2. Painting \n 3. Maths \n 4. Vollyball \n 5. Gardening ** or \n \schedule 1.Drawing \n 2. Painting \n 3. Maths \n 4. Vollyball \n 5. Gardening`)
+        .setDescription(`Here you can post your to-do for daily Purpose!! \n **!schedule 1.Drawing \n 2. Painting \n 3. Maths \n 4. Vollyball \n 5. Gardening ** or \n /schedule 1.Drawing \n 2. Painting \n 3. Maths \n 4. Vollyball \n 5. Gardening`)
         .setImage('https://clickup.com/blog/wp-content/uploads/2019/01/to-do-list-apps.png')
 
 
@@ -166,6 +193,15 @@ async function SetupVcStudy(interaction) {
     const StudyMsg = interaction.options.getString("custom-message")
     const guild = interaction.guild
 
+    const KK1 = await S1.findOneAndUpdate({
+        GuildID: guild.id,
+    },{
+        VCStudy: "Enable",
+    },{
+        upsert: true,
+        new: true,
+    })
+
     if (StudyRoles) {
         const J2 = await J1.findOneAndUpdate({
             guildId: guild.id,
@@ -182,7 +218,7 @@ async function SetupVcStudy(interaction) {
             guildId: guild.id,
             user: "anon",
         }, {
-            VCTIMETYPE: "JOIN_N_LEAVE",
+            VCTIMETYPE: "JLX0001",
         }, {
             upsert: true,
             new: true,
@@ -197,6 +233,7 @@ async function SetupVcStudy(interaction) {
                 user: "anon",
             }, {
                 VcChannel1: StudyVC.id,
+                VCTIMETYPE: "RCX0002",
             }, {
                 upsert: true,
                 new: true,
@@ -213,7 +250,7 @@ async function SetupVcStudy(interaction) {
                         let role = guild.roles.cache.find(role => role.name === "@everyone");
                         const category2 = Category.id
                         channel.setParent(category2).then(async (settedParent) => {
-                            settedParent.updateOverwrite(role, {
+                            settedParent.permissionOverwrites.edit(role, {
                                 "VIEW_CHANNEL": true,
                                 "CONNECT": true,
                                 "CREATE_INSTANT_INVITE": true,
@@ -224,6 +261,7 @@ async function SetupVcStudy(interaction) {
                             }, {
                                 VcCategory: category2,
                                 VcChannel1: settedParent.id,
+                                VCTIMETYPE: "JLX0001",
                             }, {
                                 upsert: true,
                                 new: true
@@ -267,13 +305,23 @@ async function SetupForest(interaction) {
     const user = "anon"
     const Channel = interaction.options.getChannel("forest-channel");
     const Role = interaction.options.getRole("forest-role");
+    const JJ1 = await F1.findOneAndUpdate({
+        GG,
+        user,
+    },{
+        user,
+    },{
+        upsert: true,
+        new: true,
+    });
+
     const F4 = await S1.findOneAndUpdate({
         GuildID: GG,
     }, {
         Forest: "YES",
     }, {
         upsert: true,
-        new: true
+        new: true,
     });
 
     if (Channel) {
@@ -302,13 +350,17 @@ async function SetupForest(interaction) {
         });
     }
     await interaction.reply(`Your forest feature is now enabled!!`);
-}
+
+
+    }
+
 
 async function SetupBday(interaction) {
     const GG = interaction.guild.id
     const user = "anon"
     const BDChannel = interaction.options.getChannel("bday-channel").id;
-    const BDRole = interaction.options.getRole("bday-role").id;
+    const BDrole = interaction.options.getRole("bday-role");
+   
     const B1 = require("../models/10Bday");
     const E1 = await S1.findOneAndUpdate({
         GuildID: GG,
@@ -319,7 +371,7 @@ async function SetupBday(interaction) {
         new: true
     })
 
-    const B2 = await B1.findOneAndUpdate({
+    const E2 = await B1.findOneAndUpdate({
         GG,
         user,
     }, {
@@ -330,7 +382,8 @@ async function SetupBday(interaction) {
         new: true,
     });
 
-    if (BDRole) {
+    if (BDrole) {
+        const BDRole = BDrole.id;
         const B3 = await B1.findOneAndUpdate({
             GG,
             user,
@@ -644,7 +697,7 @@ async function BdayAdd(interaction) {
         const Current_Year = new Date().getFullYear()
         const Age = Math.round(Current_Year - Year)      // 2022 - 2004
         const BDAY = `${Day}/${Month}/${Year}` // It will return in format = DD/MM/YYYY
-
+            console.log(BDAY);
         // Check if user is in other servers as well where bot is present!! Wish him there as well if the server has bday feature enable!!
         const B2 = await B1.findOneAndUpdate({
             GG: guild.id,
@@ -668,33 +721,81 @@ async function BdayAdd(interaction) {
 }
 
 async function BdayList(interaction) {
-    const get_month = interaction.options.getInteger("month-bday");
-    const current_month = new Date().getMonth()
+    const get_month = await interaction.options.getInteger("month-bday");
+    let current_month = new Date().getMonth()
+    const currmonth = current_month
+    if (current_month < 10) {
+        const MI = current_month
+        current_month = `0${MI}`
+    }
     var m_names = ['January', 'February', 'March',
         'April', 'May', 'June', 'July',
         'August', 'September', 'October', 'November', 'December'];
     const T1 = require("../models/10Bday");
-    const GG = interaction.guild.id
     const Icon = interaction.guild.iconURL()
+    const guild = interaction.guild
     const { MessageEmbed } = require("discord.js");
     const T2 = require("../models/3server-registered");
-    const A1 = await T2.find({
+    const A1 = await S1.findOne({
         GuildID: guild.id,
         Bday: "YES",
     })
     if (A1) {
-        if (!get_month) {
+        if (get_month) {
+            let MGG = get_month
+           if (get_month < 10) {
+            const MI = get_month
+            MGG = `0${MI}`
+        }
             const T4 = await T1.find({
-                GG,
-                Month: current_month,
+                GG: guild.id,
+                Month: `${MGG}`,
             });
-            for (qq of T4) {
+            if (T4) { 
+                if (T4 && T4.length > 0 ) {
+                     let reply = `Birthdays: \n\n`
+                     for (qq of T4) {
+                        const BD = qq.user
+                        const DD = qq.Day
+                        const AD = qq.Age
+                        const get_user = `<@${BD}>`
+                        reply += `> ${get_user} ➡ ${DD}/${MGG} (${AD}) \n`
+                    }
+                        var Mname = m_names[get_month];
+        
+                        const bdembed = new MessageEmbed()
+                            .setColor("RANDOM")
+                            .setTimestamp()
+                            .setTitle(`Bday's in this server for ${Mname} 🍰`)
+                            .setDescription(reply)
+                            .setFooter({
+                                text: "FriendlyBot",
+                                iconURL: Icon,
+                            })
+        
+                         interaction.reply({ embeds: [bdembed] });
+                    
+                    }
+             
+        } else return interaction.reply("No bday in given month!!");
+
+        } 
+        else {
+            const T4 = await T1.findOne({
+                GG: guild.id,
+                Month: `${current_month}`,
+            });
+            if (T4) {
+             if (T4 && T4.length > 0 ) {
+                     let Repl = "Birthdays:\n"
+                for (qq of T4) {
                 const BD = qq.user
                 const DD = qq.Day
                 const AD = qq.Age
-                const get_user = interaction.guild.users.cache.fetch(BD) || `<@${BD}>`
-                const Repl = `> ${get_user} ➡ ${DD}/${get_month} (${AD}) \n`
-                var Mname = m_names[current_month];
+                const get_user = `<@${BD}>`
+                 Repl += `> ${get_user} ➡ ${DD}/${get_month} (${AD}) \n`
+            }
+                var Mname = m_names[currmonth];
 
                 const bdembed = new MessageEmbed()
                     .setColor("RANDOM")
@@ -706,33 +807,12 @@ async function BdayList(interaction) {
                         iconURL: Icon,
                     })
 
-                await interaction.reply({ embeds: [bdembed] });
+                await interaction.reply(`Bday's for this month!!`);
+               await interaction.channel.send({  embeds: [bdembed]  });
+                 
             }
-        } else {
-            const T4 = await T1.find({
-                GG,
-                Month: get_month,
-            });
-            for (qq of T4) {
-                const BD = qq.user
-                const DD = qq.Day
-                const AD = qq.Age
-                const get_user = interaction.guild.users.cache.fetch(BD) || `<@${BD}>`
-                const Repl = `> ${get_user} ➡ ${DD}/${get_month} (${AD}) \n`
-                var Mname = m_names[get_month];
+            } else return interaction.reply(`No bday in current month!!`);
 
-                const bdembed = new MessageEmbed()
-                    .setColor("RANDOM")
-                    .setTimestamp()
-                    .setTitle(`Bday's in this server for ${Mname} 🍰`)
-                    .setDescription(Repl)
-                    .setFooter({
-                        text: "FriendlyBot",
-                        iconURL: Icon,
-                    })
-
-                await interaction.reply({ embeds: [bdembed] });
-            }
         }
 
     } else return await interaction.reply(`‼ This feature is disabled for this server. For more info use **/info**`);
@@ -747,7 +827,7 @@ async function Warning(interaction) {
     const userId = user.id
     if (reason) {
         const warning = {
-            author: interaction.member.id,
+            author: `${interaction.member}`,
             timeStamp: new Date().getTime(),
             reason,
         }
@@ -770,7 +850,7 @@ async function Warning(interaction) {
             **Please behave according to the rules!**`);
     } else {
         const warning = {
-            author: `<@${interaction.member}>`,
+            author: `${interaction.member}`,
             timeStamp: new Date().getTime(),
         }
 
@@ -828,7 +908,7 @@ async function ServerInvites(interaction) {
     const guild = interaction.guild
 
 
-    guild.fetchInvites().then(async (invites) => {
+    guild.invites.fetch().then(async (invites) => {
         const inviteCounter = {}
 
         invites.forEach(async (invite) => {
@@ -872,13 +952,22 @@ async function Purge(interaction) {
         interaction.channel.bulkDelete(messages);
     });
 
-    await interaction.reply("Deleted messages!!");
+    await interaction.reply({
+        content: "Deleted messages!!",
+        ephemeral: true,
+    });
 }
 
 async function TicketOpen(interaction) {
     const Tic = require("../models/9Ticket");
-    const user = interaction.member.username
+    const user = interaction.user.username
     const guild = interaction.guild
+
+    const VC1 = await S1.find({
+        GuildID: guild.id,
+        Ticket: "YES",
+    })
+        if (VC1) {
     const C1 = await Tic.find({
         GG: guild.id,
     })
@@ -887,47 +976,49 @@ async function TicketOpen(interaction) {
             const Cate = C2.Cat
             await interaction.reply(`Your ticket channel has been created please check the moderators category.`);
 
-            const Role = message.guild.roles.cache.find(role => role.name === "@everyone");
-            const guild = client.guilds.cache.get("806504713935781958");
-            const role = guild.roles.cache.forEach(role => {
-                if (role.permissions.has("BAN_MEMBERS")) {
-                    console.log(role.name);
-                    message.guild.channels
-                        .create(name, {
+            const Role = interaction.guild.roles.cache.find(role => role.name === "@everyone");
+          //  const guild = interaction.guild.cache.get(guild.id);
+         //   const role = interaction.guild.roles.cache.forEach(role => {
+                // if (role.permissions.has("BAN_MEMBERS")) {
+                //     console.log(role.name);
+                    interaction.guild.channels
+                        .create(user, {
                             type: 'GUILD_TEXT',
                         })
                         .then((channel) => {
-                            console.log(channel)
+                          //  console.log(channel)
                             const category = Cate
                             channel.setParent(category).then(async (settedParent) => {
-                                settedParent.updateOverwrite(Role, {
+                                settedParent.permissionOverwrites.edit(Role, {
                                     "VIEW_CHANNEL": false,
-                                    "READ_MESSAGES": false, "SEND_MESSAGES": false,
+                                    "READ_MESSAGE_HISTORY": false, "SEND_MESSAGES": false,
                                     "ATTACH_FILES": false,
                                     "CREATE_INSTANT_INVITE": false, "ADD_REACTIONS": false
                                 });
-                                settedParent.updateOverwrite(role, {
-                                    "VIEW_CHANNEL": true, "READ_MESSAGES": true,
-                                    "SEND_MESSAGES": true, "ATTACH_FILES": true
-                                })
-                                settedParent.updateOverwrite(message.author, {
+                                // settedParent.permissionOverwrites.edit(role, {
+                                //     "VIEW_CHANNEL": true, "READ_MESSAGE_HISTORY": true,
+                                //     "SEND_MESSAGES": true, "ATTACH_FILES": true
+                                // })
+                                settedParent.permissionOverwrites.edit(interaction.user, {
                                     "VIEW_CHANNEL": true,
-                                    "READ_MESSAGES": true, "SEND_MESSAGES": true,
+                                    "READ_MESSAGE_HISTORY": true, "SEND_MESSAGES": true,
                                     "ATTACH_FILES": true,
                                     "CREATE_INSTANT_INVITE": false, "ADD_REACTIONS": true
                                 });
                                 const discord = require('discord.js')
                                 var Ticketembed = new discord.MessageEmbed()
                                     .setColor('#e7b90b')
-                                    .setTitle(`Hi, ${name}. To close write **!close @${name}**)`)
+                                    .setTitle(`Hi, ${user}. To close write **!close @${user}**`)
 
-                                settedParent.send(Ticketembed)
+                                settedParent.send({ embeds: [Ticketembed]});
                             })
                         })
-                } else return;
-            });
+               // } else return;
+           // });
         }
-    } else return;
+    } if (!C1) return interaction.reply(`Support channels, Category not set yet!!`) 
+} else return interaction.reply(`This feature is disabled for this server!!`);
+    
 
 
 }
@@ -980,7 +1071,7 @@ async function Quote(interaction) {
 
     const embed = new MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`${interaction.member.username}`)
+        .setTitle(`${interaction.user.username}`)
         .setDescription(`Personalised quote: \n ${randomQuotes[Math.floor(Math.random() * randomQuotes.length)]}`)
         .setTimestamp()
 
@@ -1011,28 +1102,40 @@ async function ForestCode(interaction) {
                 const CHAN = guild.channels.cache.get(FChan)
                 const TreeEmbed = new MessageEmbed()
                     .setColor('#33adc0')
-                    .setTitle(`${message.author.username} wants to plant a tree! :evergreen_tree:`)
+                    .setTitle(`${interaction.user.username} wants to plant a tree! :evergreen_tree:`)
                     .setThumbnail(`${thumb}`)
                     .setTimestamp()
-                    .setFooter(`Planter: ${message.author.username} `)
+                    .setFooter({
+                        text: `Planter: ${interaction.user.username} `
+                    })
                     .addFields(
                         { name: '\u200B', value: 'Forest info:' },
-                        { name: `Use code: ${arguments[0]} or click this link: https://www.forestapp.cc/join-room?token=${arguments[0]}.`, value: '\u200B' },
-                        { name: ':stopwatch: Duration:', value: `${arguments[1]} min`, inline: true },
-                        { name: ':closed_lock_with_key: Starting in:', value: `${arguments[2]} min`, inline: true }
+                        { name: `Use code: ${code} or click this link: https://www.forestapp.cc/join-room?token=${code}.`, value: '\u200B' },
+                        { name: ':stopwatch: Duration:', value: `${Duration} min`, inline: true },
+                        { name: ':closed_lock_with_key: Starting in:', value: `${Starting} min`, inline: true }
+                    )
+
+                    const Row = new MessageActionRow()
+                    .addComponents(
+                        new MessageButton()
+                        .setLabel("code")
+                        .setStyle("LINK")
+                        .setURL(`https://www.forestapp.cc/join-room?token=${code}`)
+                        .setEmoji("🎄")
                     )
                 if (FRole) {
                     if (CHAN) {
                         await interaction.reply({ content: `Code sent to <#${FChan}>!!`, ephemeral: true });
-                        CHAN.send({ content: `<@&${FRole}>`, embeds: [TreeEmbed] });
+                        CHAN.send({ content: `<@&${FRole}>`, embeds: [TreeEmbed], components: [Row] });
                     } else {
-                        await interaction.reply({ content: `<@&${FRole}>`, embeds: [TreeEmbed] })
+                        await interaction.reply({ content: `<@&${FRole}>`, embeds: [TreeEmbed], components: [Row] })
                     }
                 } else {
                     if (CHAN) {
                         await interaction.reply({ content: `code sent to <#${FChan}>!!`, ephemeral: true });
+                        CHAN.send({ embeds: [TreeEmbed], components: [Row] })
                     } else {
-                        await interaction.reply({ embeds: [TreeEmbed] });
+                        await interaction.reply({ embeds: [TreeEmbed], components: [Row] });
                     }
                 }
 
@@ -1040,7 +1143,7 @@ async function ForestCode(interaction) {
         } else return await interaction.reply(`Feature is not set yet!! Ask your mods to set it up!!`);
     } else return await interaction.reply(`This feature is disabled for your server!! For more try **/info**`);
 }
-
+ 
 async function ForestHelp(interaction) {
     const forestEmbed = new MessageEmbed()
         .setColor('#13eb46')
@@ -1364,6 +1467,7 @@ async function Report(interaction) {
 async function Schedule(interaction) {
     const GG = interaction.guild.id
     const Scheul = interaction.options.getString("tasks");
+    var array = Scheul.split(/[,;]/)
     const Icon = interaction.guild.iconURL()
     const D1 = await S1.find({
         GuildID: GG,
@@ -1372,8 +1476,8 @@ async function Schedule(interaction) {
     if (D1) {
         const { MessageEmbed } = require("discord.js");
         const Embed = new MessageEmbed()
-            .setTitle(`${interaction.member.username} **Here is your today's schedule.** `)
-            .setDescription(Scheul)
+            .setTitle(`${interaction.user.username} **Here is your today's schedule.** `)
+            .setDescription(`${array}`)
             .setColor("RANDOM")
             .setThumbnail("https://pub-static.fotor.com/assets/projects/pages/b3c7feb9-9fac-4c26-8a58-95807231d8ce/vintage-yellow-schedule-book-269d689b-cdb0-4421-8f72-f253469f62d9.jpg")
             .setTimestamp()
@@ -1394,7 +1498,7 @@ async function Schedule(interaction) {
                     AA.react("🍀")
                     AA.react("📑")
                 } else {
-                    await interaction.reply({ content: "Schedule posted!!", ephemeral: true });
+                   await interaction.reply({ content: "Schedule posted!!", ephemeral: true });
 
                     const AF = await SC.send({ embeds: [Embed] });
                     AF.react("🍀")
@@ -1402,9 +1506,9 @@ async function Schedule(interaction) {
                 }
             }
         }
-        const AA = await interaction.reply({ embeds: [Embed] });
-        AA.react("🍀")
-        AA.react("📑")
+        // const AA = await interaction.reply({ embeds: [Embed] });
+        // AA.react("🍀")
+        // AA.react("📑")
     } else return await interaction.reply(`This feature is disabled for the server!! For more type **/info**`);
 
 }
@@ -1427,6 +1531,7 @@ async function Dashbaord(interaction) {
 
 module.exports = {
     help,
+    SetupSupport,
     SetupBday,
     SetupDisable,
     SetupEnable,

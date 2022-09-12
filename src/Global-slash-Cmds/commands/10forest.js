@@ -25,6 +25,7 @@ module.exports = {
                         .setDescription("Enter the starting time")
                         .setRequired(true)
                         .setMinValue(2)
+                        .setMaxValue(45)
                 )
                 .addIntegerOption((option) =>
                     option

@@ -42,3 +42,5 @@ const Bday = new mongo.Schema({
         required: false,
     }
 })
+
+module.exports = mongo.model('Bday-module', Bday);

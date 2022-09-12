@@ -36,7 +36,8 @@ module.exports = (client) => {
             TicketClose,
             TicketOpen,
             Purge,
-            TODOLIST
+            TODOLIST,
+            SetupSupport
         } = require("../functions/1slash");
         const { commandName } = interaction;
 
@@ -48,6 +49,9 @@ module.exports = (client) => {
             const SUB = interaction.options.getSubcommand();
             if (SUB === "stats") {
                 SetupStats(interaction);
+            }
+            if (SUB === "support") {
+                SetupSupport(interaction);
             }
             if (SUB === "schedule") {
                 SetupSchedule(interaction);
