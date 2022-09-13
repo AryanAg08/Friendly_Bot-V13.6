@@ -433,7 +433,7 @@ async function SetupWelcome(interaction) {
 
     if (wch) {
         const A9 = await S6.findOneAndUpdate({
-            guildID: guild.id, npm
+            guildID: guild.id,
         }, {
             guildID: guild.id,
             channelID: wch.id,

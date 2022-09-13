@@ -1,3 +1,5 @@
+const { Verification } = require("../functions/3Slash(b)");
+
 module.exports = (client) => {
     client.on('interactionCreate', async interaction => {
         if (!interaction.isCommand()) return;
@@ -182,5 +184,9 @@ module.exports = (client) => {
             Dashbaord(interaction);
         }
 
+        if (commandName === "verification") {
+               Verification(interaction);
+        }
     });
+
 } 

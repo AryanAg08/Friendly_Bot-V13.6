@@ -21,12 +21,10 @@ module.exports = (client) => {
                 if (J2) {
                     for (jk of J2) {
                         const chann = jk.VcChannel1
-                        const Notif = jk.Notification
+                        const Msg = jk.VCMSG
                         const TXTChan = jk.TextChannel
-                        const RoleId = jk.RoleId
-
+                        const RoleId = jk.RoleID
                         const chan = client.channels.cache.get(chann);
-
                         if (!chan) return;
                         else {
                             
@@ -34,6 +32,7 @@ module.exports = (client) => {
                                 if (oldVoice != newVoice) {
                                     let userID = oldMember.id
                                     if (RoleId) {
+                                        
                                         const guild = client.guilds.cache.get(GGs);
                                         const ROLE = guild.roles.cache.get(RoleId);
                                         if (ROLE) {
@@ -41,25 +40,25 @@ module.exports = (client) => {
                                         }
                                     }
                                     if (TXTChan) {
-                                        const Tag = oldMember.user.username
-                                            const Chann = client.channels.cache.get(chann)
+                                        const Tags = oldMember.member.user.username
+                                            const Chann = client.channels.cache.get(TXTChan);
                                             if (Chann) {
-                                                if (Notif) {
+                                                if (Msg) {
                                                 const member = `<@${oldMember.id}>`
                                                
-                                                if (Notif.includes("${member}")) {
-                                                    const Final = Notif.replace('${member}', `${member}`)
+                                                if (Msg.includes("${member}")) {
+                                                    const Final = Msg.replace('${member}', `${member}`)
                                                     Chann.send(Final);
                                                 }
-                                                if (Notif.includes("${Tag}")) {
-                                                    const Final1 = Notif.replace("${Tag}", `${Tag}`)
+                                                if (Msg.includes("${Tag}")) {
+                                                    const Final1 = Msg.replace('${Tag}', `${Tags}`)
                                                     Chann.send(Final1);
-                                                }
-                                                else {
-                                                    Chann.send(Notif);
+                                                } 
+                                                if (!Msg.includes("${member}") && !Msg.includes("${Tag}")) {
+                                                    Chann.send(Msg);
                                                 }
                                             } else {
-                                                Chann.send(`${Tag} Welcome to the study channel!! Good luck for your session!! 🍀`);
+                                                Chann.send(`${Tags} Welcome to the study channel!! Good luck for your session!! 🍀`);
                                             }
                                         } else return;
                                     } else return;
@@ -73,7 +72,6 @@ module.exports = (client) => {
                                         upsert: true,
                                         new: true,
                                     })
-                                    console.log(J3)
                                 }
                             }
 
@@ -102,12 +100,14 @@ module.exports = (client) => {
 
                                             const GetTime = Math.abs(b.getTime() - a.getTime())
                                               const Min = Math.floor(GetTime / 60000 )
+                                              if (isNaN(Min)) return;
                                               if (Min <= 1 ) return;
                                               const J5 = await V2.findOneAndUpdate({
                                                 guildId: GGs,
                                                 user: User,
                                               },{
                                                 user: User,
+                                                VCJOIN: "",
                                                 $inc: {
                                                     Daily: Min,
                                                     Weekly: Min,
@@ -118,7 +118,6 @@ module.exports = (client) => {
                                                 upsert: true,
                                                 new: true,
                                               });
-                                              console.log(J5);
                                         }                                    
                                     }
                                 }
