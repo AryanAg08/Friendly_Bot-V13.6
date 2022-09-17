@@ -23,4 +23,10 @@ module.exports = {
     }
        ) 
     )
+    .addRoleOption(option => 
+        option
+        .setName('setVerifiedRole')
+        .setDescription(`Set a verified role!!`)
+        .setRequired(true)
+        )
 }
