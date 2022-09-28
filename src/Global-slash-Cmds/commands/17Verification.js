@@ -23,10 +23,17 @@ module.exports = {
     }
        ) 
     )
-    .addRoleOption(option => 
+    .addRoleOption((option) => 
         option
-        .setName('setVerifiedRole')
+        .setName('setverifiedrole')
         .setDescription(`Set a verified role!!`)
         .setRequired(true)
+        )
+        
+        .addChannelOption((option) => 
+        option
+        .setName('setverificationchannel')
+        .setDescription("Set a channel where verified message goes")
+        .setRequired(false)
         )
 }

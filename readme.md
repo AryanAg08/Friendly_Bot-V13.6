@@ -199,6 +199,8 @@ For Vvvc Study time
    - Moderate Type in chat one
    - Tough Verification Channel for mods!!
 
+   // Only feature remaining!!
+
 
 
 # Permium 

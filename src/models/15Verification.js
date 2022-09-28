@@ -21,6 +21,22 @@ const Verif = new mongo.Schema({
         type: String,
         required: false,
     },
+    VerificationRole: {
+        type: String,
+        required: false,
+    },
+    VerificationChan: {
+        type: String,
+        required: false,
+    },
+    VerificationMsgchannel: {
+        type: String,
+        required: false,
+    },
+    VRFNMSG: {
+        type: String,
+        required: false,
+    },
 })
 
 module.exports = mongo.model('Verification', Verif);
