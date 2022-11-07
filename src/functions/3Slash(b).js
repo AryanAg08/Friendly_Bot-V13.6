@@ -129,6 +129,52 @@ async function Verification (interaction) {
     }
 }
 
+
+async function HELP(interaction) {
+    const { MessageButton, MessageActionRow, MessageEmbed } = require("discord.js");
+      
+    const HelpEmbed = new MessageEmbed()
+    .setColor("DARK_VIVID_PINK")
+    .setTitle("HelpDesk")
+    .setTimestamp()
+    .addFields(
+        { name: "Help Commands", value: "Get info about the commands."},
+        { name: "Setup", value: "Customise your server the way you need it."},
+        { name: "Study", value: "Get all the required assets for your server regarding study."},
+        { name: "Misc", value: "Want to some extra features that makes your server way too awesome.\n check them out."},
+        { name: "Dashboard", value: "Get an amazing dashboard for your server members."}
+    )
+
+    const row = new MessageActionRow()
+    .addComponents(
+        new MessageButton()
+        .setCustomId("HPx001")
+        .setLabel("Setup")
+        .setStyle("SUCCESS"),
+
+        new MessageButton()
+        .setCustomId("HPx002")
+        .setLabel("Study")
+        .setStyle("SUCCESS"),
+
+        new MessageButton()
+        .setCustomId("HPx003")
+        .setLabel("Misc")
+        .setStyle("SUCCESS"),
+
+        new MessageButton()
+        .setCustomId("HPx004")
+        .setLabel("Dashboard")
+        .setStyle("SUCCESS")
+
+    )
+
+
+    await interaction.reply({embeds: [HelpEmbed], components: [row]});
+
+}
+
 module.exports = {
-    Verification
+    Verification,
+    HELP
 }

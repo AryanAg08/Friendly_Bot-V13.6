@@ -1,4 +1,4 @@
-const { Verification } = require("../functions/3Slash(b)");
+const { Verification, HELP } = require("../functions/3Slash(b)");
 
 module.exports = (client) => {
     client.on('interactionCreate', async interaction => {
@@ -44,7 +44,7 @@ module.exports = (client) => {
         const { commandName } = interaction;
 
         if (commandName === "help") {
-            help(interaction);
+            HELP(interaction);
         }
 
         if (commandName === "setup") {
