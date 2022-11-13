@@ -1,4 +1,4 @@
-const { help1 } = require("../../functions/4Buttons");
+const { help1, help2 } = require("../../functions/4Buttons");
 
 module.exports = (client) => {
 
@@ -13,7 +13,7 @@ module.exports = (client) => {
             }
 
             if (interaction.customId === "HPx002") {
-               
+               help2(interaction);
             }
         }
     })
