@@ -22,9 +22,10 @@ async function Verification (interaction) {
         const row = new MessageActionRow()
         .addComponents(
             new MessageButton()
-            .setCustomId("VERIIFICATIONEASY")
+            .setCustomId(`Verification${GG}`)
             .setLabel("Verfiy")
             .setEmoji("✅")
+            .setStyle("SECONDARY")
         )
 
         await interaction.channel.send({ 
@@ -96,9 +97,9 @@ async function Verification (interaction) {
         const Chan = interaction.options.getChannel('setverificationchannel').id;
               var Channel;
         if (Chan) {
-            var Channel = Chan;
+             Channel = Chan;
         } else {
-            var Channel = chan;
+            Channel = chan;
         } 
 
         const Ag = await V1.findOneAndUpdate({
