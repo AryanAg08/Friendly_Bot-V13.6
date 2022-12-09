@@ -21,6 +21,21 @@ module.exports = {
              .setRequired(true)
         )
         )
+        .addSubcommand((subcommand) => 
+        subcommand 
+        .setName('deadline')
+        .setDescription('Setup Deadline module for your server')
+        .addChannelOption((options)=> 
+        options
+        .setName('deadline-channel')
+        .setDescription('Setup deadline channel')
+        )
+        .addRoleOption((options) =>
+        options 
+        .setName('deadline-role')
+        .setDescription('Setup deadline role')
+        )
+        )
         .addSubcommand((subcommand) =>
             subcommand
                 .setName('schedule')

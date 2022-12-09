@@ -117,7 +117,7 @@ module.exports = (client, commandOptions) => {
                         
                         for (const GGG of GUILD) {
                             if (guild.id != GGG) {
-                                return console.log(`Specific guild cmd!!`);
+                                return message.reply(`Specific guild cmd!!`);
                             }
                         }
 

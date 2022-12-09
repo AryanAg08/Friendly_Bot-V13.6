@@ -175,7 +175,81 @@ async function HELP(interaction) {
 
 }
 
+
+async function Deadlines(interaction) {
+const J1 = require("../models/3server-registered");
+const J2 = require("../models/16Deadlines");
+
+const GG = interaction.guild.id
+const user = interaction.member.id
+const Channel = interaction.options.getChannel("deadline-channel");
+const Role = interaction.options.getRole("deadline-role");
+
+const M1 = await J1.findOneAndUpdate({
+    GuildID: GG,
+},{
+    GuildID: GG,
+    Deadline: "YES",
+},{
+    upsert: true,
+    new: true,
+});
+
+if (Channel) {
+  const DChan = Channel.id
+  
+  const M2 = await J2.findOneAndUpdate({
+    GG,
+    user: "anon",
+  },{
+    user: "anon",
+    ChannelID: DChan,
+  },{
+    upsert: true,
+    new: true,
+  });
+
+  console.log(`Setup channel completed for ${DChan}`);
+}
+else {
+    const chan = interaction.channel.id;
+
+    const M3 = await J2.findOneAndUpdate({
+        GG,
+        user: "anon",
+      },{
+        user: "anon",
+        ChannelID: chan,
+      },{
+        upsert: true,
+        new: true,
+      });
+    
+      console.log(`Setup channel completed for ${chan}`);
+}
+
+if (Role) {
+    const ROLEID = Role.id
+
+    const M4 = await J2.findOneAndUpdate({
+        GG,
+        user: "anon",
+    },{
+        user: "anon",
+        RoleID: ROLEID,
+    },{
+        upsert: true,
+        new: true,
+    });
+
+    console.log(`Setup done for deadline role ${ROLEID}`);
+}
+
+await interaction.reply(`Setup done for the ${interaction.guild.name}. \n Deadline Module Active ✅`);
+}
+
 module.exports = {
     Verification,
-    HELP
+    HELP,
+    Deadlines,
 }

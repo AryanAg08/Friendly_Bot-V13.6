@@ -225,4 +225,6 @@ Easy:
 => Send user a message to user that they have been verified
 => Give them Verified role!!
 => Send a log to the mods if there exist a channel!!
- systemChannelId
+
+Medium: 
+

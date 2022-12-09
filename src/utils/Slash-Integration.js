@@ -1,4 +1,5 @@
-const { Verification, HELP } = require("../functions/3Slash(b)");
+const { Verification, HELP, Deadlines } = require("../functions/3Slash(b)");
+const { DeadlineADD, DeadlineList, Deadlineclear, DeadlineRemove } = require("../functions/6Deadline_Module");
 
 module.exports = (client) => {
     client.on('interactionCreate', async interaction => {
@@ -78,6 +79,9 @@ module.exports = (client) => {
             }
             if (SUB === "disable-commands") {
                 SetupDisable(interaction);
+            }
+            if (SUB === "deadline") {
+                Deadlines(interaction);
             }
         }
 
@@ -161,6 +165,22 @@ module.exports = (client) => {
             }
             if (SUB === "score") {
                 TODOSCORE(interaction);
+            }
+        }
+
+        if (commandName === "deadline") {
+            const SUB = interaction.options.getSubcommand();
+            if (SUB === "add") {
+                DeadlineADD(interaction);
+            }
+            if (SUB === "list") {
+                DeadlineList(interaction);
+            }
+            if (SUB === "clear") {
+                Deadlineclear(interaction);
+            }
+            if (SUB === "remove") {
+                DeadlineRemove(interaction);
             }
         }
 
