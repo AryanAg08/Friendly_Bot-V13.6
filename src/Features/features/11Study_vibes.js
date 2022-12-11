@@ -4,7 +4,6 @@ module.exports = (client) => {
         const schedule = require("node-schedule");
 
         var j = schedule.scheduleJob('*/1 * * * *', async function () {
-            console.log("Checking Vc Members!!!");
             const guild = client.guilds.cache.get('703937875720273972');
             const voiceChannels = await guild.channels.cache.filter(c => c.type === 'GUILD_VOICE');
             let count = 0;
