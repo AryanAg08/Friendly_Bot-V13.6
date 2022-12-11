@@ -11,7 +11,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName("setup")
         .setDescription('Setup the bot features!!')
-        .setDefaultPermission(perms['bitfield'])
+        .setDefaultPermission("0x0000000000000008")
         .addSubcommand((subcommand) =>
             subcommand
                 .setName('stats')
