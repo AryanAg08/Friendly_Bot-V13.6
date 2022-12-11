@@ -800,7 +800,7 @@ async function BdayList(interaction) {
                         const get_user = `<@${BD}>`
                         reply += `> ${get_user} ➡ ${DD}/${MGG} (${AD}) \n`
                     }
-                        var Mname = m_names[get_month + 1];
+                        var Mname = m_names[get_month - 1];
         
                         const bdembed = new MessageEmbed()
                             .setColor("RANDOM")
