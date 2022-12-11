@@ -48,8 +48,10 @@ module.exports = (client) => {
             help(interaction);
         }
 
+        const { Permissions } = require("discord.js");
+
         if (commandName === "setup") {
-            if (interaction.member.permissions.has(8)) {
+            if (interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
             const SUB = interaction.options.getSubcommand();
             if (SUB === "stats") {
                 SetupStats(interaction);
