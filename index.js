@@ -45,3 +45,5 @@ console.log(`Bot is online`);
 client.login(process.env.TOKEN);
 
 // Main Bot Token = NzkwNTAzMTk1NjIwNjcxNDk4.X-BjeA.4SDiHHlur2HSgXAlzLE9rlv6dtc
+
+// TOKEN=Nzg4NTA0Mzk4OTEyMjkwODg3.GUoPhM.3setqgDtNHkeOJgQ8DF7ke2nOAWfmPOtr9GgsE

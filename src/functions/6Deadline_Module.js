@@ -48,7 +48,7 @@ async function DeadlineADD (interaction) {
             const D2 =  await new J2(input).save()
                console.log(D2);
 
-             channel.send(`<@${interaction.member.id}> added your deadline <:deadline:1003299351629664306> **${Deadline}** on **${DD}**`);
+             await interaction.reply(`<@${interaction.member.id}> added your deadline <:deadline:1003299351629664306> **${Deadline}** on **${Dd}**\n Deadline ID: *${DID}*`);
          } else return await interaction.reply('The year you entered is not a valid year, Please use the structure **DD/MM/YYYY** (example: !dl add 06/05/2022 Maths Test) ');
         } else return await interaction.reply('The month you entered did not match the structure **DD/MM/YYYY** (example: !dl add 06/05/2022 Maths Test) ');
      } else return await interaction.reply('The date you entered did not match the structure structure **DD/MM/YYYY** (example: !dl add 06/05/2022 Maths Test) ');      
@@ -77,7 +77,7 @@ async function DeadlineList(interaction) {
         if (M2 && M2.length) {
             let reply = `Your deadlines: \n`
             for (qq of M2) {
-                reply += `${qq.Date} Deadline: ${qq.Deadline}\n\n`
+                reply += `${qq.Date} Deadline: ${qq.Deadline} \nDeadline ID: *${qq.DID}*\n\n`
             }
 
             await interaction.reply(reply);
@@ -97,7 +97,7 @@ async function Deadlineclear(interaction) {
     const user = member.id
     
     const D1 = await J1.find({
-        GuildID: gg,
+        GuildID: GG,
         Deadline: "YES",
     })
     if (D1) {
@@ -161,7 +161,7 @@ function isDateBeforeToday(B, C) {
     let D = J[1]
     let E = J[2]
 
-    return B < D || C >= E;
+    return B < D;
 }
 
 function makeid(length) {
