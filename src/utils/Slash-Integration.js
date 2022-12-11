@@ -49,7 +49,7 @@ module.exports = (client) => {
         }
 
         if (commandName === "setup") {
-            if (interaction.member.permissions.has("ADMIADMINISTRATOR")) {
+            if (interaction.member.permissions.has(8)) {
             const SUB = interaction.options.getSubcommand();
             if (SUB === "stats") {
                 SetupStats(interaction);
