@@ -553,8 +553,8 @@ async function SetupEnable(interaction) {
     })
     if (Z2) {
         for (zz of Z2) {
-            const Bday = zz.Bday 
-            const Forest =  zz.Forest 
+            const Bday = `${zz.Bday} \n` 
+            const Forest =  `${zz.Forest} \n ` 
             const Reactions = `${zz.ifreaction} \n`  
             const Todo = `${zz.Todo} \n` 
             const Event = `${zz.Event} \n`  || "❌\n"
