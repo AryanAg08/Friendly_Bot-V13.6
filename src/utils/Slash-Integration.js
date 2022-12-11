@@ -45,7 +45,7 @@ module.exports = (client) => {
         const { commandName } = interaction;
 
         if (commandName === "help") {
-            HELP(interaction);
+            help(interaction);
         }
 
         if (commandName === "setup") {
