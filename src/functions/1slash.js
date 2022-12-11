@@ -553,19 +553,19 @@ async function SetupEnable(interaction) {
     })
     if (Z2) {
         for (zz of Z2) {
-            const Bday = zz.Bday + "✅ \n"  || "❌\n"
-            const Forest =  zz.Forest +  `✅ \n`  || "❌\n"
-            const Reactions = `${zz.ifreaction} ✅\n`  || "❌\n"
-            const Todo = `${zz.Todo} ✅\n`  || "❌\n"
-            const Event = `${zz.Event} ✅\n`  || "❌\n"
-            const VCstudy = `${zz.VCStudy} ✅\n`  || "❌\n"
-            const Stats = `${zz.Stats} ✅\n`  || "❌\n"
-            const Schedule = `${zz.Schedule} ✅\n`  || "❌\n"
-            const Tickets = `${zz.Ticket} ✅\n`  || "❌\n"
-            const Logs = `${zz.Logs} ✅\n`  || "❌\n"
-            const Welcome = `${zz.welcome} ✅\n`  || "❌\n"
-            const Verification = `${zz.Verification} ✅\n`  || "❌\n"
-            const Deadline = `${zz.Deadline} ✅\n`  || "❌\n"
+            const Bday = zz.Bday 
+            const Forest =  zz.Forest 
+            const Reactions = `${zz.ifreaction} \n`  
+            const Todo = `${zz.Todo} \n` 
+            const Event = `${zz.Event} \n`  || "❌\n"
+            const VCstudy = `${zz.VCStudy} \n`  || "❌\n"
+            const Stats = `${zz.Stats} \n`  || "❌\n"
+            const Schedule = `${zz.Schedule} \n`  || "❌\n"
+            const Tickets = `${zz.Ticket} \n`  || "❌\n"
+            const Logs = `${zz.Logs} \n`  || "❌\n"
+            const Welcome = `${zz.welcome} \n`  || "❌\n"
+            const Verification = `${zz.Verification} \n`  || "❌\n"
+            const Deadline = `${zz.Deadline} \n`  || "❌\n"
 
             let reply = "1. Bday Feature `/setup bday`\n" + Bday
             reply += "2. Forest Feature `/setup forest-session`\n" + Forest
