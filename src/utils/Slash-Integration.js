@@ -103,6 +103,9 @@ module.exports = (client) => {
         }
 
         if (commandName === "warn") {
+            if (interaction.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) {
+
+            
             const SUB = interaction.options.getSubcommand();
 
             if (SUB === "warn-user") {
@@ -111,14 +114,19 @@ module.exports = (client) => {
             if (SUB === "stats") {
                 WarningStats(interaction);
             }
-        }
+        } else return await interaction.reply("You do not have perms!!")
+     }
 
         if (commandName === "server-invites") {
+            if (interaction.member.permissions.has(Permissions.FLAGS.CREATE_INSTANT_INVITE)) {
             ServerInvites(interaction);
+            } else return await interaction.reply("You do not have perms!!")
         }
 
         if (commandName === "purge") {
+            if (interaction.member.permissions.has(Permissions.FLAGS.MANAGE_CHANNELS)) {
             Purge(interaction);
+            } else return await interaction.reply("You do not have perms!!")
         }
 
         if (commandName === "ticket") {
