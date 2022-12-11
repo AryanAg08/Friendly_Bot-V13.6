@@ -534,29 +534,68 @@ async function SetupWelcome(interaction) {
 async function SetupEnable(interaction) {
     const Icon = interaction.guild.iconURL()
     const { MessageEmbed } = require("discord.js");
-    let reply = "1. Bday Feature `/setup bday`\n"
-    reply += "2. Forest Feature `/setup forest-session`\n"
-    reply += "3. Reactions Feature `/setup reactionrole`\n"
-    reply += "4. Todo Feature `/todo`\n"
-    reply += "5. Event Feature `/events`\n"
-    reply += "6. VCStudy Feature `/setup vc-study`\n"
-    reply += "7. Stats Feature `/setup stats`\n"
-    reply += "8. Schedule Feature `/setup schedule`\n"
-    reply += "9. Ticket|| support Feature `/ticket`\n"
-    reply += "10. Logs Feature `/Logs`\n"
-    reply += "11. Welcome Feature `/setup welcome`\n"
+    // let reply = "1. Bday Feature `/setup bday`\n"
+    // reply += "2. Forest Feature `/setup forest-session`\n"
+    // reply += "3. Reactions Feature `/setup reactionrole`\n"
+    // reply += "4. Todo Feature `/todo`\n"
+    // reply += "5. Event Feature `/events`\n"
+    // reply += "6. VCStudy Feature `/setup vc-study`\n"
+    // reply += "7. Stats Feature `/setup stats`\n"
+    // reply += "8. Schedule Feature `/setup schedule`\n"
+    // reply += "9. Ticket|| support Feature `/ticket`\n"
+    // reply += "10. Logs Feature `/Logs`\n"
+    // reply += "11. Welcome Feature `/setup welcome`\n"
 
-    const setupEmbed = new MessageEmbed()
-        .setColor("RANDOM")
-        .setTimestamp()
-        .setTitle(`List of features available`)
-        .setDescription(reply)
-        .setFooter({
-            text: "FriendlyBot",
-            iconURL: Icon,
-        })
+    const Z1 = require("../models/3server-registered");
 
-    await interaction.reply({ embeds: [setupEmbed] });
+    const Z2 = await Z1.find({
+        GuildID: interaction.guild.id
+    })
+    if (Z2) {
+        for (zz of Z2) {
+            const Bday = `${zz.Bday} ✅ \n`  || "❌\n"
+            const Forest =  `${zz.Forest} ✅ \n`  || "❌\n"
+            const Reactions = `${zz.ifreaction} ✅\n`  || "❌\n"
+            const Todo = `${zz.Todo} ✅\n`  || "❌\n"
+            const Event = `${zz.Event} ✅\n`  || "❌\n"
+            const VCstudy = `${zz.VCStudy} ✅\n`  || "❌\n"
+            const Stats = `${zz.Stats} ✅\n`  || "❌\n"
+            const Schedule = `${zz.Schedule} ✅\n`  || "❌\n"
+            const Tickets = `${zz.Ticket} ✅\n`  || "❌\n"
+            const Logs = `${zz.Logs} ✅\n`  || "❌\n"
+            const Welcome = `${zz.welcome} ✅\n`  || "❌\n"
+            const Verification = `${zz.Verification} ✅\n`  || "❌\n"
+            const Deadline = `${zz.Deadline} ✅\n`  || "❌\n"
+
+            let reply = "1. Bday Feature `/setup bday`\n" + Bday
+            reply += "2. Forest Feature `/setup forest-session`\n" + Forest
+            reply += "3. Reactions Feature `/setup reactionrole`\n" + Reactions
+            reply += "4. Todo Feature `/todo`\n" + Todo
+            reply += "5. Event Feature `/events`\n" + Event
+            reply += "6. VCStudy Feature `/setup vc-study`\n" + VCstudy
+            reply += "7. Stats Feature `/setup stats`\n" + Stats
+            reply += "8. Schedule Feature `/setup schedule`\n" + Schedule
+            reply += "9. Ticket|| support Feature `/ticket`\n" + Tickets
+            reply += "10. Logs Feature `/Logs`\n" + Logs
+            reply += "11. Welcome Feature `/setup welcome`\n" + Welcome
+            reply += "12. Verification Feature `/setup Verification`\n" + Verification
+            reply += "13. Deadline Feature `/setup Deadline`\n" + Deadline
+
+            const setupEmbed = new MessageEmbed()
+            .setColor("RANDOM")
+            .setTimestamp()
+            .setTitle(`List of features available`)
+            .setDescription(reply)
+            .setFooter({
+                text: "FriendlyBot",
+                iconURL: Icon,
+            })
+    
+        await interaction.reply({ embeds: [setupEmbed] });
+    
+    
+        }
+    }
 
     /**
      * Features:
