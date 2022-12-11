@@ -20,7 +20,6 @@ module.exports = (client) => {
             memberCount = guild.roles.cache.get("707547622591692911").members.size;
             const channelID = "862013407225053244"
             const channel = guild.channels.cache.get(channelID)
-            console.log(memberCount);
             const CC = memberCount / 1000 
             const NN = Math.round(CC * 100) / 100
             channel.setName(`Verified: ${NN}k`)
