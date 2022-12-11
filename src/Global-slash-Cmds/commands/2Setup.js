@@ -1,9 +1,11 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const { Permissions  } = require("discord.js") 
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("setup")
         .setDescription('Setup the bot features!!')
+        .setDefaultPermission(Permissions.FLAGS.ADMINISTRATOR)
         .addSubcommand((subcommand) =>
             subcommand
                 .setName('stats')
