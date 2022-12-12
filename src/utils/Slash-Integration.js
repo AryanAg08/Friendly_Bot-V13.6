@@ -1,5 +1,6 @@
 const { Verification, HELP, Deadlines } = require("../functions/3Slash(b)");
 const { DeadlineADD, DeadlineList, Deadlineclear, DeadlineRemove } = require("../functions/6Deadline_Module");
+const { BotCount_chan, Count_goodies } = require("../functions/7Bot_Counting");
 
 module.exports = (client) => {
     client.on('interactionCreate', async interaction => {
@@ -196,6 +197,16 @@ module.exports = (client) => {
             }
         }
 
+        if (commandName === "botcounting") {
+            const SUB = interaction.options.getSubcommand();
+            if (SUB === "channel") {
+                BotCount_chan(interaction);
+            }
+            if (SUB === "goodies") {
+                Count_goodies(interaction);
+            }
+        }
+
         if (commandName === "studytime") {
             StudyTime(interaction);
         }
@@ -219,6 +230,7 @@ module.exports = (client) => {
         if (commandName === "verification") {
                Verification(interaction);
         }
+
     });
 
 } 

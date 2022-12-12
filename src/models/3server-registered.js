@@ -57,6 +57,10 @@ const servers = mongoose.Schema({
         type: String,
         required: false,
     },
+    BotCount: {
+        type: String,
+        required: false,
+    }
 });
 
 module.exports = new mongoose.model('1]registered-servers', servers);
