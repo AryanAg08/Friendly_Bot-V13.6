@@ -39,7 +39,7 @@ module.exports  = (client) => {
 
     client.on("messageCreate", async (message) => {
         const GG = message.guild.id
-        const user = message.author
+        const user = message.member
         const cont = message.content
         if (message.author.bot) return;
         
