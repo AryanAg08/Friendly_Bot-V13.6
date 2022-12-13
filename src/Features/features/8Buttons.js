@@ -831,7 +831,6 @@ module.exports = (client) => {
             }
 
             if (BUTTONID === code41) {
-                console.log(interaction);
                 if (member.roles.cache.has(Vincent)) {
                     member.roles.remove(Vincent);
                     return interaction.reply({
