@@ -6,6 +6,8 @@ module.exports = (client) => {
             const code2 = "TK002"
             const BUTTONID = interaction.customId;
             const member = interaction.member;
+
+            if (interaction.guild.id === "703937875720273972") {
             
             // Roles ---//
             const hs = "750853349984829460"
@@ -798,5 +800,6 @@ module.exports = (client) => {
                 }
             }
         }
+    } else return;
     });
 }
