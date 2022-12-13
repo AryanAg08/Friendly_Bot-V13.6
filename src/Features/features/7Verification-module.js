@@ -105,12 +105,12 @@ module.exports  = (client) => {
                             const row = new MessageActionRow()
                             .addComponents(
                                 new MessageButton()
-                                .setCustomId(`AC${message.author.id}`)
+                                .setCustomId(`AC${message.member.id}`)
                                 .setLabel("Accept")
                                 .setStyle("SUCCESS"),
 
                                 new MessageButton()
-                                .setCustomId(`DN${message.author.id}`)
+                                .setCustomId(`DN${message.member.id}`)
                                 .setLabel("Deny")
                                 .setStyle("DANGER")
                             )
@@ -125,9 +125,9 @@ module.exports  = (client) => {
 
                             const L1 = await v2.findOneAndUpdate({
                                 GG: GG,
-                                user: user,
+                                user: user.id,
                             },{
-                                user: user,
+                                user: user.id,
                                 VerificationStatus: "WAITING",
                                 MSGID: ID,
                             },{
