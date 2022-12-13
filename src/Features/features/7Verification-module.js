@@ -149,6 +149,7 @@ module.exports  = (client) => {
         if (!interaction.isButton()) return;
       const Guild = interaction.guild.id;
       const BID = interaction.customId;
+      console.log(interaction.id);
       
               const K1 = await v1.find({
                 GuildID: Guild,
@@ -156,7 +157,7 @@ module.exports  = (client) => {
               })
               if (K1) {
                 const K2 = await v2.find({
-                    GG: Guild,
+                    GG: Guild,  
                     MSGID: interaction.id,
                     VerificationStatus: "WAITING",
                 })
