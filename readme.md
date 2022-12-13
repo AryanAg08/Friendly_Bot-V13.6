@@ -227,4 +227,7 @@ Easy:
 => Send a log to the mods if there exist a channel!!
 
 Medium: 
-
+=> Embed Displaying How to verify 
+=> Message.content from channel Specified 
+=> If it matches the required alias then get verified 
+=> give then required role. 

@@ -70,7 +70,7 @@ async function Verification (interaction) {
         VerificationLevel: "MEDIUM",
         VerificationChan: chan,
         VerificationRole: role,
-        VRFNMSG: "Verify!",
+        VRFNMSG: "Verify",
     },{
       upsert: true,
       new: true,
@@ -86,8 +86,19 @@ async function Verification (interaction) {
         new: true,
     }) 
 
+    const { MessageEmbed } = require("discord.js");
+    
+    const Em = new MessageEmbed()
+    .setColor("RANDOM")
+    .setDescription(`Welcome to the ${interaction.guild.name}!! \n To get verified Type **Verify** here in <#${chan}>`)
+    .setTimestamp()
+    .setFooter({
+        text: `${interaction.guild.name}`,
+        iconURL: `${interaction.guild.iconURL()}`
+    })
+
     await interaction.reply(`Verification has been set up in <#${chan}> !!`);
-    interaction.channel.send(`For users to verify they have to send **Verify!** in <#${chan}>!!`);
+    interaction.channel.send({ embeds: [Em]});
     }
 
     if (VL === "hard") {

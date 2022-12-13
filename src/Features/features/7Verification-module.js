@@ -34,18 +34,44 @@ module.exports  = (client) => {
                 else return;
             }
         }
+    } 
+    })
 
-        const b3 = await v2.find({
-            GG: gg,
-            VerificationLevel: "MEDIUM",
-            user: "anon",
+    client.on("messageCreate", async (message) => {
+        const GG = message.guild.id
+        const user = message.author
+        const cont = message.content
+        
+        const B1 = await v1.find({
+            GuildID: GG,
+            Verification: "YES"
         })
-
-        if (b3) {
-            for (tt of b3) {
-                
-            }
-        }
-    }
+        if (B1) {
+            const B2 = await v2.find({
+                GG,
+                user: "anon",
+                VerificationLevel: "MEDIUM",
+            })
+            if (B2) {
+                for (vv of B2) {
+                    const chan = vv.VerificationChan
+                    const Role = vv.VerificationRole
+                     
+                    if (message.channel.id === chan) {
+                        if (cont === "Verify"|| cont === "verify" || cont === "VERIFY") {
+                              const CheckRole = message.guild.roles.find((role) => role.id === `${Role}`)
+                               if (CheckRole) {
+                                const H = message.reply(`You are verified `);
+                                H.setTimeout(() => message.delete(), 10000);
+                                   user.roles.add(`${Role}`);     
+                              } else {
+                                message.reply(`Contact admin of the server to check verification role!!`);
+                              }
+                           
+                        } else return message.delete();   
+                    }  else return;
+                }
+            } else return;
+        } else return;
     })
 }
