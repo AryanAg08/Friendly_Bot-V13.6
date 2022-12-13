@@ -126,6 +126,7 @@ async function Verification (interaction) {
             upsert: true,
             new: true,
         })
+        console.log(Ag)
 
         const AG = await S1.findOneAndUpdate({
             GuildID: guild,

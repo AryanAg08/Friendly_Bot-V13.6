@@ -231,3 +231,7 @@ Medium:
 => Message.content from channel Specified 
 => If it matches the required alias then get verified 
 => give then required role. 
+
+Hard: 
+=> Same as medium but ask intentions of joining the server!!!
+=> Sends to another channel the verification Embed!! 

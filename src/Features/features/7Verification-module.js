@@ -76,7 +76,21 @@ module.exports  = (client) => {
                         } else return message.delete();   
                     }  else return;
                 }
-            } else return;
+            } 
+
+            const N1 = await v2.find({
+                GG,
+                user: "anon",
+                VerificationLevel: "HARD",
+            })
+            if (N1) {
+                for (oo of N1) {
+                    const CHAN = oo.VerificationChan
+                    const Role = oo.VerificationRole
+                    const MSgChan = oo.VerificationMsgchannel
+                }
+            }
+
         } else return;
-    })
+    });
 }
