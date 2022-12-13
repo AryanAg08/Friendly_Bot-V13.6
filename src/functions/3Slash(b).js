@@ -98,7 +98,7 @@ async function Verification (interaction) {
     })
 
     await interaction.reply(`Verification has been set up in <#${chan}> !!`);
-    interaction.channel.send({ embeds: [Em]});
+    await interaction.channel.send({ embeds: [Em]});
     }
 
     if (VL === "hard") {
