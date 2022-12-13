@@ -76,7 +76,7 @@ module.exports = (client, commandOptions) => {
     // Listen for messages
     client.on('messageCreate', async (message) => {
         const { member, content, guild, channel } = message
-
+        if (message.channel.type === "DM") return;
         // const prefix = guildPrefixes[guild.id] || globalPrefix
         const pd = require("../models/1.guild-prefix");
         const G2 = await pd.find({
