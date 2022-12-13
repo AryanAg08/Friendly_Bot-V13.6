@@ -64,8 +64,8 @@ module.exports  = (client) => {
                                if (CheckRole) {
                                  user.send(`You are verified!! \n **${message.guild.name}**`)
                                  .catch(() => console.log("Can't send this user dm!!"))
-                                 
-                                   user.roles.add(`${Role}`);     
+
+                                   user.roles.add(Role);     
                               } else {
                                 message.reply(`Contact admin of the server to check verification role!!`);
                               }
