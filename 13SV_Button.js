@@ -2,8 +2,6 @@ module.exports = (client) => {
     client.on('interactionCreate', async interaction => {
         if (!interaction.isButton()) return;
         if (interaction.isButton()) {
-            const code1 = 'MED01'
-            const code2 = "TK002"
             const BUTTONID = interaction.customId;
             const member = interaction.member;
 
