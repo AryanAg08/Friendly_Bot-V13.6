@@ -62,8 +62,9 @@ module.exports  = (client) => {
                         if (cont === "Verify"|| cont === "verify" || cont === "VERIFY") {
                               const CheckRole = message.guild.roles.cache.find((role) => role.id === `${Role}`)
                                if (CheckRole) {
-                                const H = message.reply(`You are verified `);
-                                H.setTimeout(() => message.delete(), 10000);
+                                 user.send(`You are verified!! \n **${message.guild.name}**`)
+                                 .catch(() => console.log("Can't send this user dm!!"))
+                                 
                                    user.roles.add(`${Role}`);     
                               } else {
                                 message.reply(`Contact admin of the server to check verification role!!`);
