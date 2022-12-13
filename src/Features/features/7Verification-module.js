@@ -60,7 +60,7 @@ module.exports  = (client) => {
                      
                     if (message.channel.id === chan) {
                         if (cont === "Verify"|| cont === "verify" || cont === "VERIFY") {
-                              const CheckRole = message.guild.roles.find((role) => role.id === `${Role}`)
+                              const CheckRole = message.guild.roles.cache.find((role) => role.id === `${Role}`)
                                if (CheckRole) {
                                 const H = message.reply(`You are verified `);
                                 H.setTimeout(() => message.delete(), 10000);
