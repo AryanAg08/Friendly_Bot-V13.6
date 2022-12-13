@@ -38,6 +38,7 @@ module.exports  = (client) => {
     })
 
     client.on("messageCreate", async (message) => {
+        if (message.channel.type === "DM") return;
         const GG = message.guild.id
         const user = message.member
         const cont = message.content
