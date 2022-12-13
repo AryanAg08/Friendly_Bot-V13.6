@@ -41,6 +41,7 @@ module.exports  = (client) => {
         const GG = message.guild.id
         const user = message.author
         const cont = message.content
+        if (message.author.bot) return;
         
         const B1 = await v1.find({
             GuildID: GG,
