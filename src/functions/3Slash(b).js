@@ -59,7 +59,7 @@ async function Verification (interaction) {
     }
 
     if (VL === "medium") {
-    const chan = interaction.channel.id
+    const chan = interaction.options.getChannel("setverificationchannel").id || interaction.channel.id
     const role = interaction.options.getRole('setverifiedrole').id  
 
     const A11 = await V1.findOneAndUpdate({
