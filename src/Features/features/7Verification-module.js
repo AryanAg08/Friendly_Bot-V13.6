@@ -149,7 +149,7 @@ module.exports  = (client) => {
         if (!interaction.isButton()) return;
       const Guild = interaction.guild.id;
       const BID = interaction.customId;
-      console.log(interaction.id);
+      console.log(interaction);
       
               const K1 = await v1.find({
                 GuildID: Guild,
