@@ -634,138 +634,138 @@ module.exports = (client) => {
                     });
                 }
             }
-            const TREEE = require("../../models/42Tree");
-            const GG = "703937875720273972"
-            if (BUTTONID === code35) {
-                if (member.roles.cache.has(anos)) { // if they already have the role
-                    member.roles.remove(anos); // remove it
-                    return interaction.reply({
-                        content: 'Successfully removed from Anos team!',
-                        ephemeral: true,
-                    });
-                } else { // if they don't have the role
-                    member.roles.add(anos); // add it
-                    const T2 = await TREEE.findOneAndUpdate({
-                        GG,
-                        user: member.id,
-                    },{
-                        TEAM: "Anos",
-                        Goal: "Not Set",
-                        ALLDONE: "2",
-                    },{
-                        upsert: true,
-                        new: true,
-                    })
-                    return interaction.reply({
-                        content: 'Successfully added **Anos** team role!',
-                        ephemeral: true
-                    });
-                }
-            }
-            if (BUTTONID === code36) {
-                if (member.roles.cache.has(nezuko)) { // if they already have the role
-                    member.roles.remove(nezuko); // remove it
-                    return interaction.reply({
-                        content: 'Successfully removed from nezuko team!',
-                        ephemeral: true,
-                    });
-                } else { // if they don't have the role
-                    member.roles.add(nezuko); // add it
-                    const T2 = await TREEE.findOneAndUpdate({
-                        GG,
-                        user: member.id,
-                    },{
-                        TEAM: "Nezuko",
-                        Goal: "Not Set",
-                        ALLDONE: "2",
-                    },{
-                        upsert: true,
-                        new: true,
-                    })
-                    return interaction.reply({
-                        content: 'Successfully added **Nezuko** team role!',
-                        ephemeral: true
-                    });
-                }
-            }
-            if (BUTTONID === code37) {
-                if (member.roles.cache.has(gojo)) { // if they already have the role
-                    member.roles.remove(gojo); // remove it
-                    return interaction.reply({
-                        content: 'Successfully removed from gojo team!',
-                        ephemeral: true,
-                    });
-                } else { // if they don't have the role
-                    member.roles.add(gojo); // add it
-                    const T2 = await TREEE.findOneAndUpdate({
-                        GG,
-                        user: member.id,
-                    },{
-                        TEAM: "Gojo",
-                        Goal: "Not Set",
-                        ALLDONE: "2",
-                    },{
-                        upsert: true,
-                        new: true,
-                    })
-                    return interaction.reply({
-                        content: 'Successfully added **Gojo** team role!',
-                        ephemeral: true
-                    });
-                }
-            }
-            if (BUTTONID === code38) {
-                if (member.roles.cache.has(naruto)) { // if they already have the role
-                    member.roles.remove(naruto); // remove it
-                    return interaction.reply({
-                        content: 'Successfully removed from naruto team!',
-                        ephemeral: true,
-                    });
-                } else { // if they don't have the role
-                    member.roles.add(naruto); // add it
-                    const T2 = await TREEE.findOneAndUpdate({
-                        GG,
-                        user: member.id,
-                    },{
-                        TEAM: "Naruto",
-                        Goal: "Not Set",
-                        ALLDONE: "2",
-                    },{
-                        upsert: true,
-                        new: true,
-                    })
-                    return interaction.reply({
-                        content: 'Successfully added **Naruto** team role!',
-                        ephemeral: true
-                    });
-                }
-            }
-            if (BUTTONID === code39) {
-                if (member.roles.cache.has(anya)) { // if they already have the role
-                    member.roles.remove(anya); // remove it
-                    return interaction.reply({
-                        content: 'Successfully removed from Anya team!',
-                        ephemeral: true,
-                    });
-                } else { // if they don't have the role
-                    member.roles.add(anya); // add it
-                    const T2 = await TREEE.findOneAndUpdate({
-                        GG,
-                        user: member.id,
-                    },{
-                        TEAM: "Anya",
-                        Goal: "Not Set",
-                        ALLDONE: "2",
-                    },{
-                        upsert: true,
-                        new: true,
-                    })
-                    return interaction.reply({
-                        content: 'Successfully added **Anya** team role!',
-                        ephemeral: true
-                    });
-                }
-            }
+            // const TREEE = require("../../models/42Tree");
+            // const GG = "703937875720273972"
+            // if (BUTTONID === code35) {
+            //     if (member.roles.cache.has(anos)) { // if they already have the role
+            //         member.roles.remove(anos); // remove it
+            //         return interaction.reply({
+            //             content: 'Successfully removed from Anos team!',
+            //             ephemeral: true,
+            //         });
+            //     } else { // if they don't have the role
+            //         member.roles.add(anos); // add it
+            //         const T2 = await TREEE.findOneAndUpdate({
+            //             GG,
+            //             user: member.id,
+            //         },{
+            //             TEAM: "Anos",
+            //             Goal: "Not Set",
+            //             ALLDONE: "2",
+            //         },{
+            //             upsert: true,
+            //             new: true,
+            //         })
+            //         return interaction.reply({
+            //             content: 'Successfully added **Anos** team role!',
+            //             ephemeral: true
+            //         });
+            //     }
+            // }
+            // if (BUTTONID === code36) {
+            //     if (member.roles.cache.has(nezuko)) { // if they already have the role
+            //         member.roles.remove(nezuko); // remove it
+            //         return interaction.reply({
+            //             content: 'Successfully removed from nezuko team!',
+            //             ephemeral: true,
+            //         });
+            //     } else { // if they don't have the role
+            //         member.roles.add(nezuko); // add it
+            //         const T2 = await TREEE.findOneAndUpdate({
+            //             GG,
+            //             user: member.id,
+            //         },{
+            //             TEAM: "Nezuko",
+            //             Goal: "Not Set",
+            //             ALLDONE: "2",
+            //         },{
+            //             upsert: true,
+            //             new: true,
+            //         })
+            //         return interaction.reply({
+            //             content: 'Successfully added **Nezuko** team role!',
+            //             ephemeral: true
+            //         });
+            //     }
+            // }
+            // if (BUTTONID === code37) {
+            //     if (member.roles.cache.has(gojo)) { // if they already have the role
+            //         member.roles.remove(gojo); // remove it
+            //         return interaction.reply({
+            //             content: 'Successfully removed from gojo team!',
+            //             ephemeral: true,
+            //         });
+            //     } else { // if they don't have the role
+            //         member.roles.add(gojo); // add it
+            //         const T2 = await TREEE.findOneAndUpdate({
+            //             GG,
+            //             user: member.id,
+            //         },{
+            //             TEAM: "Gojo",
+            //             Goal: "Not Set",
+            //             ALLDONE: "2",
+            //         },{
+            //             upsert: true,
+            //             new: true,
+            //         })
+            //         return interaction.reply({
+            //             content: 'Successfully added **Gojo** team role!',
+            //             ephemeral: true
+            //         });
+            //     }
+            // }
+            // if (BUTTONID === code38) {
+            //     if (member.roles.cache.has(naruto)) { // if they already have the role
+            //         member.roles.remove(naruto); // remove it
+            //         return interaction.reply({
+            //             content: 'Successfully removed from naruto team!',
+            //             ephemeral: true,
+            //         });
+            //     } else { // if they don't have the role
+            //         member.roles.add(naruto); // add it
+            //         const T2 = await TREEE.findOneAndUpdate({
+            //             GG,
+            //             user: member.id,
+            //         },{
+            //             TEAM: "Naruto",
+            //             Goal: "Not Set",
+            //             ALLDONE: "2",
+            //         },{
+            //             upsert: true,
+            //             new: true,
+            //         })
+            //         return interaction.reply({
+            //             content: 'Successfully added **Naruto** team role!',
+            //             ephemeral: true
+            //         });
+            //     }
+            // }
+            // if (BUTTONID === code39) {
+            //     if (member.roles.cache.has(anya)) { // if they already have the role
+            //         member.roles.remove(anya); // remove it
+            //         return interaction.reply({
+            //             content: 'Successfully removed from Anya team!',
+            //             ephemeral: true,
+            //         });
+            //     } else { // if they don't have the role
+            //         member.roles.add(anya); // add it
+            //         const T2 = await TREEE.findOneAndUpdate({
+            //             GG,
+            //             user: member.id,
+            //         },{
+            //             TEAM: "Anya",
+            //             Goal: "Not Set",
+            //             ALLDONE: "2",
+            //         },{
+            //             upsert: true,
+            //             new: true,
+            //         })
+            //         return interaction.reply({
+            //             content: 'Successfully added **Anya** team role!',
+            //             ephemeral: true
+            //         });
+            //     }
+            // }
             if (BUTTONID === code40) {
                 if (member.roles.cache.has(focus)) {
                     member.roles.remove(focus);
