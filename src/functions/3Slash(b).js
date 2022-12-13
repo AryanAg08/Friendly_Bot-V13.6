@@ -87,14 +87,14 @@ async function Verification (interaction) {
     }) 
 
     const { MessageEmbed } = require("discord.js");
-    
+     const Icon = interaction.guild.iconURL()
     const Em = new MessageEmbed()
     .setColor("RANDOM")
     .setDescription(`Welcome to the ${interaction.guild.name}!! \n To get verified Type **Verify** here in <#${chan}>`)
     .setTimestamp()
     .setFooter({
         text: `${interaction.guild.name}`,
-        iconURL: `${interaction.guild.iconURL()}`
+        iconURL: Icon,
     })
 
     await interaction.reply(`Verification has been set up in <#${chan}> !!`);
