@@ -171,12 +171,20 @@ module.exports  = (client) => {
 
                             USer.send(" Hi! A mod just verified you for access on the Study Vibes server. \nWe wish you good luck with your studies and a happy stay! \n Don't forget to have a look at the toolbox-channel to unlock different toolbox-clubs!")
                             .catch(() => console.log("Can't send this user dm!!"));
+                            return interaction.reply({
+                                content: "Verification Done!!",
+                                ephemeral: true,
+                            })
                         }
                         if (BID === `DN${auth}`) {
                             const USer = interaction.guild.members.cache.get(auth);
 
                             USer.send("Hi! Unfortunately you did not pass the verification process for our server. If you think this was a mistake feel free to contact an available mod. We wish you all the best. ")
                                 .catch(() => console.log("Can't send this user dm!!"))
+                                return interaction.reply({
+                                    content: "Verification Done!!",
+                                    ephemeral: true,
+                                })
                     } 
                 }
             }
