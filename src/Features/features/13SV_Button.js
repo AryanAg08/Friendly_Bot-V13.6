@@ -6,55 +6,7 @@ module.exports = (client) => {
             const code2 = "TK002"
             const BUTTONID = interaction.customId;
             const member = interaction.member;
-            // if (interaction.options)
-            // console.log(interaction);
-            if (interaction.customId === code1) {
-                console.log("Trying!!!!!");
-                const user = interaction.user.id
-                const guild = client.guilds.cache.get("703937875720273972");
-                const auth = guild.members.cache.get(user)
-                auth.roles.add("980134800549609513")
-                await interaction.reply({ content: "Added Role!!", ephemeral: true });
-            }
-            if (interaction.customId === code2) {
-                await interaction.reply({ content: 'Your ticket is created!!', ephemeral: true});
-                console.log("ticket");
-                const user = interaction.user.username
-                const guild = interaction.guild
-                const everyone = guild.roles.cache.find(role => role.name === "@everyone");
-                const mods = guild.roles.cache.find(role => role.id === "707581746937462794");
-
-                guild.channels
-                .create(
-                 user, {
-                    type: 'GUILD_TEXT'
-                 })
-                 .then((channel) => {
-                    const category = "796476509853712486"
-                    channel.setParent(category).then(async (settedParent) => {
-                        settedParent.permissionOverwrites.edit(everyone, {
-                            "VIEW_CHANNEL": false,
-                        });
-                        settedParent.permissionOverwrites.edit(mods, {
-                            "VIEW_CHANNEL": true,  "READ_MESSAGE_HISTORY": true, "SEND_MESSAGES": true,
-                            "ATTACH_FILES": true,
-                            "CREATE_INSTANT_INVITE": true, "ADD_REACTIONS": true
-                        });
-                        settedParent.permissionOverwrites.edit(interaction.user, {
-                            "VIEW_CHANNEL": true,
-                            "READ_MESSAGE_HISTORY": true, "SEND_MESSAGES": true,
-                            "ATTACH_FILES": true,
-                            "CREATE_INSTANT_INVITE": false, "ADD_REACTIONS": true
-                        });
-                        const discord = require('discord.js')
-                        var Ticketembed = new discord.MessageEmbed()
-                          .setColor('#e7b90b')
-                          .setTitle(`Hi, ${user}. To close write **!close @${user}**)`)
             
-                        settedParent.send({ embeds: [Ticketembed] });
-                    })
-                 });
-            }
             // Roles ---//
             const hs = "750853349984829460"
             const Batchelor = "750853181193322627"
