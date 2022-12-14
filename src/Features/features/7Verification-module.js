@@ -158,7 +158,7 @@ module.exports  = (client) => {
               if (K1) {
                 const K2 = await v2.find({
                     GG: Guild,  
-                    MSGID: interaction.id,
+                    MSGID: interaction.message.id,
                     VerificationStatus: "WAITING",
                 })
                 if (K2) {
