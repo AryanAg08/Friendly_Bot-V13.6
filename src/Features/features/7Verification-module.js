@@ -181,9 +181,30 @@ module.exports  = (client) => {
 
                             USer.send(" Hi! A mod just verified you for access on the Server. \nWe wish you good luck with your studies and a happy stay! \n Don't forget to have a look at the toolbox-channel to unlock different toolbox-clubs!")
                             .catch(() => console.log("Can't send this user dm!!"));
-                            return interaction.reply({
+                             interaction.reply({
                                 content: "Verification Done!!",
                                 ephemeral: true,
+                            })
+
+                            const { MessageButton, MessageActionRow } = require("discord.js");
+                              
+                            const row = new MessageActionRow()
+                            .addComponents(
+                                new MessageButton()
+                                .setCustomId(`AC${interaction.user.id}`)
+                                .setLabel("Accept")
+                                .setStyle("SUCCESS")
+                                .setDisabled(true),
+
+                                new MessageButton()
+                                .setCustomId(`DN${interaction.user.id}`)
+                                .setLabel("Deny")
+                                .setStyle("DANGER")
+                                .setDisabled(true)
+                            )
+
+                            return interaction.message.edit({
+                                components: [row],
                             })
                         }
                     }
@@ -192,10 +213,31 @@ module.exports  = (client) => {
 
                             USer.send("Hi! Unfortunately you did not pass the verification process for our server. If you think this was a mistake feel free to contact an available mod. We wish you all the best. ")
                                 .catch(() => console.log("Can't send this user dm!!"))
-                                return interaction.reply({
+                                 interaction.reply({
                                     content: "Verification Done!!",
                                     ephemeral: true,
                                 })
+                                
+                            const { MessageButton, MessageActionRow } = require("discord.js");
+                              
+                            const row = new MessageActionRow()
+                            .addComponents(
+                                new MessageButton()
+                                .setCustomId(`AC${interaction.user.id}`)
+                                .setLabel("Accept")
+                                .setStyle("SUCCESS")
+                                .setDisabled(true),
+
+                                new MessageButton()
+                                .setCustomId(`DN${interaction.user.id}`)
+                                .setLabel("Deny")
+                                .setStyle("DANGER")
+                                .setDisabled(true)
+                            )
+
+                            return interaction.message.edit({
+                                components: [row],
+                            })
                     } 
                 }
             }
