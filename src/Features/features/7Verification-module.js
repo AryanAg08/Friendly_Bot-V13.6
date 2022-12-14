@@ -203,6 +203,11 @@ module.exports  = (client) => {
                                 .setDisabled(true)
                             )
 
+                            if (interaction.guild.id === "703937875720273972") {
+                                interaction.guild.members.cache.get(auth).roles.remove("739920051208978495");
+                                interaction.guild.members.cache.get(auth).roles.remove("829989087494537216");
+                            }
+
                             return interaction.message.edit({
                                 components: [row],
                             })
@@ -217,6 +222,11 @@ module.exports  = (client) => {
                                     content: "Verification Done!!",
                                     ephemeral: true,
                                 })
+
+                                  if (interaction.guild.id === "703937875720273972") {
+                                interaction.guild.members.cache.get(auth).roles.add("739920051208978495");
+                                interaction.guild.members.cache.get(auth).roles.add("829989087494537216");
+                            }
                                 
                             const { MessageButton, MessageActionRow } = require("discord.js");
                               
