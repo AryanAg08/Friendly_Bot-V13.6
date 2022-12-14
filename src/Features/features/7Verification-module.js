@@ -163,8 +163,18 @@ module.exports  = (client) => {
                 })
                 if (K2) {
                     for (tt of K2) {
-                        const Role = tt.VerificationRole
+                        
                         const auth = tt.user
+
+                        const KH1 = await v2.find({
+                            GG: Guild,
+                            user: "anon",
+                            VerificationLevel: "HARD",
+                        })
+                        for (qq of KH1) {
+                            const Role = qq.VerificationRole
+
+                        
 
                         if (BID === `AC${auth}`) {
                             interaction.guild.members.cache.get(auth).roles.add(Role);
@@ -177,6 +187,7 @@ module.exports  = (client) => {
                                 ephemeral: true,
                             })
                         }
+                    }
                         if (BID === `DN${auth}`) {
                             const USer = interaction.guild.members.cache.get(auth);
 
