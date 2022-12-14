@@ -180,7 +180,7 @@ module.exports  = (client) => {
                             interaction.guild.members.cache.get(auth).roles.add(Role);
                             const USer = interaction.guild.members.cache.get(auth);
 
-                            USer.send(" Hi! A mod just verified you for access on the Study Vibes server. \nWe wish you good luck with your studies and a happy stay! \n Don't forget to have a look at the toolbox-channel to unlock different toolbox-clubs!")
+                            USer.send(" Hi! A mod just verified you for access on the Server. \nWe wish you good luck with your studies and a happy stay! \n Don't forget to have a look at the toolbox-channel to unlock different toolbox-clubs!")
                             .catch(() => console.log("Can't send this user dm!!"));
                             return interaction.reply({
                                 content: "Verification Done!!",
