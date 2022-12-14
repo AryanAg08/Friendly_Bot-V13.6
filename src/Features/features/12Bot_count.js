@@ -5,6 +5,7 @@ module.exports = (client) => {
 
     client.on('messageCreate', async (message) => {
         if (message.author.bot) return;
+        if (message.channel.type === "DM") return;
          const GG = message.guild.id;
          const user = message.author.id;
 
