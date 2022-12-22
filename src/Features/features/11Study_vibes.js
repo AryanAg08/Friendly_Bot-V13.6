@@ -153,7 +153,7 @@ module.exports = (client) => {
                 new: true,
              });
              console.log(T1);
-             message.delete()''
+             message.delete();
         }
         const M2 = await M1.find({
             GG: guild.id,
