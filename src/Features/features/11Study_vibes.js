@@ -139,6 +139,20 @@ module.exports = (client) => {
         const K1 = require("../../models/20Candies");
        if (guild.id === "703937875720273972") {
         console.log("Reedeming!!");
+        if (content === cont) {
+            const T1 = await K1.findOneAndUpdate({
+                GGuild: guild.id,
+                user: author.id,
+             },{
+                user: author.id,
+                $inc: {
+                    candies: 4,
+                },
+             },{
+                upsert: true,
+                new: true,
+             });
+        }
         const M2 = await M1.find({
             GG: guild.id,
             user: "anon",
