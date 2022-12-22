@@ -75,7 +75,7 @@ module.exports = (client) => {
            const CandiesCount = Math.floor(Math.random()*Candies.length);
            const AddCandies = Candies[CandiesCount];
            const MGG = await chan.send(MSG);
-           console.log(`In ${ChanArr}`);S
+           console.log(`In ${ChanArr}`);
            const MsgID = MGG.id;
            const C1 = await N1.findOneAndUpdate({
             GG,
