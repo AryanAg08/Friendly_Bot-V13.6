@@ -55,7 +55,7 @@ module.exports = (client) => {
             "12"
         ];
 
-        const MSG = "type **!claim candies**";
+        const MSG = "type **!claim candies**" ;
         const schedule = require("node-schedule");
         const ms = require("ms");
         const moment = require("moment");
@@ -64,7 +64,7 @@ module.exports = (client) => {
            
             const random = Math.floor(Math.random()*channels.length);
             const ChanArr = channels[random]
-            const chan = client.channels.cache.get(ChanArr);
+            const chan = client.channels.cache.get("998568176289841162");
             const GG = "703937875720273972";
             const user = "anon";
             const IsStillActive = "YES";
@@ -74,7 +74,7 @@ module.exports = (client) => {
             let Time = moment(endtime).format("DD/MM/YYYY-HH:mm");
            const CandiesCount = Math.floor(Math.random()*Candies.length);
            const AddCandies = Candies[CandiesCount];
-           const MGG = await chan.send(MSG);
+           const MGG = await chan.send(MSG + `\n In: <#${ChanArr}>`);
            console.log(`In ${ChanArr}`);
            const MsgID = MGG.id;
            const C1 = await N1.findOneAndUpdate({
