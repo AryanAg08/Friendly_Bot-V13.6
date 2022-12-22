@@ -133,6 +133,7 @@ module.exports = (client) => {
     });
 
     client.on("messageCreate", async message => {
+        if (message.channel.type === "DM") return;
         const {guild, author, content, channel} = message;
         const cont = "!claim candies";
         const M1 = require("../../models/19Christmas_Package");
