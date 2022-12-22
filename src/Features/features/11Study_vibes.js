@@ -138,6 +138,7 @@ module.exports = (client) => {
         const M1 = require("../../models/19Christmas_Package");
         const K1 = require("../../models/20Candies");
        if (guild.id === "703937875720273972") {
+        console.log("Reedeming!!");
         const M2 = await M1.find({
             GG: guild.id,
             user: "anon",
