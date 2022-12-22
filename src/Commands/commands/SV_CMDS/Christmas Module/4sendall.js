@@ -44,8 +44,8 @@ module.exports = {
         
       try 
 { const attachment = new MessageAttachment(imagethree)
-	receive.send(UserEmbed)
-    receive.send(attachment)
+	receive.send({ embed: [UserEmbed], components: [attachment]});
+ //   receive.send(attachment)
       } catch(e) {
       	console.log(e)
       const channn = message.guild.channels.cache.get("796445338595885066")
@@ -62,7 +62,7 @@ module.exports = {
         
       try 
 {  const attachment = new MessageAttachment(imagetwo)
-	receive.send(UserEmbed, attachment)
+	receive.send({ embed: [UserEmbed], components: [attachment]});
       } catch(e) {
       	console.log(e)
       const channn = message.guild.channels.cache.get("796445338595885066")
@@ -80,7 +80,7 @@ if (four === "tree") {
         
       try 
 {  const attachment = new MessageAttachment(imagefour)
-	receive.send(UserEmbed, attachment)
+	receive.send({ embed: [UserEmbed], components: [attachment]});
       } catch(e) {
       	console.log(e)
       const channn = message.guild.channels.cache.get("796445338595885066")
@@ -98,7 +98,7 @@ if (four === "santa") {
         
       try 
 { const attachment = new MessageAttachment(imagefive)
-	receive.send(UserEmbed, attachment)
+	receive.send({ embed: [UserEmbed], components: [attachment]});
       } catch(e) {
       	console.log(e)
       const channn = message.guild.channels.cache.get("796445338595885066")
