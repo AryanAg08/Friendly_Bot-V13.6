@@ -5,7 +5,7 @@ module.exports = {
     .setDescription("Send your christmas wishing to the other user!! Only for Study Vibes Server!!")
     .addUserOption((option) => 
     option
-    .setName("userName")
+    .setName("username")
     .setDescription("Name of the user you want to send this msg!!")
     .setRequired(true)
     )
@@ -35,7 +35,7 @@ module.exports = {
     )
     .addStringOption((optn) => 
     optn
-    .setName("whishingMessage")
+    .setName("message")
     .setDescription("Your wishing for the user!!")
     .setRequired(true)
     )

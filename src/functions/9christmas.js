@@ -1,6 +1,6 @@
 async function wish (interaction) {
-    const receiver = interaction.options.getUser("userName").id
-    const text1 = interaction.options.getString("wishingMessage")
+    const receiver = interaction.options.getUser("username").id
+    const text1 = interaction.options.getString("message")
     const selected = interaction.options.getString('gifttype');
 
     const GGuild = interaction.guild.id
