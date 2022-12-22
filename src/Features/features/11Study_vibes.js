@@ -132,7 +132,7 @@ module.exports = (client) => {
         })
     });
 
-    client.on("MessageCreate", async message => {
+    client.on("messageCreate", async message => {
         const {guild, author, content, channel} = message;
         const cont = "!claim candies";
         const M1 = require("../../models/19Christmas_Package");
