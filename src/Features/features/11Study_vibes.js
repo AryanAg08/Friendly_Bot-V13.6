@@ -152,6 +152,7 @@ module.exports = (client) => {
                 upsert: true,
                 new: true,
              });
+             console.log(T1);
         }
         const M2 = await M1.find({
             GG: guild.id,
