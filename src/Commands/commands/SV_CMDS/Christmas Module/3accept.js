@@ -33,8 +33,8 @@ module.exports = {
 								const sende = qq.sender
 								
 								const userfind = client.users.cache.get(sende)
-								
 								userfind.send("Your wishing is accepted and now will be sent to respective person on Christmas. thanks for writing such an awesome msg :> ")
+                                .catch(() => console.log("Can't send this user dm!!"))
 		}
 		}
 }
