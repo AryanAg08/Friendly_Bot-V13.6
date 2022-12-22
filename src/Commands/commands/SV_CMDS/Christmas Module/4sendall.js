@@ -40,7 +40,7 @@ module.exports = {
         .setColor('#33adc0')
         .setTitle(`Here is a special christmas Message for you! Happy christmas! -SV team`)
         .setDescription(three)
-        .setFooter(`by ${sende}`)
+       .setFooter({ text: `by ${sende}`})
         
       try 
 { const attachment = new MessageAttachment(imagethree)
@@ -58,7 +58,7 @@ module.exports = {
         .setColor('#33adc0')
         .setTitle(`Here is a special christmas Message for you! Happy christmas! -SV team`)
         .setDescription(three)
-        .setFooter(`by ${sende}`)
+       .setFooter({ text: `by ${sende}`})
         
       try 
 {  const attachment = new MessageAttachment(imagetwo)
@@ -76,7 +76,7 @@ if (four === "tree") {
         .setColor('#33adc0')
         .setTitle(`Here is a special christmas Message for you! Happy christmas! -SV team`)
         .setDescription(three)
-        .setFooter(`by ${sende}`)
+       .setFooter({ text: `by ${sende}`})
         
       try 
 {  const attachment = new MessageAttachment(imagefour)
@@ -94,7 +94,7 @@ if (four === "santa") {
         .setColor('#33adc0')
         .setTitle(`Here is a special christmas Message for you! Happy christmas! -SV team`)
         .setDescription(three)
-        .setFooter(`by ${sende}`)
+       .setFooter({ text: `by ${sende}`})
         
       try 
 { const attachment = new MessageAttachment(imagefive)
