@@ -60,7 +60,11 @@ const servers = mongoose.Schema({
     BotCount: {
         type: String,
         required: false,
-    }
+    },
+    PrivateChannel: {
+        type: String,
+        required: false,
+    },
 });
 
 module.exports = new mongoose.model('1]registered-servers', servers);

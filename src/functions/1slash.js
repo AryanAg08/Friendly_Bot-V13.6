@@ -529,6 +529,8 @@ async function SetupWelcome(interaction) {
         })
         console.log(A12);
     }
+
+    await interaction.reply("Welcome Setup done!!");
 }
 
 async function SetupEnable(interaction) {
