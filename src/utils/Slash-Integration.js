@@ -2,6 +2,7 @@ const { Verification, HELP, Deadlines } = require("../functions/3Slash(b)");
 const { DeadlineADD, DeadlineList, Deadlineclear, DeadlineRemove } = require("../functions/6Deadline_Module");
 const { BotCount_chan, Count_goodies } = require("../functions/7Bot_Counting");
 const { Join_to_create } = require("../functions/8Join_To_create");
+const { wish } = require("../functions/9christmas");
 
 module.exports = (client) => {
     client.on('interactionCreate', async interaction => {
@@ -240,6 +241,10 @@ module.exports = (client) => {
             if (interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
             Join_to_create(interaction);
         } else return await interaction.reply("You do not have perms!!")
+        }
+
+        if (commandName === "wish") {
+            wish(interaction);
         }
 
     });
