@@ -4,7 +4,7 @@ async function wish (interaction) {
     const selected = interaction.options.getString('gifttype');
 
     const GGuild = interaction.guild.id
-    const user = interaction.user.id
+    const user = interaction.member.id
     const Aa = require("../models/20Candies");
     const Ba = require("../models/21Wishes");
 
@@ -71,7 +71,7 @@ wishnumber, },
   console.log(A2); 
 const chan = interaction.guild.channels.cache.get("997941830396170340")
 
-chan.send(`${interaction.user.username} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
+chan.send(`${interaction.member.username} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
   interaction.reply({content: "done", ephemeral: true})
   }
   }
@@ -140,7 +140,7 @@ wishnumber, },
 
 const chan = interaction.guild.channels.cache.get("997941830396170340")
 
-chan.send(`${interaction.author} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber}`)
+chan.send(`${interaction.member.username} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber}`)
   interaction.reply({content: "done", ephemeral: true})
   }
   }
@@ -207,7 +207,7 @@ user: "anon",
   console.log(A2); 
 const chan = interaction.guild.channels.cache.get("997941830396170340")
 
-chan.send(`${interaction.author} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
+chan.send(`${interaction.member.username} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
   interaction.reply({content: "done", ephemeral: true})
   }
   }
@@ -273,7 +273,7 @@ wishnumber, },
   console.log(A2); 
 const chan = interaction.guild.channels.cache.get("997941830396170340")
 
-chan.send(`${interaction.author} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
+chan.send(`${interaction.member.username} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
   interaction.reply({content: "done", ephemeral: true})
   }
   }
