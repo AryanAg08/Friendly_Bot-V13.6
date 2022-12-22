@@ -71,7 +71,7 @@ wishnumber, },
   console.log(A2); 
 const chan = interaction.guild.channels.cache.get("997941830396170340")
 
-chan.send(`${interaction.member.username} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
+chan.send(`<@${interaction.member.id}> just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
   interaction.reply({content: "done", ephemeral: true})
   }
   }
@@ -140,7 +140,7 @@ wishnumber, },
 
 const chan = interaction.guild.channels.cache.get("997941830396170340")
 
-chan.send(`${interaction.member.username} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber}`)
+chan.send(`<@${interaction.member.id}> just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber}`)
   interaction.reply({content: "done", ephemeral: true})
   }
   }
@@ -207,7 +207,7 @@ user: "anon",
   console.log(A2); 
 const chan = interaction.guild.channels.cache.get("997941830396170340")
 
-chan.send(`${interaction.member.username} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
+chan.send(`<@${interaction.member.id}> just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
   interaction.reply({content: "done", ephemeral: true})
   }
   }
@@ -273,7 +273,7 @@ wishnumber, },
   console.log(A2); 
 const chan = interaction.guild.channels.cache.get("997941830396170340")
 
-chan.send(`${interaction.member.username} just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
+chan.send(`<@${interaction.member.id}> just sent a wish with a number **${wishnumber}** \n\n ${wish} \n\n accept it using **!accept ${wishnumber} `)
   interaction.reply({content: "done", ephemeral: true})
   }
   }
