@@ -40,11 +40,14 @@ module.exports = {
         .setColor('#33adc0')
         .setTitle(`Here is a special christmas Message for you! Happy christmas! -SV team`)
         .setDescription(three)
+      //  .setImage("https://w7.pngwing.com/pngs/347/229/png-transparent-gift-heap-christmas-gifts-gift-boxes-gift-heap.png")
        .setFooter({ text: `by ${sende}`})
         
       try 
 { const attachment = new MessageAttachment(imagethree)
-	receive.send({ embed: [UserEmbed], components: [attachment]});
+	receive.send({ embed: [UserEmbed], files: [{
+        attachment: [attachment]
+    }]});
  //   receive.send(attachment)
       } catch(e) {
       	console.log(e)
@@ -62,7 +65,9 @@ module.exports = {
         
       try 
 {  const attachment = new MessageAttachment(imagetwo)
-	receive.send({ embed: [UserEmbed], components: [attachment]});
+	receive.send({ embed: [UserEmbed], files: [{
+        attachment: [attachment]
+    }]});
       } catch(e) {
       	console.log(e)
       const channn = message.guild.channels.cache.get("796445338595885066")
@@ -80,7 +85,9 @@ if (four === "tree") {
         
       try 
 {  const attachment = new MessageAttachment(imagefour)
-	receive.send({ embed: [UserEmbed], components: [attachment]});
+	receive.send({ embed: [UserEmbed], files: [{
+        attachment: [attachment]
+    }]});
       } catch(e) {
       	console.log(e)
       const channn = message.guild.channels.cache.get("796445338595885066")
@@ -98,7 +105,9 @@ if (four === "santa") {
         
       try 
 { const attachment = new MessageAttachment(imagefive)
-	receive.send({ embed: [UserEmbed], components: [attachment]});
+	receive.send({ embed: [UserEmbed], files: [{
+        attachment: [attachment]
+    }]});
       } catch(e) {
       	console.log(e)
       const channn = message.guild.channels.cache.get("796445338595885066")
