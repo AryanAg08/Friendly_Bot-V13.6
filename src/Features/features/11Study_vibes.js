@@ -105,7 +105,7 @@ module.exports = (client) => {
                     // Do the same as timer feature//
                     const Time = ll.Time
                     const Msg = ll.MsgID
-                    const Channel = ll.ChannelID
+                    const Channel = "998568176289841162"
 
                     const current = new Date(Date.now());
                     const moment = require("moment");
