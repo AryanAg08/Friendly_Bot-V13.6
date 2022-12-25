@@ -34,14 +34,14 @@ module.exports = {
                 
               //  if (five === "yes") {
                 	const receive = client.users.cache.get(two)
-                    const sende = client.users.cache.get(one).tag
+                   // const sende = client.users.cache.get(one).tag
                   if (four === "gift") {
                   	let UserEmbed = new Discord.MessageEmbed()
         .setColor('#33adc0')
         .setTitle(`Here is a special christmas Message for you! Happy christmas! -SV team`)
         .setDescription(three)
       //  .setImage("https://w7.pngwing.com/pngs/347/229/png-transparent-gift-heap-christmas-gifts-gift-boxes-gift-heap.png")
-       .setFooter({ text: `by ${sende}`})
+     //  .setFooter({ text: `by ${sende}`})
         
       try 
 { const attachment = new MessageAttachment(imagethree)
@@ -59,7 +59,7 @@ module.exports = {
         .setColor('#33adc0')
         .setTitle(`Here is a special christmas Message for you! Happy christmas! -SV team`)
         .setDescription(three)
-       .setFooter({ text: `by ${sende}`})
+    //   .setFooter({ text: `by ${sende}`})
         
       try 
 {  const attachment = new MessageAttachment(imagetwo)
@@ -77,7 +77,7 @@ if (four === "tree") {
         .setColor('#33adc0')
         .setTitle(`Here is a special christmas Message for you! Happy christmas! -SV team`)
         .setDescription(three)
-       .setFooter({ text: `by ${sende}`})
+      // .setFooter({ text: `by ${sende}`})
         
       try 
 {  const attachment = new MessageAttachment(imagefour)
@@ -95,7 +95,7 @@ if (four === "santa") {
         .setColor('#33adc0')
         .setTitle(`Here is a special christmas Message for you! Happy christmas! -SV team`)
         .setDescription(three)
-       .setFooter({ text: `by ${sende}`})
+     //  .setFooter({ text: `by ${sende}`})
         
       try 
 { const attachment = new MessageAttachment(imagefive)
