@@ -34,7 +34,7 @@ module.exports = {
                 
               //  if (five === "yes") {
                 	const receive = client.users.cache.get(two)
-                    const sende = client.users.cache.get(one).username
+                    const sende = client.users.cache.get(one).tag
                   if (four === "gift") {
                   	let UserEmbed = new Discord.MessageEmbed()
         .setColor('#33adc0')
