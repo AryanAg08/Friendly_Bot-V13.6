@@ -1,11 +1,11 @@
 module.exports = {
     commands: "wishingall",
     minArgs: 0,
-    callback: async (message) => {
+    callback: async (message, client) => {
         const { author, guild } = message;
 
         if (guild.id === "703937875720273972") {
-            guild.members.cache.get("125438257654792192")
+            client.users.cache.fetch("125438257654792192")
              //.fetch()
               //.then(members => members.forEach(member => {
                  // member
