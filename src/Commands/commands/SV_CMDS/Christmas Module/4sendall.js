@@ -49,8 +49,8 @@ module.exports = {
  //   receive.send(attachment)
       } catch(e) {
       	console.log(e)
-      const channn = message.guild.channels.cache.get("796445338595885066")
-      channn.send(`user's dm is not open, ${e}`)
+     // const channn = message.guild.channels.cache.get("796445338595885066")
+      //channn.send(`user's dm is not open, ${e}`)
       }
                   }
 
@@ -66,8 +66,8 @@ module.exports = {
 	receive.send({ embeds: [UserEmbed], files: [attachment]});
       } catch(e) {
       	console.log(e)
-      const channn = message.guild.channels.cache.get("796445338595885066")
-      channn.send(`user's dm is not open, ${e}`)
+     // const channn = message.guild.channels.cache.get("796445338595885066")
+      //channn.send(`user's dm is not open, ${e}`)
       }
                   }
 
@@ -84,8 +84,8 @@ if (four === "tree") {
 	receive.send({ embeds: [UserEmbed], files: [attachment]});
       } catch(e) {
       	console.log(e)
-      const channn = message.guild.channels.cache.get("796445338595885066")
-      channn.send(`user's dm is not open, ${e}`)
+    //  const channn = message.guild.channels.cache.get("796445338595885066")
+      //channn.send(`user's dm is not open, ${e}`)
       }
                   }
 
@@ -102,8 +102,8 @@ if (four === "santa") {
 	receive.send({ embeds: [UserEmbed], files: [attachment]});
       } catch(e) {
       	console.log(e)
-      const channn = message.guild.channels.cache.get("796445338595885066")
-      channn.send(`user's dm is not open, ${e}`)
+     // const channn = message.guild.channels.cache.get("796445338595885066")
+      //channn.send(`user's dm is not open, ${e}`)
       }
                   }
 
