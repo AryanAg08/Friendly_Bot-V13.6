@@ -108,7 +108,7 @@ async function Join_to_create (interaction) {
    }
 }
 
-async function Make_ONLY_VOICE_Channel (user, client, Guild) {
+async function Make_ONLY_VOICE_Channel (user, Guild) {
      const J1 = require("../models/3server-registered");
      const J2 = require("../models/18Private_channels");
      const GG = Guild.id
