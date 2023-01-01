@@ -253,6 +253,30 @@ if (O1) {
           READ_MESSAGE_HISTORY: true,
         });
 
+        const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
+           const embed = new MessageEmbed()
+           .setColor("RANDOM")
+           .setDescription(`Welcome **${user.member.user.username}** to the voice channel`)
+           
+           const row = new MessageActionRow()
+            .addComponents(
+              new MessageButton()
+              .setCustomId(`PVC${user.id}`)
+              .setLabel("Close")
+              .setEmoji("❌")
+              .setStyle("DANGER"),
+               
+              new MessageButton()
+              .setCustomId(`PV${GG}`)
+              .setStyle("PRIMARY")
+              .setDisabled(true)
+            )
+
+            vc.send({
+              embeds: [embed],
+              components: [row],
+            });
+            
         const N2 = await J2.findOneAndUpdate({
           GG,
           user: User,
