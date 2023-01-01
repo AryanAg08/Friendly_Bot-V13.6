@@ -30,4 +30,4 @@ const PVC = new mongo.Schema({
     MemCount: same,
 });
 
-module.exports = mongo.Model("Private-Channel", PVC)
+module.exports = mongo.model("Private-Channel", PVC)

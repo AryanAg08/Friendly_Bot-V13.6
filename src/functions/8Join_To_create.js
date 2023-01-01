@@ -46,7 +46,7 @@ async function Join_to_create (interaction) {
         user: "anon",
         Category: Category,
         Type: "VOICE",
-        JoinVC: ID,
+        JoinV: ID,
        },{
         upsert: true,
         new: true,
@@ -95,7 +95,7 @@ async function Join_to_create (interaction) {
           user: "anon",
           Category: Category,
           Type: "BOTH",
-          JoinVC: Id,
+          JoinV: Id,
          },{
           upsert: true,
           new: true,
@@ -106,9 +106,11 @@ async function Join_to_create (interaction) {
      // Save it in mongo
     
    }
+
+   await interaction.reply("Private Voice Channel setup done!! ✅")
 }
 
-async function Make_ONLY_VOICE_Channel (user, Guild) {
+async function Make_ONLY_VOICE_Channel (user, Guild, Category) {
      const J1 = require("../models/3server-registered");
      const J2 = require("../models/18Private_channels");
      const GG = Guild.id
@@ -137,17 +139,17 @@ async function Make_ONLY_VOICE_Channel (user, Guild) {
     })
     .exec()
 
-    await Guild.channels.cache(String(chname.replace("${user}", user.member.user.username)), {
+    await Guild.channels.create(String(chname.replace("${user}", user.member.user.username)), {
       type: "GUILD_VOICE",
     }).then (async vc => {
-         const N1 = await J2.find({
-          GG,
-          user: "anon",
-         })
-         for (tt of N1) {
-          const cat = tt.Category;
+        //  const N1 = await J2.find({
+        //   GG,
+        //   user: "anon",
+        //  })
+        //  for (tt of N1) {
+        //   const cat = tt.Category;
 
-          vc.setParent(cat).then( async (settedParent) => {
+          vc.setParent(Category).then( async (settedParent) => {
             settedParent.permissionOverwrites.edit(user.member.user, {
               VIEW_CHANNEL: true, CONNECT: true,
             });
@@ -167,12 +169,12 @@ async function Make_ONLY_VOICE_Channel (user, Guild) {
 
           });
          } 
-    });
-
-  }
+    // });
+    )
+  //}
    
 }
-
+}
 async function CREATE_BOTH_CHANNELS (user, Guild) {
   const J1 = require("../models/3server-registered");
   const J2 = require("../models/18Private_channels");
@@ -202,7 +204,7 @@ if (O1) {
  })
  .exec()
 
- await Guild.channels.cache(String(chname.replace("${user}", user.member.user.username)), {
+ await Guild.channels.create(String(chname.replace("${user}", user.member.user.username)), {
    type: "GUILD_VOICE",
  }).then (async vc => {
       const N1 = await J2.find({
