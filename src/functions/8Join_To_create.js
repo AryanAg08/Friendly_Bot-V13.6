@@ -236,7 +236,7 @@ if (O1) {
      // } 
  });
 
- await Guild.channels.cache(String(chname.replace("${user}", user.member.user.username)), {
+ await Guild.channels.create(String(chname.replace("${user}", user.member.user.username)), {
   type: "GUILD_TEXT",
 }).then (async vc => {
     //  const N1 = await J2.find({
