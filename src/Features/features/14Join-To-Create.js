@@ -39,7 +39,7 @@ module.exports = (client) => {
                                }
                                if (V3 === "BOTH") {
                                 const user = oldMember
-                                CREATE_BOTH_CHANNELS(user, Guild);
+                                CREATE_BOTH_CHANNELS(user, Guild, Y1);
                                }
                         //}
                       }
