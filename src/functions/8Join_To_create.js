@@ -175,7 +175,7 @@ async function Make_ONLY_VOICE_Channel (user, Guild, Category) {
    
 }
 }
-async function CREATE_BOTH_CHANNELS (user, Guild) {
+async function CREATE_BOTH_CHANNELS (user, Guild, Category) {
   const J1 = require("../models/3server-registered");
   const J2 = require("../models/18Private_channels");
   const GG = Guild.id
@@ -207,14 +207,14 @@ if (O1) {
  await Guild.channels.create(String(chname.replace("${user}", user.member.user.username)), {
    type: "GUILD_VOICE",
  }).then (async vc => {
-      const N1 = await J2.find({
-       GG,
-       user: "anon",
-      })
-      for (tt of N1) {
-       const cat = tt.Category;
+      // const N1 = await J2.find({
+      //  GG,
+      //  user: "anon",
+      // })
+      // for (tt of N1) {
+      //  const cat = tt.Category;
 
-       vc.setParent(cat).then( async (settedParent) => {
+       vc.setParent(Category).then( async (settedParent) => {
          settedParent.permissionOverwrites.edit(user.member.user, {
            VIEW_CHANNEL: true, CONNECT: true,
          });
@@ -233,20 +233,20 @@ if (O1) {
          });
 
        });
-      } 
+     // } 
  });
 
  await Guild.channels.cache(String(chname.replace("${user}", user.member.user.username)), {
   type: "GUILD_TEXT",
 }).then (async vc => {
-     const N1 = await J2.find({
-      GG,
-      user: "anon",
-     })
-     for (tt of N1) {
-      const cat = tt.Category;
+    //  const N1 = await J2.find({
+    //   GG,
+    //   user: "anon",
+    //  })
+    //  for (tt of N1) {
+    //   const cat = tt.Category;
 
-      vc.setParent(cat).then( async (settedParent) => {
+      vc.setParent(Category).then( async (settedParent) => {
         settedParent.permissionOverwrites.edit(user.member.user, {
           VIEW_CHANNEL: true,
           SEND_MESSAGES: true,
@@ -265,7 +265,7 @@ if (O1) {
         });
 
       });
-     } 
+    // } 
 });
 
 }
