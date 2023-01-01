@@ -34,20 +34,13 @@ module.exports = (client) => {
             if (L2) {
                 for (ff of L2) {
                     const VCC = ff.VC
-                    const type = ff.Type
                     const TCC = ff.TC
 
-                    if (type === "BOTH") {
                        const vchan = interaction.guild.channels.cache.get(VCC);
                        const tchan = interaction.guild.channels.cache.get(TCC);
 
-                       if (vchan) {
                         vchan.delete();
-                       }
-                       if (tchan) {
                         tchan.delete();
-                       }
-                    }
                 }
             } else return;
         }
