@@ -235,3 +235,9 @@ Medium:
 Hard: 
 => Same as medium but ask intentions of joining the server!!!
 => Sends to another channel the verification Embed!! 
+
+
+
+## Things to be fixed: 
+1. Welcome Module
+2. Study count module
