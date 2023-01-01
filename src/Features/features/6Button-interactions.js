@@ -22,7 +22,7 @@ module.exports = (client) => {
             const BID = interaction.customId;
             const userId = interaction.user.id;
                if (BID === `PVC${userId}`) {
-
+                console.log(`Working!! `)
                
             const L1 = require("../../models/18Private_channels");
 
