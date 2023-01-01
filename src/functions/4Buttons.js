@@ -19,6 +19,7 @@ async function help1 (interaction) {
 
      await interaction.reply({
       embeds: [HeLp1],
+      ephemeral: true,
      });
      
 }
