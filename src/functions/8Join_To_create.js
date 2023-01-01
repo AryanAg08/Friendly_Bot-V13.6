@@ -269,6 +269,7 @@ if (O1) {
               new MessageButton()
               .setCustomId(`PV${GG}`)
               .setStyle("PRIMARY")
+              .setLabel(`${Guild.name}`)
               .setDisabled(true)
             )
 
