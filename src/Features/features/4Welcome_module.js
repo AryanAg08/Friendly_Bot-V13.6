@@ -10,7 +10,7 @@ module.exports = (client) =>  {
        const systemChannel = member.guild.systemChannelId
        const { MessageActionRow, MessageButton, MessageEmbed } = require("discord.js");
 
-       const systemChan = client.channels.cache.get(systemChannel);
+       const systemChan = member.guild.channels.cache.get(systemChannel);
             if (Bot) return;
        const RG = require("../../models/3server-registered");
        const WS = require("../../models/7welcome");
@@ -57,7 +57,7 @@ module.exports = (client) =>  {
                         if (roleID) {
                             const checkRole = member.guild.roles.cache.find((r) => {
                                 return r.id === roleID
-                            }) || null
+                            })
 
                             if (!checkRole) return;
                                 member.user.roles.add(roleID);
@@ -66,7 +66,7 @@ module.exports = (client) =>  {
                         if (Chan) {
                             const checkChannel = member.guild.channels.cache.find((chan) => {
                                 return chan.id === Chan
-                            }) || null
+                            }) 
 
                             if (!checkChannel) return;
                           
@@ -90,7 +90,7 @@ module.exports = (client) =>  {
                         if (Chan) {
                             const checkChannel = member.guild.channels.cache.find((chan) => {
                                 return chan.id === Chan
-                            }) || null
+                            })
 
                             if (!checkChannel) return;
                           
