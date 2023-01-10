@@ -73,7 +73,7 @@ module.exports = (client) =>  {
                           
                             const CHANNEL = client.channels.cache.get(Chan);
 
-                            CHANNEL.send(`${Tag} joined ${Gname}. They are ${count}th member of the server!!`);
+                            CHANNEL.send(`**${Tag}** joined ${Gname}. \n They are **${count}th** member of the server!!`);
 
                         }
 

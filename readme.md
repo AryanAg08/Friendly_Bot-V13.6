@@ -239,5 +239,5 @@ Hard:
 
 
 ## Things to be fixed: 
-1. Welcome Module
+1. Welcome Module ✅
 2. Study count module
