@@ -61,7 +61,7 @@ module.exports = (client) =>  {
                             })
 
                             if (!checkRole) return;
-                                member.user.roles.add(roleID);
+                                member.roles.add(roleID);
                         }
 
                         if (Chan) {
