@@ -19,7 +19,9 @@ const features = require("./src/Features/load-features");
 const commands = require("./src/Commands/load-commands");
 const globalSlash = require("./src/Global-slash-Cmds/load-slash");
 const mongo = require("./src/utils/mongo");
-const Global = require("./src/utils/Slash-Integration")
+const Global = require("./src/utils/Slash-Integration");
+const PandaCMD = require("./The pandamonium/Commands/load-commands");
+const PandaFeature = require("./The pandamonium/Features/load-Features");
 
 client.commands = new Collection();
 
@@ -27,6 +29,8 @@ features(client);
 commands(client);
 globalSlash(client);
 Global(client);
+PandaCMD(client);
+PandaFeature(client);
 
 client.on('ready', async () => {
     await mongo();
