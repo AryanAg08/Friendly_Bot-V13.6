@@ -319,7 +319,7 @@ async function ModVCCLose(interaction) {
             const VCChan = interaction.guild.channels.cache.get(VCC);
 
             VCChan.delete();
-            interaction.channel.delete();
+           await interaction.channel.delete();
           }
         } else {
           return;
