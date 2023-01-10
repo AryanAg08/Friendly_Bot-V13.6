@@ -296,10 +296,40 @@ if (O1) {
 }
 }
 
+async function ModVCCLose(interaction) {
+      const O1 = require("../models/3server-registered");
+      const O2 = require("../models/18Private_channels");
 
+      const GG = interaction.guild.id
+      
+      const G1 = await O1.find({
+        GuildID: GG,
+        PrivateChannel: "YES"
+      })
+
+      if (G1) {
+        const L1 = await O2.find({
+          GG: GG,
+          TC: interaction.channel.id
+        })
+        if (L1) {
+          for (ii of L1) {
+            const VCC = ii.VC;
+
+            const VCChan = interaction.guild.channels.cache.get(VCC);
+
+            VCChan.delete();
+            interaction.channel.delete();
+          }
+        } else {
+          return;
+        }
+      } else return;
+}
 
 module.exports = {
     Join_to_create,
     CREATE_BOTH_CHANNELS,
     Make_ONLY_VOICE_Channel,
+    ModVCCLose,
 }
