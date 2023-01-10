@@ -250,7 +250,7 @@ module.exports = (client) => {
         if (commandName === "closepvc") {
             if (interaction.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) {
                 ModVCCLose(interaction);
-            }  else return await interaction.reply("You do not have perms!!")
+            }  else return await interaction.reply("You do not have perms!!");
         }
 
     });
