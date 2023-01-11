@@ -50,6 +50,50 @@ module.exports = (client) => {
             }
           }
     });
-}
+
+  client.on("voiceStateUpdate", async (oldMember, newMember) => {
+    let oldVoice = oldMember.channelId
+    let newVoice = newMember.channelId
+
+    const I1 = require("../../models/3server-registered");
+    const T2 = require("../../models/18Private_channels");
+
+    const T3 = await I1.find({
+      PrivateChannel: "YES",
+    })
+    if (T3) {
+      for (tt of T3) {
+        const GGs = tt.GuildID
+
+        const I2 = await T2.find({
+          GG: GGs,
+        })
+        if (I2) {
+          for (pp of I2) {
+            const User = pp.user
+            const PVVC = pp.VC
+            const TCC = pp.TC
+
+            if (User === "anon") return;
+            else {
+              if (newVoice === PVVC) {
+                if (oldVoice != newVoice) {
+                  client.channels.cache.get(TCC).permissionOverwrites.edit(oldMember.id, { VIEW_CHANNEL: true, SEND_MESSAGES: true, READ_MESSAGE_HISTORY: true });
+                }
+              }
+
+              if (oldVoice === PVVC) {
+                if (oldVoice != newVoice) {
+                  client.channels.cache.get(TEXt).permissionOverwrites.edit(oldMember.id, { VIEW_CHANNEL: false, SEND_MESSAGES: false });
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  })
+  }
 
 // check the functions Create channels ones they aren't making a new channel;
+

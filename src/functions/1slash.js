@@ -196,7 +196,7 @@ async function SetupVcStudy(interaction) {
     const KK1 = await S1.findOneAndUpdate({
         GuildID: guild.id,
     },{
-        VCStudy: "Enable",
+        VCStudy: "Enable",  
     },{
         upsert: true,
         new: true,
