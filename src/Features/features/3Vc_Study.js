@@ -25,7 +25,7 @@ module.exports = (client) => {
                         const TXTChan = jk.TextChannel
                         const RoleId = jk.RoleID
                         const guild = client.guilds.cache.get(GGs);
-                        const chan = guild.channels.cache.get(chann);
+                        const chan = client.channels.cache.get(chann);
                         if (!chan) return;
                         else {
                             
