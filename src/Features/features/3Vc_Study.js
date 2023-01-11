@@ -131,48 +131,48 @@ module.exports = (client) => {
         }
     )
 
-    client.on("ready", async () => {
-        const Schedule = require("node-schedule");
-        const O1 = require("../../models/3server-registered");
-        const O2 = require("../../models/14VCStudy");
+    // client.on("ready", async () => {
+    //     const Schedule = require("node-schedule");
+    //     const O1 = require("../../models/3server-registered");
+    //     const O2 = require("../../models/14VCStudy");
 
-        var j = Schedule.scheduleJob("*/6 * * * *", async function () {
-           const T1 = await O1.find({
-                 VCStudy: "Enable", 
-           })    
+    //     var j = Schedule.scheduleJob("*/6 * * * *", async function () {
+    //        const T1 = await O1.find({
+    //              VCStudy: "Enable", 
+    //        })    
 
-           if (T1) {
-            for (kk of T1) {
-                const GuildId = kk.GuildID
+    //        if (T1) {
+    //         for (kk of T1) {
+    //             const GuildId = kk.GuildID
 
-                const L2 = await O2.find({
-                    guildId: GuildId,
-                    user: "anon",    
-                })
-                if (L2) {
-                    for (oo of L2) {
-                        const RoleId = oo.RoleID
+    //             const L2 = await O2.find({
+    //                 guildId: GuildId,
+    //                 user: "anon",    
+    //             })
+    //             if (L2) {
+    //                 for (oo of L2) {
+    //                     const RoleId = oo.RoleID
 
-                        const Role = client.guilds.cache.get(GuildId).roles.cache.get(RoleId)
-                        if (Role) {
-                            try {
-                                Role.members.map(m => {
-                                    const user = m.user.id;
-                                    const B = AddTime(user, GuildId);
-                                    console.log(B);
-                                });
-                            } 
-                            catch (err) {
-                                console.log(err);
-                            }
-                        }
-                    }
-                }
+    //                     const Role = client.guilds.cache.get(GuildId).roles.cache.get(RoleId)
+    //                     if (Role) {
+    //                         try {
+    //                             Role.members.map(m => {
+    //                                 const user = m.user.id;
+    //                                 const B = AddTime(user, GuildId);
+    //                                 console.log(B);
+    //                             });
+    //                         } 
+    //                         catch (err) {
+    //                             console.log(err);
+    //                         }
+    //                     }
+    //                 }
+    //             }
 
-            }
-           }
-        })
-    })
+    //         }
+    //        }
+    //     })
+    // })
 }
 
 
