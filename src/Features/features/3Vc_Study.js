@@ -160,7 +160,6 @@ module.exports = (client) => {
                                 Role.members.map(m => {
                                     const user = m.user.id;
                                     const B = AddTime(user, GuildId);
-                                    console.log(B);
                                 });
                             } 
                             catch (err) {
