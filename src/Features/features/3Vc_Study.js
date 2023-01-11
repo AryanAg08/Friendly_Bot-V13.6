@@ -48,7 +48,7 @@ module.exports = (client) => {
                                                
                                                 if (Msg.includes("${user}")) {
                                                     const Final = Msg.replace('${user}', `${member}`)
-                                                   await  Chann.send(Final);
+                                                    Chann.send(Final);
                                                 }
                                                 if (Msg.includes("${Tag}")) {
                                                     const Final1 = Msg.replace('${Tag}', `${Tags}`)
