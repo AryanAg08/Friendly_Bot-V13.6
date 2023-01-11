@@ -48,13 +48,13 @@ module.exports = (client) => {
                                                
                                                 if (Msg.includes("${user}")) {
                                                     const Final = Msg.replace('${user}', `${member}`)
-                                                    Chann.send(Final);
+                                                   await  Chann.send(Final);
                                                 }
                                                 if (Msg.includes("${Tag}")) {
                                                     const Final1 = Msg.replace('${Tag}', `${Tags}`)
                                                     Chann.send(Final1);
                                                 } 
-                                                if (!Msg.includes("${member}") && !Msg.includes("${Tag}")) {
+                                                if (!Msg.includes("${user}") && !Msg.includes("${Tag}")) {
                                                     Chann.send(Msg);
                                                 }
                                             } else {
@@ -152,11 +152,11 @@ module.exports = (client) => {
                 if (L2) {
                     for (oo of L2) {
                         const RoleId = oo.RoleID
-                        const GG = client.guilds.cache.get(GuildId);
-                        const Role = GG.roles.cache.get(RoleId)
+
+                        const Role = client.guilds.cache.get(GuildId).roles.cache.get(RoleId)
                         if (Role) {
                             try {
-                                GG.roles.cache.get(RoleId).members.map(m => {
+                                Role.members.map(m => {
                                     const user = m.user.id;
                                     const B = AddTime(user, GuildId);
                                     console.log(B);
