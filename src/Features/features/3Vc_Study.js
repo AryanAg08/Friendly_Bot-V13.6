@@ -46,8 +46,8 @@ module.exports = (client) => {
                                                 if (Msg) {
                                                 const member = `<@${oldMember.id}>`
                                                
-                                                if (Msg.includes("${member}")) {
-                                                    const Final = Msg.replace('${member}', `${member}`)
+                                                if (Msg.includes("${user}")) {
+                                                    const Final = Msg.replace('${user}', `${member}`)
                                                     Chann.send(Final);
                                                 }
                                                 if (Msg.includes("${Tag}")) {
@@ -130,4 +130,84 @@ module.exports = (client) => {
         }
         }
     )
+
+    client.on("ready", async () => {
+        const Schedule = require("node-schedule");
+        const O1 = require("../../models/3server-registered");
+        const O2 = require("../../models/14VCStudy");
+
+        var j = Schedule.scheduleJob("*/6 * * * *", async function () {
+           const T1 = await O1.find({
+                 VCStudy: "Enable", 
+           })    
+
+           if (T1) {
+            for (kk of T1) {
+                const GuildId = kk.GuildID
+
+                const L2 = await O2.find({
+                    guildId: GuildId,
+                    user: "anon",    
+                })
+                if (L2) {
+                    for (oo of L2) {
+                        const RoleId = oo.RoleID
+                        const GG = client.guilds.cache.get(GuildId);
+                        const Role = GG.roles.cache.get(RoleId)
+                        if (Role) {
+                            try {
+                                GG.roles.cache.get(RoleId).members.map(m => {
+                                    const user = m.user.id;
+                                    const B = AddTime(user, GuildId);
+                                    console.log(B);
+                                });
+                            } 
+                            catch (err) {
+                                console.log(err);
+                            }
+                        }
+                    }
+                }
+
+            }
+           }
+        })
+    })
+}
+
+
+
+ const Time = require("../../models/14VCStudy");
+
+async function AddTime (user, GuildID) {
+    const Min = "0.1"
+    const guildId = GuildID
+    return await Time.findOneAndUpdate({ 
+        guildId, 
+        user,
+    },{ 
+        user,
+        $inc: {  
+        Daily: Min,
+        Weekly: Min,
+        Monthly: Min, 
+        ServerTime: Min,
+     },},{
+         upsert: true, 
+         new: true 
+        }) 
+        && await Time.findOneAndUpdate({ 
+            guildId, 
+            user: "anon",
+        },{ 
+            userId: "anon", 
+            $inc: { 
+                Daily: Min,
+                Weekly: Min,
+                Monthly: Min, 
+                ServerTime: Min,
+            },},{
+                upsert: true, 
+                new: true 
+            });  
 }

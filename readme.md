@@ -241,3 +241,9 @@ Hard:
 ## Things to be fixed: 
 1. Welcome Module ✅
 2. Study count module
+3. Server Security Features
+4. Daily Words 
+5. Daily Quotes some amazing ideas 
+6. Link Features
+7. BookMark Feature
+8. 
