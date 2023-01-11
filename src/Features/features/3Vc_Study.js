@@ -24,7 +24,8 @@ module.exports = (client) => {
                         const Msg = jk.VCMSG
                         const TXTChan = jk.TextChannel
                         const RoleId = jk.RoleID
-                        const chan = client.channels.cache.get(chann);
+                        const guild = client.guilds.cache.get(GGs);
+                        const chan = guild.channels.cache.get(chann);
                         if (!chan) return;
                         else {
                             
@@ -33,7 +34,7 @@ module.exports = (client) => {
                                     let userID = oldMember.id
                                     if (RoleId) {
                                         
-                                        const guild = client.guilds.cache.get(GGs);
+                                        
                                         const ROLE = guild.roles.cache.get(RoleId);
                                         if (ROLE) {
                                             guild.members.cache.get(userID).roles.add(RoleId)
