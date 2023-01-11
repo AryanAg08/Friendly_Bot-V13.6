@@ -107,7 +107,7 @@ module.exports = (client) => {
                                                 user: User,
                                               },{
                                                 user: User,
-                                                VCJOIN: "",
+                                                VCJOIN: " ",
                                                 $inc: {
                                                     Daily: Min,
                                                     Weekly: Min,
