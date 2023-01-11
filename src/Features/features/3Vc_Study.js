@@ -152,10 +152,9 @@ module.exports = (client) => {
                 if (L2) {
                     for (oo of L2) {
                         const RoleId = oo.RoleID
-
+                        if (RoleId != undefined) { 
                         const GG = client.guilds.cache.get(GuildId)
                         const Role = GG.roles.cache.find((role) => role.id === RoleId)
-                        
                         if (Role) {
                             try {
                                 Role.members.map(m => {
@@ -169,6 +168,7 @@ module.exports = (client) => {
                             }
                         }
                     }
+                }
                 }
 
             }
