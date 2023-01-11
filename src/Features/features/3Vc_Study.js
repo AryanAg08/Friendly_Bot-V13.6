@@ -1,3 +1,5 @@
+const { AddTime } = require("../../functions/10StudyVC");
+
 module.exports = (client) => {
     client.on("voiceStateUpdate", async (oldMember, newMember) => {
         let oldVoice = oldMember.channelId;
@@ -19,7 +21,7 @@ module.exports = (client) => {
                 })
 
                 if (J2) {
-                    
+                    console.log(J2);
                     for (jk of J2) {
                         const chann = jk.VcChannel1
                         const Msg = jk.VCMSG
@@ -57,7 +59,7 @@ module.exports = (client) => {
                                                     const Final1 = Msg.replace('${Tag}', `${Tags}`)
                                                     Chann.send(Final1);
                                                 } 
-                                                if (!Msg.includes("${user}") && !Msg.includes("${Tag}")) {
+                                                else if (!Msg.includes("${user}") && !Msg.includes("${Tag}")) {
                                                     Chann.send(Msg);
                                                 }
                                             } else {
@@ -132,9 +134,9 @@ module.exports = (client) => {
             }
         }
         }
-    )
+    );
 
-    client.on("ready", async () => {
+client.on("ready", async () => {
         const Schedule = require("node-schedule");
         const O1 = require("../../models/3server-registered");
         const O2 = require("../../models/14VCStudy");
@@ -177,41 +179,4 @@ module.exports = (client) => {
            }
         })
     })
-}
-
-
-
- const Time = require("../../models/14VCStudy");
-
-async function AddTime (user, GuildID) {
-    const Min = "0.1"
-    const guildId = GuildID
-    return await Time.findOneAndUpdate({ 
-        guildId, 
-        user,
-    },{ 
-        user,
-        $inc: {  
-        Daily: Min,
-        Weekly: Min,
-        Monthly: Min, 
-        ServerTime: Min,
-     },},{
-         upsert: true, 
-         new: true 
-        }) 
-        && await Time.findOneAndUpdate({ 
-            guildId, 
-            user: "anon",
-        },{ 
-            userId: "anon", 
-            $inc: { 
-                Daily: Min,
-                Weekly: Min,
-                Monthly: Min, 
-                ServerTime: Min,
-            },},{
-                upsert: true, 
-                new: true 
-            });  
 }
