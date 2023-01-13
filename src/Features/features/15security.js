@@ -47,7 +47,7 @@ module.exports = (client) => {
                },{
                 user: "anon",
                 InviteLinks: "YES",
-                LogChannel: interaction.guild.systemChannelId,
+                LogChannel: guild.systemChannelId,
                },{
                 upsert: true,
                 new: true,
@@ -73,7 +73,7 @@ module.exports = (client) => {
                    },{
                     user: "anon",
                     BadWords: "YES",
-                    LogChannel: interaction.guild.systemChannelId,
+                    LogChannel: guild.systemChannelId,
                    },{
                     upsert: true,
                     new: true,
@@ -99,7 +99,7 @@ module.exports = (client) => {
                    },{
                     user: "anon",
                     EveryonePing: "YES",
-                    LogChannel: interaction.guild.systemChannelId,
+                    LogChannel: guild.systemChannelId,
                    },{
                     upsert: true,
                     new: true,
@@ -137,6 +137,7 @@ module.exports = (client) => {
             })
 
             if (B5) {
+                console.log("YUPYUP!!");
                 for (ww of B5) {
                     const Words = ww.BadWords
                     const Ping = ww.EveryonePing
