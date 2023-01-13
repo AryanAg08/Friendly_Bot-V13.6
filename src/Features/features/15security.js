@@ -137,7 +137,7 @@ module.exports = (client) => {
             })
 
             if (B5) {
-                console.log("try");
+                console.log("working");
                 for (ww of B5) {
                     const Words = ww.BadWords
                     const Ping = ww.EveryonePing
@@ -178,7 +178,7 @@ module.exports = (client) => {
                     if (Ping === "YES") {
                         console.log("everyone module!!");
                         if (content.includes("@everyone") || word.includes("@everyone")) {
-                            if (member.permissions.has(Permissions.FLAGS.BAN_MEMBERS || Permissions.FLAGS.ADMINISTRATOR || Permissions.FLAGS.KICK_MEMBERS)) return;
+                            if (member.permissions.has(Permissions.FLAGS.BAN_MEMBERS) || member.permissions.has(Permissions.FLAGS.ADMINISTRATOR) || member.permissions.has(Permissions.FLAGS.KICK_MEMBERS)) return;
                             else {
                                 message.delete()
                                 const K3 = await B1.findOneAndUpdate({
