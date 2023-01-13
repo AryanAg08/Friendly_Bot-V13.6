@@ -146,7 +146,7 @@ module.exports = (client) => {
                     if (Words === "YES") {
                         console.log("Words module!!");
                          for (var i = 0; i > swear.length; i++ ) {
-                            if (word.includes(swear[i])) {
+                            if ( content.includes(swear) || word.includes(swear)) {
                                 message.delete();
                                 const K1 = await B1.findOneAndUpdate({
                                     GG: guild.id,
@@ -201,7 +201,7 @@ module.exports = (client) => {
                                     GG: guild.id,
                                     user: member.id,
                                 })
-                                for (rr of K4) {
+                                for (rr of K4) {    
                                     await LogChannel.send(`<@${member.id}> was using everyone ping in <#${channel.id}> This is their **${rr.Count}**`);
                                 } 
                             }
