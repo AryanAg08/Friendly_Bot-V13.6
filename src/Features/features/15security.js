@@ -30,7 +30,7 @@ module.exports = (client) => {
             const code2 = "WORDSPING"
             const code3 = "EVERYONEPING"
 
-              interaction.reply("Successful!!\n");
+             await interaction.reply("Successful!!\n");
             if (value.includes(code1)) {
                const A2 = await A1.findOneAndUpdate({
                 GuildID: guild.id,
