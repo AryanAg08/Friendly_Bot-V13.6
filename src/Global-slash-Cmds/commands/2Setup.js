@@ -161,5 +161,10 @@ module.exports = {
                 .setName('disable-commands')
                 .setDescription('disable functions for your server!!')
         )
+        .addSubcommand((cmd) => 
+        cmd
+        .setName("server-security")
+        .setDescription("Setup security against spams. Get all the reports delivered to your server systemChannel (logs)")
+        )
 };
 //   const clientId = '788504398912290887'; // 790503195620671498  --> Friendly_bot

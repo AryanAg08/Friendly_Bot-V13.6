@@ -1,3 +1,4 @@
+const { security } = require("../functions/11Security");
 const { Verification, HELP, Deadlines } = require("../functions/3Slash(b)");
 const { DeadlineADD, DeadlineList, Deadlineclear, DeadlineRemove } = require("../functions/6Deadline_Module");
 const { BotCount_chan, Count_goodies } = require("../functions/7Bot_Counting");
@@ -88,6 +89,9 @@ module.exports = (client) => {
             }
             if (SUB === "deadline") {
                 Deadlines(interaction);
+            }
+            if (SUB === "server-security") {
+                security(interaction);
             }
         } else return await interaction.reply(`You do not have perms to run this cmd!!`)
         }
