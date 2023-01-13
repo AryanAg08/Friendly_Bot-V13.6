@@ -238,7 +238,7 @@ const wordsss = [
                         console.log("Words module!!");
                          for (const i = 0; i > wordsss.length; i++ ) {
                             console.log("Wordss")
-                            if (content.includes(wordsss[i]) || word.includes(wordsss[i])) {
+                            if (word.includes(wordsss)) {
                                 console.log("HEll yeah!!");
                                 message.delete();
                                 const K1 = await B1.findOneAndUpdate({
