@@ -201,7 +201,7 @@ module.exports = (client) => {
                                     GG: guild.id,
                                     user: member.id,
                                 })
-                                for (rr of K2) {
+                                for (rr of K4) {
                                     await LogChannel.send(`<@${member.id}> was using everyone ping in <#${channel.id}> This is their **${rr.Count}**`);
                                 } 
                             }
@@ -239,7 +239,7 @@ module.exports = (client) => {
                             GG: guild.id,
                             user: member.id,
                         })
-                        for (rr of K2) {
+                        for (rr of K6) {
                             await LogChannel.send(`<@${member.id}> was using everyone ping in <#${channel.id}> This is their **${rr.Count}**`);
                         } 
                         LogChannel.send(`\n> by <@${member.id}> \n> code: ${code}`);
