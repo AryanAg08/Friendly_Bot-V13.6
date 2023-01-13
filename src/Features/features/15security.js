@@ -144,6 +144,7 @@ module.exports = (client) => {
                     if (Words === "YES") {
                         console.log("Words module!!");
                          for (var i = 0; i > swear.length; i++ ) {
+                            console.log("Wordss")
                             if (content.includes(swear) || word.includes(swear)) {
                                 console.log("HEll yeah!!");
                                 message.delete();
