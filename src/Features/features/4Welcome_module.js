@@ -53,7 +53,8 @@ module.exports = (client) =>  {
                         .setThumbnail(member.guild.icon)
 
 
-                        member.user.send({ embeds: [Embed], components: [Row] });
+                        member.user.send({ content: "Hello",embeds: [Embed], components: [Row] })
+                        .catch(() => console.log("can't dm this user!!"));
 
                         if (roleID) {
                             const checkRole = member.guild.roles.cache.find((r) => {
