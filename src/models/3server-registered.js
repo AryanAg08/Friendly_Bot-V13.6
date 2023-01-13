@@ -65,6 +65,10 @@ const servers = mongoose.Schema({
         type: String,
         required: false,
     },
+    Security: {
+        type: String,
+        required: false,
+    }
 });
 
 module.exports = new mongoose.model('1]registered-servers', servers);
