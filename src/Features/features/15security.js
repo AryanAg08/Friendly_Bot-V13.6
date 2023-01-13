@@ -137,7 +137,6 @@ module.exports = (client) => {
             })
 
             if (B5) {
-                console.log("working");
                 for (ww of B5) {
                     const Words = ww.BadWords
                     const Ping = ww.EveryonePing
@@ -147,6 +146,7 @@ module.exports = (client) => {
                         console.log("Words module!!");
                          for (var i = 0; i > swear.length; i++ ) {
                             if ( content.includes(swear[i]) || word.includes(swear[i])) {
+                                console.log("HEll yeah!!");
                                 message.delete();
                                 const K1 = await B1.findOneAndUpdate({
                                     GG: guild.id,
@@ -176,7 +176,6 @@ module.exports = (client) => {
                     }
 
                     if (Ping === "YES") {
-                        console.log("everyone module!!");
                         if (content.includes("@everyone") || word.includes("@everyone")) {
                             if (member.permissions.has(Permissions.FLAGS.BAN_MEMBERS) || member.permissions.has(Permissions.FLAGS.ADMINISTRATOR) || member.permissions.has(Permissions.FLAGS.KICK_MEMBERS)) return;
                             else {
@@ -209,7 +208,6 @@ module.exports = (client) => {
                     }
 
                     if (Invite === "YES") {
-                        console.log("Invite Link Module!!");
                         const code = content.split('discord.gg/')[1]
                
                    if (content.includes(`discord.gg/${guild.name}`)) {
