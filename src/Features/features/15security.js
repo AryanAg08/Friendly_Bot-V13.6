@@ -138,6 +138,7 @@ module.exports = (client) => {
             })
 
             if (B5) {
+                console.log("try")
                 for (ww of B5) {
                     const Words = ww.BadWords
                     const Ping = ww.EveryonePing
@@ -146,7 +147,7 @@ module.exports = (client) => {
                     if (Words === "YES") {
                         console.log("Words module!!");
                          for (var i = 0; i > swear.length; i++ ) {
-                            if (word.includes(swear)) {
+                            if (word.includes(swear[i])) {
                                 message.delete();
                                 const K1 = await B1.findOneAndUpdate({
                                     GG: guild.id,
