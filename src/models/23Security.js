@@ -22,7 +22,7 @@ const sec = new mongo.Schema({
         required: true,
     },
     Count: {
-        type: String,
+        type: Number,
         required: false,
     },
     IsPersonAllow: {
