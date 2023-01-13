@@ -109,7 +109,100 @@ module.exports = (client) => {
             }
         }
     });
-
+const wordsss = [
+        "potty",
+        "shit",
+        "Bitch",
+        "bitch",
+        "ass",
+        "booty",
+        "asshole",
+        "motherfucka",
+        "motherfucker",
+        "dick",
+        "pussy",
+        "bigass",
+        "madarchod",
+        "wtf",
+        "s h i t",
+        "S H I T",
+        "addict",
+        "fock",
+        "assassin",
+        "punish",
+        "kill",
+        "suicide",
+        "boob",
+        "anal ",
+        "anus ",
+        "arse",
+        "ballsack",
+        "balls",
+        "bastard",
+        "bitch",
+        "biatch",
+        "bloody",
+        "blowjob",
+        "blow job",
+        "bollock",
+        "bollok",
+        "boner",
+        " boob",
+        "bugger",
+        "bum ",
+        "buttplug",
+        "clitoris",
+        "cock",
+        "coon",
+        "crap",
+        "cunt",
+        "dick",
+        "dildo",
+        "dyke",
+        "fag",
+        "feck",
+        "fellate",
+        "fellatio",
+        "felching",
+        " fuck ",
+        "f u c k",
+        "fudgepacker",
+        "fudge packer",
+        "flange",
+        "Goddamn",
+        "God damn",
+        "homo",
+        "jerk",
+        "jizz",
+        "knobend",
+        "knob end",
+        "labia",
+        "muff",
+        "nigger",
+        "nigga",
+        "penis",
+        "piss",
+        "poop",
+        "prick",
+        "pube",
+        "pussy",
+        "queer",
+        "scrotum",
+        "sex",
+        "sh1t",
+        "slut",
+        "smegma",
+        "spunk",
+        "tit",
+        "tosser",
+        "turd",
+        "twat",
+        "vagina",
+        "wank",
+        "whore",
+        "shut up you motherfucker"
+    
+]
     client.on("messageCreate", async (message) => {
       if (message.channel.type === "DM") return;
       else {
@@ -143,9 +236,9 @@ module.exports = (client) => {
                     
                     if (Words === "YES") {
                         console.log("Words module!!");
-                         for (var i = 0; i > swear.length; i++ ) {
+                         for (var i = 0; i > wordsss.length; i++ ) {
                             console.log("Wordss")
-                            if (content.includes(swear) || word.includes(swear)) {
+                            if (content.includes(wordsss[i]) || word.includes(wordsss[i])) {
                                 console.log("HEll yeah!!");
                                 message.delete();
                                 const K1 = await B1.findOneAndUpdate({
