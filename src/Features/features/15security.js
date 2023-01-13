@@ -118,13 +118,12 @@ module.exports = (client) => {
             content,
             guild,
             channel,
-            systemChannelId
          } = message;
          const word =  content.toLowerCase()
          const { Permissions }  = require("discord.js");
          const swear = require("../../utils/3words.json");
-         console.log(guild);
-         const LogChannel = guild.channels.cache.get(systemChannelId);
+         console.log(guild.systemChannelId);
+         const LogChannel = guild.channels.cache.get(guild.systemChannelId);
 
          const A5 = await A1.find({
             GuildID: guild.id,
