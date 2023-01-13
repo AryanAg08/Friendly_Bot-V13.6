@@ -110,7 +110,7 @@ module.exports = (client) => {
         }
     });
 
-    client.on("messageCreate", async message => {
+    client.on("messageCreate", async (message) => {
       if (message.channel.type === "DM") return;
       else {
         const {
@@ -138,7 +138,7 @@ module.exports = (client) => {
             })
 
             if (B5) {
-                console.log("try")
+                console.log("try");
                 for (ww of B5) {
                     const Words = ww.BadWords
                     const Ping = ww.EveryonePing
