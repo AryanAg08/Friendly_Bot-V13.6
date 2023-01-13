@@ -30,7 +30,7 @@ module.exports = (client) => {
             const code2 = "WORDSPING"
             const code3 = "EVERYONEPING"
 
-
+              interaction.reply("Successful!!\n");
             if (value.includes(code1)) {
                const A2 = await A1.findOneAndUpdate({
                 GuildID: guild.id,
@@ -54,7 +54,7 @@ module.exports = (client) => {
                 new: true,
                });
 
-               await interaction.reply("Added Protection against spam Invite Links!!");
+               await interaction.channel.send("Added Protection against spam Invite Links!!");
             }
 
             if (value.includes(code2)) {
@@ -80,7 +80,7 @@ module.exports = (client) => {
                     new: true,
                    });  
 
-                   await interaction.reply("Added security against wrong words!! \n To check words that are considered bad use /spam wordlist");
+                   await interaction.channel.send("Added security against wrong words!! \n To check words that are considered bad use /spam wordlist");
             }
 
             if (value.includes(code3)) {
@@ -106,7 +106,7 @@ module.exports = (client) => {
                     new: true,
                    });  
 
-                   await interaction.reply("Enabled security against @ everyone spams!! \n **NOTE: ONLY MEMBERS HAVING BAN_MEMBERS PERMISSIONS WILL BE ALLOWED TO USE THE EVERYONE PING!!**");
+                   await interaction.channel.send("Enabled security against @ everyone spams!! \n **NOTE: ONLY MEMBERS HAVING BAN_MEMBERS PERMISSIONS WILL BE ALLOWED TO USE THE EVERYONE PING!!**");
             }
         }
     });
