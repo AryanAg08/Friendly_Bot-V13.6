@@ -123,7 +123,7 @@ module.exports = (client) => {
          const word =  content.toLowerCase()
          const { Permissions }  = require("discord.js");
          const swear = require("../../utils/3words.json");
-         console.log(systemChannelId);
+         console.log(guild);
          const LogChannel = guild.channels.cache.get(systemChannelId);
 
          const A5 = await A1.find({
