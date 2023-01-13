@@ -146,7 +146,7 @@ module.exports = (client) => {
                     if (Words === "YES") {
                         console.log("Words module!!");
                          for (var i = 0; i > swear.length; i++ ) {
-                            if ( content.includes(swear) || word.includes(swear)) {
+                            if ( content.includes(swear[i]) || word.includes(swear[i])) {
                                 message.delete();
                                 const K1 = await B1.findOneAndUpdate({
                                     GG: guild.id,
