@@ -122,7 +122,6 @@ module.exports = (client) => {
          const word =  content.toLowerCase()
          const { Permissions }  = require("discord.js");
          const swear = require("../../utils/3words.json");
-         console.log(guild.systemChannelId);
          const LogChannel = guild.channels.cache.get(guild.systemChannelId);
 
          const A5 = await A1.find({
@@ -145,7 +144,7 @@ module.exports = (client) => {
                     if (Words === "YES") {
                         console.log("Words module!!");
                          for (var i = 0; i > swear.length; i++ ) {
-                            if ( content.includes(swear[i]) || word.includes(swear[i])) {
+                            if (content.includes(swear) || word.includes(swear)) {
                                 console.log("HEll yeah!!");
                                 message.delete();
                                 const K1 = await B1.findOneAndUpdate({
