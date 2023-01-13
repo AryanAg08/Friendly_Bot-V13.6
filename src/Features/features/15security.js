@@ -137,13 +137,13 @@ module.exports = (client) => {
             })
 
             if (B5) {
-                console.log("YUPYUP!!");
                 for (ww of B5) {
                     const Words = ww.BadWords
                     const Ping = ww.EveryonePing
                     const Invite = ww.InviteLinks
                     
                     if (Words === "YES") {
+                        console.log("Words module!!");
                          for (var i = 0; i > swear.length; i++ ) {
                             if (word.includes(swear)) {
                                 message.delete();
@@ -175,6 +175,7 @@ module.exports = (client) => {
                     }
 
                     if (Ping === "YES") {
+                        console.log("everyone module!!");
                         if (content.includes("@everyone") || word.includes("@everyone")) {
                             if (member.permissions.has(Permissions.FLAGS.BAN_MEMBERS || Permissions.FLAGS.ADMINISTRATOR || Permissions.FLAGS.KICK_MEMBERS)) return;
                             else {
@@ -207,6 +208,7 @@ module.exports = (client) => {
                     }
 
                     if (Invite === "YES") {
+                        console.log("Invite Link Module!!");
                         const code = content.split('discord.gg/')[1]
                
                    if (content.includes(`discord.gg/${guild.name}`)) {
