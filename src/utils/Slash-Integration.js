@@ -1,5 +1,6 @@
 const { security } = require("../functions/11Security");
 const { daily } = require("../functions/12daily");
+const { timer, showtimer } = require("../functions/13timers");
 const { Verification, HELP, Deadlines } = require("../functions/3Slash(b)");
 const { DeadlineADD, DeadlineList, Deadlineclear, DeadlineRemove } = require("../functions/6Deadline_Module");
 const { BotCount_chan, Count_goodies } = require("../functions/7Bot_Counting");
@@ -214,6 +215,17 @@ module.exports = (client) => {
                 Count_goodies(interaction);
             }
         } else return await interaction.reply("You do not have perms!!") 
+        }
+
+        if (commandName === "timer") {
+            const SUB = interaction.options.getSubcommand()
+
+            if (SUB === "set-timer") {
+                     timer(interaction);
+            }
+            if (SUB === "showtimers") {
+                showtimer(interaction);
+            }
         }
 
         if (commandName === "studytime") {

@@ -247,4 +247,4 @@ Hard:
 5. Daily Quotes some amazing ideas 
 6. Link Features // ????
 7. BookMark Feature
-8. 
+8. Timers

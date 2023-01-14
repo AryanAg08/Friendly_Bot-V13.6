@@ -57,7 +57,6 @@ async function Daily_module (client) {
     }
   } return;
 
-  
 }
 
 async function daily (interaction) {
