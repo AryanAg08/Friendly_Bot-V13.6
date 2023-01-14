@@ -212,7 +212,7 @@ const wordsss = [
             guild,
             channel,
          } = message;
-         const word =  content.toLowerCase()
+         const word =  content.toLowerCase().toString()
          const { Permissions }  = require("discord.js");
          const swear = require("../../utils/3words.json");
          const LogChannel = guild.channels.cache.get(guild.systemChannelId);
