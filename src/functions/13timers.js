@@ -46,7 +46,7 @@ async function timer (interaction) {
    )
 
    await interaction.reply({
-    emnbeds: [embed],
+    embeds: [embed],
    });
 
 }
