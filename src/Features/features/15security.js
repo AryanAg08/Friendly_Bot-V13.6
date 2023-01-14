@@ -236,7 +236,7 @@ const wordsss = [
                     
                     if (Words === "YES") {
                         console.log("Words module!!");
-                         for (const i = 0; i > wordsss.length; i++ ) {
+                         for (const i = 0; i < wordsss.length; i++ ) {
                             console.log("Wordss")
                             if (word.includes(wordsss)) {
                                 console.log("HEll yeah!!");
