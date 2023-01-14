@@ -68,7 +68,11 @@ const servers = mongoose.Schema({
     Security: {
         type: String,
         required: false,
-    }
+    },
+    Daily: {
+        type: String,
+        required: false,
+    },
 });
 
 module.exports = new mongoose.model('1]registered-servers', servers);
