@@ -15,7 +15,7 @@ module.exports = {
    )
    .addStringOption((opt) => 
    opt
-   .setName("timer-description")
+   .setName("description")
    .setDescription(`Description of the timer!!`)
    )
    )
