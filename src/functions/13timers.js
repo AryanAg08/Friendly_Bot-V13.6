@@ -37,7 +37,7 @@ async function timer (interaction) {
    const T2 = await new T1(input).save()
 
    const embed = new MessageEmbed()
-   .setTitle(`${interaction.member.tag}`)
+   .setTitle(`${interaction.user.tag}`)
    .setTimestamp()
    .addFields(
     { name: "⏰Timer started!", value: `<@${user}> ${tagalong}`, inline: false},
