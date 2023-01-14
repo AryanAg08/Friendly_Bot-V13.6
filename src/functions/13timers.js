@@ -16,12 +16,12 @@ async function timer (interaction) {
    let structuretime = moment(endtime).format("DD/MM/YYYY-HH:mm");
    const Timers = structuretime
    let TimeStamp = `<t:${Math.floor( new Date(endtime).getTime() / 1000)}:F>`
-   let tagalong;
+    var tagalong;
    if (description) {
-    tagalong += description;
+    tagalong = description;
    }
    else { 
-   tagalong += "Timer End!!";
+   tagalong = "Timer End!!";
    } 
 
    const Text = tagalong
