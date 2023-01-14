@@ -10,6 +10,5 @@ module.exports = {
     .setName("channel")
     .setDescription("mention the channel where you want the daily module")
     .setRequired(true)
-    .addChannelTypes(ChannelTypes.GUILD_TEXT)
     )
 }
