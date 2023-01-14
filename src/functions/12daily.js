@@ -63,7 +63,7 @@ async function Daily_module (client) {
 async function daily (interaction) {
  const channel = interaction.options.getChannel("channel").id
 
- const checkchan = interaction.guild.channels.cache.fetch(ch => ch.type === "GUILD_TEXT" && ch.id === channel)
+ const checkchan = interaction.guild.channels.cache.find(ch => ch.type === "GUILD_TEXT" && ch.id === channel)
    if (checkchan) {
     const B1 = await A2.findOneAndUpdate({
         GuildID: interaction.guild.id,
