@@ -29,6 +29,7 @@
     "mongoose": "^6.3.3",
     "node-schedule": "^2.1.0",
     "topgg-autoposter": "^2.0.1",
-    "topgg-vote-receiver": "^1.0.0"
+    "topgg-vote-receiver": "^1.0.0",
+    "words-of-the-day": "^1.0.0"
   }
 }
