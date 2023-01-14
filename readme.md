@@ -242,8 +242,7 @@ Hard:
 1. Welcome Module ✅
 2. Study count module ✅
     shows random time count!!
-3. Server Security Features
-    abusive words module not working
+3. Server Security Features ✅
 4. Daily Words 
 5. Daily Quotes some amazing ideas 
 6. Link Features
