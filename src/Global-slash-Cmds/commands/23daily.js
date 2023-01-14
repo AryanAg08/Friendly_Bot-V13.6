@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
-const { ChannelTypes } = require("discord.js/typings/enums");
 
 module.exports = {
     data: new SlashCommandBuilder()
