@@ -58,8 +58,8 @@ async function showtimer (interaction) {
         GG,
     })
        var Timers = "Server Timers: \n\n"
-        if (Gerfg && Gerfg.length > 0) {
-             for (rr of Gerfg) {
+        if (T3 && T3.length > 0) {
+             for (rr of T3) {
                 Timers += `<a:Arrow:862279551698993162> <@${rr.user}>'s Timer ${rr.TimeStamp} - ${rr.Text} \n`
              }
             }else {
