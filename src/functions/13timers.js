@@ -3,7 +3,7 @@ const T1 = require("../models/25timers");
 
 async function timer (interaction) {
    const time = interaction.options.getNumber("duration");
-   const description = interaction.options.getString("Timer-description");
+   const description = interaction.options.getString("timer-description");
    const ms = require("ms")
    const moment = require("moment")
    const GG = interaction.guild.id
