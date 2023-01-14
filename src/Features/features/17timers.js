@@ -7,7 +7,7 @@ client.on('ready', async () => {
   
     const moment = require("moment");
 
-    var j = schedule.scheduleJob('/10 * * * * *', async function () {
+    var j = schedule.scheduleJob('*/1 * * * *', async function () {
         console.log('Timer!!')
         const T2 = await T1.find();
         if (T2) {
