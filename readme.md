@@ -245,6 +245,6 @@ Hard:
 3. Server Security Features ✅
 4. Daily Words ✅
 5. Daily Quotes some amazing ideas 
-6. Link Features // ????
+6. Link Features //  For everything....
 7. BookMark Feature
-8. Timers
+8. Timers ✅
