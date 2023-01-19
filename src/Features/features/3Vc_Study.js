@@ -21,7 +21,6 @@ module.exports = (client) => {
                 })
 
                 if (J2) {
-                    console.log(J2);
                     for (jk of J2) {
                         const chann = jk.VcChannel1
                         const Msg = jk.VCMSG
@@ -34,7 +33,6 @@ module.exports = (client) => {
                             
                             if (newVoice === chann) {
                                 if (oldVoice != newVoice) {
-                                     console.log(J2);
                                     let userID = oldMember.id
                                     if (RoleId) {
                                         
