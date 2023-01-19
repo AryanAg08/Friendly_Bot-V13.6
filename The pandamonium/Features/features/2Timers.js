@@ -10,22 +10,17 @@ module.exports = (client) => {
         const chan = client.channels.cache.get("1010214273986859049");
 
         var j = schedule.scheduleJob('*/1 * * * *', async function () {
-            console.log('pandamonium timer!!')
             const T2 = await T1.find({
                 GG: GG,
             });
             if (T2) {
-                console.log(T2);
             for (ee of T2) {
                 const Time = ee.Timers
                 const author = ee.user
-                const TES = ee.Text
-                console.log(Time + author + TES);
+                const TES = ee.Text;
                 const current = new Date(Date.now());
                 const Curent = moment(current).format('DD/MM/YYYY-HH:mm')
-                console.log(Curent)
                 if (Time === Curent) {
-                    console.log(`Timer found for pandamonium!!`)
                     chan.send(`Timer finshed :tada:!! <@${author}>  ${TES}`);
 
                     const T4 = await T1.findOneAndDelete({
@@ -34,7 +29,6 @@ module.exports = (client) => {
                         Timers: Time,
                         Text: TES,
                     });
-                    console.log(`Deleted Timer log!!`);
                 } 
 
             }
