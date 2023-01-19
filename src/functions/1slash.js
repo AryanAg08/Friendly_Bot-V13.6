@@ -934,7 +934,7 @@ async function WarningStats(interaction) {
     for (const warning of A13.warnings) {
         const { author, timestamp, reason } = warning
 
-        reply += `By ${author} on ${new Date(timestamp).toLocaleDateString()} for ${reason}\n`
+        reply += `By ${author} on <t:${timestamp}:F> for ${reason}\n`
     }
 
     const wembed = new MessageEmbed()
