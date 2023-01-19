@@ -892,7 +892,7 @@ async function Warning(interaction) {
     } else {
         const warning = {
             author: `${interaction.member}`,
-            timeStamp: new Date().getTime(),
+            timeStamp: new Date(Date.now()).getTime(),
             reason: "No reason specified",
         }
 
