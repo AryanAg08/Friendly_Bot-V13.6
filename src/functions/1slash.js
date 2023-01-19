@@ -893,6 +893,7 @@ async function Warning(interaction) {
         const warning = {
             author: `${interaction.member}`,
             timeStamp: new Date().getTime(),
+            reason: "No reason specified",
         }
 
         const A8 = await S5.findOneAndUpdate({
@@ -933,7 +934,7 @@ async function WarningStats(interaction) {
     for (const warning of A13.warnings) {
         const { author, timestamp, reason } = warning
 
-        reply += `By ${author} on ${new Date(timestamp).toLocaleDateString()} for ${reason || "No reason specified!!"}\n`
+        reply += `By ${author} on ${new Date(timestamp).toLocaleDateString()} for ${reason}\n`
     }
 
     const wembed = new MessageEmbed()
