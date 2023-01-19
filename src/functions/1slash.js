@@ -932,9 +932,9 @@ async function WarningStats(interaction) {
     let reply = `⚠ Warnings for <@${user}>: \n\n`
 
     for (const warning of A13.warnings) {
-        const { author, timestamp, reason } = warning
+        const { author, timeStamp, reason } = warning
 
-        reply += `By ${author} on <t:${timestamp}:F> for ${reason}\n`
+        reply += `By ${author} on <t:${timeStamp}:F> for ${reason}\n`
     }
 
     const wembed = new MessageEmbed()
