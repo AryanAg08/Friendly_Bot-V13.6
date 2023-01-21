@@ -243,10 +243,16 @@ Hard:
 2. Study count module ✅
     shows random time count!!
 3. Server Security Features ✅
-4. Daily Words  
+4. Daily Words  ✅
     Remaning IDk somehow it is not displaying 
-    
-5. Daily Quotes some amazing ideas 
+      // Should work y now!!
+5. Daily Quotes some amazing ideas  // Umm will try afterwards
 6. Link Features //  For everything....
 7. BookMark Feature 
+  > give the message Id 
+  > Will reach your dm as an bookmark 
+  > Maybe give it a extra touch (
+     
+  ) 
+ 
 8. Timers ✅
