@@ -768,7 +768,7 @@ async function BdayAdd(interaction) {
 async function BdayList(interaction) {
     const get_month = await interaction.options.getInteger("month-bday");
     let current_month = new Date().getMonth()
-    const currmonth = current_month
+    const currmonth = current_month + 1;
     if (current_month < 10) {
         const MI = current_month
         current_month = `0${MI}`
