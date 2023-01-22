@@ -824,7 +824,7 @@ async function BdayList(interaction) {
         else {
             const T4 = await T1.findOne({
                 GG: guild.id,
-                Month: `${current_month}`,
+                Month: `${currmonth}`,
             });
             if (T4) {
              if (T4 && T4.length > 0 ) {
