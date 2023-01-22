@@ -738,7 +738,7 @@ async function BdayAdd(interaction) {
         }
         const DAY = Day
         const MONTH = Month
-        
+
         const Current_Year = new Date().getFullYear()
         const Age = Math.round(Current_Year - Year)      // 2022 - 2004
         const BDAY = `${DAY}/${MONTH}/${Year}` // It will return in format = DD/MM/YYYY
@@ -826,9 +826,24 @@ async function BdayList(interaction) {
 
         } 
         else {
+
+            /**
+             * {
+2023-01-22T16:19:12.835219+00:00 app[worker.1]:   _id: new ObjectId("631ebcabdd95380e2b2adeb4"),
+2023-01-22T16:19:12.835220+00:00 app[worker.1]:   GG: '1017810847046832179',
+2023-01-22T16:19:12.835220+00:00 app[worker.1]:   user: '693351718263455755',
+2023-01-22T16:19:12.835220+00:00 app[worker.1]:   Age: '19',
+2023-01-22T16:19:12.835222+00:00 app[worker.1]:   BdDate: '02/01/2004',
+2023-01-22T16:19:12.835222+00:00 app[worker.1]:   Day: '02',
+2023-01-22T16:19:12.835223+00:00 app[worker.1]:   Month: '01',
+2023-01-22T16:19:12.835223+00:00 app[worker.1]:   Year: '2004',
+2023-01-22T16:19:12.835223+00:00 app[worker.1]:   __v: 0
+2023-01-22T16:19:12.835224+00:00 app[worker.1]: }
+             */
+            console.log(current_month)
             const T4 = await T1.findOne({
                 GG: guild.id,
-                Month: `${currmonth}`,
+                Month: `${current_month}`,
             });
             if (T4) {
              if (T4 && T4.length > 0 ) {
