@@ -143,9 +143,7 @@ module.exports = (client) => {
                     const Invite = ww.InviteLinks
                     
                     if (Words === "YES") {
-                        console.log("Words module!!");
                          for (var i = 0; i < swear.length; i++ ) {
-
                             if (word.includes(swear[i])) {
                                 console.log("HEll yeah!!");
                                 message.delete();
