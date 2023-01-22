@@ -1496,12 +1496,12 @@ async function StudyTime(interaction) {
 }
 
 async function Report(interaction) {
-    const rep = interaction.options.getString("report-feature");
+    const rep = interaction.options.getString("reportfeature");
     const App = interaction.options.getString("appreciate");
     const guild = interaction.guild
     const Main = interaction.client.channels.cache.get("896418168359251979");
 
-    Main.send(`**${guild.name} \n **Report: ${rep && App}** \n By- **${interaction.member.username}**`);
+    Main.send(`**${guild.name}** \n **Report: ${rep || App}** \n By- **${interaction.member.user.username}**`);
 
     await interaction.reply({ content: 'Sent to our devs!!', ephemeral: true });
 }

@@ -6,7 +6,7 @@ module.exports = {
         .setDescription('Upset or obsessed with any feature! Tell us more about it 💗 ')
         .addStringOption((option) =>
             option
-                .setName("report-feature")
+                .setName("reportfeature")
                 .setDescription(" Report!! Your efforts are appreciated 💓")
                 .setRequired(false)
         )
