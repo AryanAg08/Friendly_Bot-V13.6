@@ -734,10 +734,14 @@ async function BdayAdd(interaction) {
         if (Month < 10) {
             const MI = Month
             Month = `0${MI}`
+            
         }
+        const DAY = Day
+        const MONTH = Month
+        
         const Current_Year = new Date().getFullYear()
         const Age = Math.round(Current_Year - Year)      // 2022 - 2004
-        const BDAY = `${Day}/${Month}/${Year}` // It will return in format = DD/MM/YYYY
+        const BDAY = `${DAY}/${MONTH}/${Year}` // It will return in format = DD/MM/YYYY
             console.log(BDAY);
         // Check if user is in other servers as well where bot is present!! Wish him there as well if the server has bday feature enable!!
         const B2 = await B1.findOneAndUpdate({

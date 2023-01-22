@@ -1,6 +1,5 @@
 module.exports = (client) =>  {
     client.on("guildMemberAdd", async member => {
-        console.log(member);
        const Guild = member.guild.id
        const Gname = member.guild.name
        const JoinedTime = member.guild.joinedTimestamp
