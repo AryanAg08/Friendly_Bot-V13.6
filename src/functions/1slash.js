@@ -846,6 +846,7 @@ async function BdayList(interaction) {
                 Month: `${current_month}`,
             });
             if (T4) {
+                console.log("BDAY!!!")
              if (T4 && T4.length > 0 ) {
                      let Repl = "Birthdays:\n"
                 for (qq of T4) {
