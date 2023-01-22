@@ -31,6 +31,15 @@ module.exports = (client) => {
                                 const name = bbh.user
                                 const age = bbh.Age
                                 
+                                const Y1 = await B2.findOneAndUpdate({
+                                    GG: GGs,
+                                    user: name,
+                                },{
+                                    Age: age + 1,
+                                },{
+                                    upsert: true,
+                                    new: true,                         
+                                   })
                                 reply += `<:Arrow:999990883107741726> ${name}`
                             }
     

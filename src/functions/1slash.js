@@ -746,7 +746,7 @@ async function BdayAdd(interaction) {
         // Check if user is in other servers as well where bot is present!! Wish him there as well if the server has bday feature enable!!
         const B2 = await B1.findOneAndUpdate({
             GG: guild.id,
-            user,
+            user: user,
         }, {
             GG: guild.id,
             user,
@@ -767,7 +767,7 @@ async function BdayAdd(interaction) {
 
 async function BdayList(interaction) {
     const get_month = await interaction.options.getInteger("month-bday");
-    let current_month = new Date().getMonth()
+    var current_month = new Date().getMonth()
     const currmonth = current_month;
     if (current_month < 10) {
         const MI = current_month + 1;
@@ -826,53 +826,37 @@ async function BdayList(interaction) {
 
         } 
         else {
-
-            /**
-             * {
-2023-01-22T16:19:12.835219+00:00 app[worker.1]:   _id: new ObjectId("631ebcabdd95380e2b2adeb4"),
-2023-01-22T16:19:12.835220+00:00 app[worker.1]:   GG: '1017810847046832179',
-2023-01-22T16:19:12.835220+00:00 app[worker.1]:   user: '693351718263455755',
-2023-01-22T16:19:12.835220+00:00 app[worker.1]:   Age: '19',
-2023-01-22T16:19:12.835222+00:00 app[worker.1]:   BdDate: '02/01/2004',
-2023-01-22T16:19:12.835222+00:00 app[worker.1]:   Day: '02',
-2023-01-22T16:19:12.835223+00:00 app[worker.1]:   Month: '01',
-2023-01-22T16:19:12.835223+00:00 app[worker.1]:   Year: '2004',
-2023-01-22T16:19:12.835223+00:00 app[worker.1]:   __v: 0
-2023-01-22T16:19:12.835224+00:00 app[worker.1]: }
-             */
-            console.log(current_month)
-            const T4 = await T1.findOne({
+            const T4 = await T1.find({
                 GG: guild.id,
-                Month: `${current_month}`,
+                Month: current_month,
             });
-            if (T4) {
-                console.log("BDAY!!!")
-             if (T4 && T4.length > 0 ) {
-                     let Repl = "Birthdays:\n"
-                for (qq of T4) {
-                const BD = qq.user
-                const DD = qq.Day
-                const AD = qq.Age
-                const get_user = `<@${BD}>`
-                 Repl += `> ${get_user} ➡ ${DD}/${get_month} (${AD}) \n`
-            }
-                var Mname = m_names[currmonth];
-
-                const bdembed = new MessageEmbed()
-                    .setColor("RANDOM")
-                    .setTimestamp()
-                    .setTitle(`Bday's in this server for ${Mname} 🍰`)
-                    .setDescription(Repl)
-                    .setFooter({
-                        text: "FriendlyBot",
-                        iconURL: Icon,
-                    })
-
-                await interaction.reply(`Bday's for this month!!`);
-               await interaction.channel.send({  embeds: [bdembed]  });
-                 
-            }
-            } else return interaction.reply(`No bday in current month!!`);
+            if (T4) { 
+                if (T4 && T4.length > 0 ) {
+                    let reply = `Birthdays: \n\n`
+                     for (qq of T4) {
+                        const BD = qq.user
+                        const DD = qq.Day
+                        const AD = qq.Age
+                        const get_user = `<@${BD}>`
+                        reply += `> ${get_user} ➡ ${DD}/${current_month} (${AD}) \n`
+                    }
+                        var Mname = m_names[currmonth];
+        
+                        const bdembed = new MessageEmbed()
+                            .setColor("RANDOM")
+                            .setTimestamp()
+                            .setTitle(`Bday's in this server for ${Mname} 🍰`)
+                            .setDescription(reply)
+                            .setFooter({
+                                text: "FriendlyBot",
+                                iconURL: Icon,
+                            })
+        
+                      await interaction.reply({ embeds: [bdembed] });
+                    
+                    }
+             
+        } else return interaction.reply("No bday in given month!!");
 
         }
 

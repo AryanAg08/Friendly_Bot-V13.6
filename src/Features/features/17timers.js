@@ -19,7 +19,6 @@ client.on('ready', async () => {
             const chan = client.channels.cache.get(channel);
             const current = new Date(Date.now());
             const Curent = moment(current).format('DD/MM/YYYY-HH:mm')
-            console.log(Curent)
             if (Time === Curent) {
                 chan.send(`Timer finshed :tada:!! <@${author}>  ${TES}`);
 
