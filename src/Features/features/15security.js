@@ -111,6 +111,7 @@ module.exports = (client) => {
     });
 
     client.on("messageCreate", async (message) => {
+        if (message.author.bot)return;
       if (message.channel.type === "DM") return;
       else {
         const {
@@ -119,7 +120,7 @@ module.exports = (client) => {
             guild,
             channel,
          } = message;
-         const word =  content.toLowerCase().toString()
+         const word = content
          const { Permissions }  = require("discord.js");
          const swear = require("../../utils/3words.json");
          const LogChannel = guild.channels.cache.get(guild.systemChannelId);
@@ -144,6 +145,7 @@ module.exports = (client) => {
                     if (Words === "YES") {
                         console.log("Words module!!");
                          for (var i = 0; i < swear.length; i++ ) {
+
                             if (word.includes(swear[i])) {
                                 console.log("HEll yeah!!");
                                 message.delete();
