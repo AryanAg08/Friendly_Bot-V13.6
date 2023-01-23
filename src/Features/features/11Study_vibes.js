@@ -8,12 +8,12 @@ module.exports = (client) => {
             const voiceChannels = await guild.channels.cache.filter(c => c.type === 'GUILD_VOICE');
             let count = 0;
 
-            for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
+            // for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
             
-            const channelId = "886948093566808095";
+            // const channelId = "886948093566808095";
 
-            const AA = await guild.channels.cache.get(channelId);
-            AA.setName(`Currently Studying: ${count}`);
+            // const AA = await guild.channels.cache.get(channelId);
+            // AA.setName(`Currently Studying: ${count}`);
             
             let memberCount;
             memberCount = guild.roles.cache.get("707547622591692911").members.size;
