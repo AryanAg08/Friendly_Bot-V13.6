@@ -49,7 +49,7 @@ module.exports = {
         .addFields(
             {
                 name: `Choose the roles:`, value: ` 
-                <:1_:801441662252482600> Gamers 🎮 \n <:2_:801441662798266399> Watchers 🍿 \n <:3_:801441662920425512> StudyGroup 👨🏾‍🤝‍👨🏼 \n <:4_:801441663397396510> Forest 🎄 \n <:5_:801441662659592202> Rumple Dairy ✍   
+                <:1_:801441662252482600> Gamers 🎮 \n <:2_:801441662798266399> Watchers 🍿 \n  <:3_:801441662920425512> Rumple Dairy ✍   
                         
                 Feel free to choose multiple options, choose a single option or choose none. It is all up to you!!
                 
