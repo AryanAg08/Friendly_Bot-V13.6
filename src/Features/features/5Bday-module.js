@@ -8,7 +8,7 @@ module.exports = (client) => {
         let BDD = moment().format("DD")
         const { MessageEmbed } = require("discord.js");
 
-        var j = schedule.scheduleJob("*/1 * * * *", async function() {
+        var j = schedule.scheduleJob("1 2 * * *", async function() {
             const ff = await B1.find({
                 Bday: "YES",
             })
@@ -19,11 +19,13 @@ module.exports = (client) => {
 
                      const B3 = await B2.find({
                         GG: GGs,
-                        Month: bTd,
-                        Day: BDD,
+                        Month: `${bTd}`,
+                        Day: `${BDD}`,
                      })
 
                      if (B3) {
+                        console.log("Birthday Module: \n");
+                        console.log(B3);
                          if (B3 && B3.length > 0 ) {
                             let reply = `Birthday's today 🎊\n`
                               
@@ -55,7 +57,7 @@ module.exports = (client) => {
                                     const wish = tt.ServerWish
 
                                     if (chan) {
-                                        const checkchan = client.channels.cache.fetch((c) => c.id === chan) || null
+                                        const checkchan = client.channels.cache.find((c) => c.id === chan) || null
                                         
                                         if (!checkchan) return;
 

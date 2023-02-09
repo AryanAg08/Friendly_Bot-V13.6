@@ -23,17 +23,17 @@ module.exports = {
             .setEmoji("📺")
             .setLabel("Watchers"),
 
-            new MessageButton()
-            .setCustomId(code32)
-            .setStyle("PRIMARY")
-            .setEmoji("📚")
-            .setLabel("Study Group"),
+            // new MessageButton()
+            // .setCustomId(code32)
+            // .setStyle("PRIMARY")
+            // .setEmoji("📚")
+            // .setLabel("Study Group"),
 
-            new MessageButton()
-            .setCustomId(code33)
-            .setStyle("PRIMARY")
-            .setEmoji("🌴")
-            .setLabel("Forest"),
+            // new MessageButton()
+            // .setCustomId(code33)
+            // .setStyle("PRIMARY")
+            // .setEmoji("🌴")
+            // .setLabel("Forest"),
             
             new MessageButton()
             .setCustomId(code34)
@@ -49,7 +49,7 @@ module.exports = {
         .addFields(
             {
                 name: `Choose the roles:`, value: ` 
-                <:1_:801441662252482600> Gamers 🎮 \n <:2_:801441662798266399> Watchers (Sub Only) 🍿 \n <:3_:801441662920425512> StudyGroup 👨🏾‍🤝‍👨🏼 \n <:4_:801441663397396510> Forest 🎄 \n <:5_:801441662659592202> Rumple Dairy ✍  (Sub Only) 
+                <:1_:801441662252482600> Gamers 🎮 \n <:2_:801441662798266399> Watchers 🍿 \n <:3_:801441662920425512> StudyGroup 👨🏾‍🤝‍👨🏼 \n <:4_:801441663397396510> Forest 🎄 \n <:5_:801441662659592202> Rumple Dairy ✍   
                         
                 Feel free to choose multiple options, choose a single option or choose none. It is all up to you!!
                 
