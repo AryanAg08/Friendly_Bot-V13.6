@@ -246,7 +246,7 @@ Hard:
 4. Daily Words  ✅
     Remaning IDk somehow it is not displaying 
       // Should work y now!!
-5. Daily Quotes some amazing ideas  // Umm will try afterwards
+5. Daily Quotes some amazing ideas  // Umm will try afterwards 
 6. Link Features //  For everything....
 7. BookMark Feature 
   > give the message Id 
