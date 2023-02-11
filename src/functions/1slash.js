@@ -1487,7 +1487,9 @@ async function StudyTime(interaction) {
                     .setTitle(`⏰ Your study time`)
                     .setColor('#FDF9F9')
                     .setDescription(`${reply}`)
-                    .setFooter(`Study time for: ${interaction.member.user.username} \n by @Friendly_Bot`)
+                    .setFooter({
+                        text: `Study time for: ${interaction.member.user.username} \n by @Friendly_Bot`
+                    })
                     .setTimestamp()
 
                 await interaction.reply({ embeds: [logembed] });
