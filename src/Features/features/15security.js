@@ -144,7 +144,8 @@ module.exports = (client) => {
                     
                     if (Words === "YES") {
                          for (var i = 0; i < swear.length; i++ ) {
-                            if (word.includes(swear[i])) {
+                            if ( new RegExp("\\b"+swear[i]+"\\b").test(word) ) {
+                                // word.includes(swear[i])
                                 console.log("HEll yeah!!");
                                 message.delete();
                                 const K1 = await B1.findOneAndUpdate({
