@@ -20,6 +20,17 @@ module.exports = {
              .setRequired(true)
         )
         )
+        .addSubcommand((cmd) => 
+        cmd 
+        .setName('addmod')
+        .setDescription('Add moderator who is online when a support channel is open. In future much more features will be attached to it.')
+        .addUserOption((opt) => 
+        opt
+        .setName('mod')
+        .setDescription('Mention the moderator. (One at a time.')
+        .setRequired(true)
+        )
+        )
         .addSubcommand((subcommand) => 
         subcommand 
         .setName('deadline')
