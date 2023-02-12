@@ -23,7 +23,7 @@ module.exports = {
         .addSubcommand((cmd) => 
         cmd 
         .setName('addmod')
-        .setDescription('Add moderator who is online when a support channel is open. In future much more features will be attached to it.')
+        .setDescription('Add moderator who is online when a support channel is open.')
         .addUserOption((opt) => 
         opt
         .setName('mod')
