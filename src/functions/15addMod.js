@@ -6,7 +6,7 @@ async function mod(interaction) {
 //    console.log(getUser);
     const GG = interaction.guild
 
-    const userStats = GG.users.cache.get(getUser.id);
+    const userStats = GG.members.cache.get(getUser.id);
     console.log(userStats);
     // User {
     //     2023-02-12T18:27:36.010499+00:00 app[worker.1]:   id: '693351718263455755',
