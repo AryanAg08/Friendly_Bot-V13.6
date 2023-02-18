@@ -88,6 +88,7 @@ module.exports = (client) => {
                                             guild.members.cache.get(User).roles.remove(RoleId)
                                         }
                                     }
+                                    
                                     var leave = new Date(Date.now());
 
                                     const J4 = await V2.find({
@@ -169,6 +170,7 @@ client.on("ready", async () => {
                                 console.log(err);
                             }
                         }
+                        else return;
                     }
                 }
                 }
