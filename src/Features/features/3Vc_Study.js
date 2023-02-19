@@ -158,19 +158,32 @@ client.on("ready", async () => {
                         const RoleId = oo.RoleID
                         if (RoleId) { 
                         const GG = client.guilds.cache.get(GuildId)
-                        const Role = await GG.roles.cache.find((role) => role.id === RoleId)
-                        if (Role) {
-                            try {
-                                Role.members.map(m => {
-                                    const user = m.user.id;
-                                    const B = AddTime(user, GuildId);
-                                });
-                            } 
-                            catch (err) {
-                                console.log(err);
-                            }
+                        try {
+                            let roles = await reaction.message.guild.roles.fetch();
+                            
+                            let role = roles.cache.get(RoleId);
+                          //  let role = roles.cache.find((r) => r.name.toLowerCase() === '️announcements-ping');
+                          try {
+                            Role.members.map(m => {
+                                const user = m.user.id;
+                                const B = AddTime(user, GuildId);
+                            });
+                        } 
+                        catch (err) {
+                            console.log(err);
                         }
-                        else return;
+                    
+                            if (!role) return console.log(`Oops, I can't find the role`);
+                        
+                        
+                          } catch (error) {
+                            console.log(error);
+                          }
+
+
+
+                        
+                        
                     }
                 }
                 }
