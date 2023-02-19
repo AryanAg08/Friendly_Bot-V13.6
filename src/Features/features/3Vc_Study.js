@@ -156,9 +156,9 @@ client.on("ready", async () => {
                 if (L2) {
                     for (oo of L2) {
                         const RoleId = oo.RoleID
-                        if (RoleId != null) { 
+                        if (RoleId) { 
                         const GG = client.guilds.cache.get(GuildId)
-                        const Role = GG.roles.cache.find((role) => role.id === RoleId)
+                        const Role = await GG.roles.cache.find((role) => role.id === RoleId)
                         if (Role) {
                             try {
                                 Role.members.map(m => {
