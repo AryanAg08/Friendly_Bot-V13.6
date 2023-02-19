@@ -159,7 +159,7 @@ client.on("ready", async () => {
                         if (RoleId) { 
                         const GG = client.guilds.cache.get(GuildId)
                         try {
-                            let roles = await reaction.message.guild.roles.fetch();
+                            let roles = await GG.roles.fetch();
                             
                             let role = roles.cache.get(RoleId);
                           //  let role = roles.cache.find((r) => r.name.toLowerCase() === '️announcements-ping');
