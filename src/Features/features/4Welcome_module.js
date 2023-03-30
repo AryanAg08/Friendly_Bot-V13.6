@@ -17,9 +17,9 @@ module.exports = (client) =>  {
            .setImage('attachment://JIIT.gif')
            .setDescription(`Welcome ${Tag} to the server \n JIIT OPTICA presents **Code Of Duty**.`)
 
-           const channel = client.channels.cache.get("1090928183274123285");
+           //const channel = client.channels.cache.get("1090928183274123285");
 
-           channel.send({ embeds: [embed] });
+           systemChan.send({ embeds: [embed] });
        }
 
        const systemChan = member.guild.channels.cache.get(systemChannel);
