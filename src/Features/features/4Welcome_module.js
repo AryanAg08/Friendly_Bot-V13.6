@@ -10,6 +10,18 @@ module.exports = (client) =>  {
        const systemChannel = member.guild.systemChannelId
        const { MessageActionRow, MessageButton, MessageEmbed } = require("discord.js");
 
+
+       if (Guild === "1088582075763925053") {
+           const embed = new MessageEmbed()
+           .setColor("RANDOM")
+           .setImage('attachment://JIIT.gif')
+           .setDescription(`Welcome ${Tag} to the server \n JIIT OPTICA presents **Code Of Duty**.`)
+
+           const channel = client.channels.cache.get("1090928183274123285");
+
+           channel.send({ embeds: [embed] });
+       }
+
        const systemChan = member.guild.channels.cache.get(systemChannel);
             if (Bot) return;
        const RG = require("../../models/3server-registered");
