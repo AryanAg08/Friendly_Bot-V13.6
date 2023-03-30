@@ -14,7 +14,7 @@ module.exports = (client) =>  {
        if (Guild === "1088582075763925053") {
            const embed = new MessageEmbed()
            .setColor("RANDOM")
-           .setImage("https://cdn.discordapp.com/attachments/1090928183274123285/1090942214890332190/ezgif.com-video-to-gif.gif")
+           .setImage("https://cdn.discordapp.com/attachments/1089488497980735519/1090945017553629264/ezgif.com-video-to-gif.gif")
            .setDescription(`Welcome ${Tag} to the server \n JIIT OPTICA presents **Code Of Duty**.`)
 
            const channel = client.channels.cache.get("1090928183274123285");
