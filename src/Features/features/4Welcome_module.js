@@ -14,7 +14,7 @@ module.exports = (client) =>  {
        if (Guild === "1088582075763925053") {
            const embed = new MessageEmbed()
            .setColor("RANDOM")
-           .setImage('attachment://JIIT.gif')
+           .setImage("https://imgur.com/a/4Pp003W")
            .setDescription(`Welcome ${Tag} to the server \n JIIT OPTICA presents **Code Of Duty**.`)
 
            const channel = client.channels.cache.get("1090928183274123285");
