@@ -22,5 +22,19 @@ module.exports = (client) => {
               message.channel.send({ embeds: [exampleEmbed], components: [row] });
         
         }
-    })
+   });
+
+   client.on("interactionCreate", async (interaction) => {
+    if (!interaction.isButton()) return;
+  
+    const BID = interaction.customId;
+  
+                     if (BID === "Team") {
+                        
+                     }
+                  
+                    return interaction.reply();
+                    
+            
+    });
 }
