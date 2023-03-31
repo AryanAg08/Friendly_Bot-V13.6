@@ -217,6 +217,7 @@ client.on("ready", async () => {
                         const RoleId = oo.RoleID
                         if (RoleId != undefined) { 
                         const GG = client.guilds.cache.get(GuildId)
+                        try {
                         const Role = GG.roles.cache.find((role) => role.id === RoleId)
                         if (Role) {
                             try {
@@ -229,7 +230,10 @@ client.on("ready", async () => {
                                 console.log(err);
                             }
                         }
+                    } catch (err) {
+                        console.log(err);
                     }
+                }
                 }
                 }
 
