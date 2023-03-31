@@ -8,7 +8,7 @@ module.exports = (client) => {
         let BDD = moment().format("DD")
         const { MessageEmbed } = require("discord.js");
 
-        var j = schedule.scheduleJob("1 2 * * *", async function() {
+        var j = schedule.scheduleJob("*/1 * * * *", async function() {
             const ff = await B1.find({
                 Bday: "YES",
             })

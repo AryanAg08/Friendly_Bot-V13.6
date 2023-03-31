@@ -20,17 +20,6 @@ module.exports = {
              .setRequired(true)
         )
         )
-        .addSubcommand((cmd) => 
-        cmd 
-        .setName('addmod')
-        .setDescription('Add moderator who is online when a support channel is open.')
-        .addUserOption((opt) => 
-        opt
-        .setName('mod')
-        .setDescription('Mention the moderator. (One at a time.')
-        .setRequired(true)
-        )
-        )
         .addSubcommand((subcommand) => 
         subcommand 
         .setName('deadline')
@@ -176,6 +165,24 @@ module.exports = {
         cmd
         .setName("server-security")
         .setDescription("Setup security against spams. Get all the reports delivered to your server systemChannel (logs)")
+        )
+
+        .addSubcommand((cmd) => 
+        cmd
+        .setName("pom-session")
+        .setDescription("Enable pomodoro-sessions for your server!!")
+        .addChannelOption((opt) => 
+        opt
+        .setName("pom-channel")
+        .setDescription("Channel for Notifications of Poms!!")
+        .setRequired(true)
+        )
+        .addRoleOption((opt) => 
+        opt
+        .setName("pom-role")
+        .setDescription("Role to ping when a Pom session is active")
+        .setRequired(false)
+        )
         )
 };
 //   const clientId = '788504398912290887'; // 790503195620671498  --> Friendly_bot

@@ -246,7 +246,7 @@ Hard:
 4. Daily Words  ✅
     Remaning IDk somehow it is not displaying 
       // Should work y now!!
-5. Daily Quotes some amazing ideas  // Umm will try afterwards 
+5. Daily Quotes some amazing ideas  // Umm will try afterwards
 6. Link Features //  For everything....
 7. BookMark Feature 
   > give the message Id 
@@ -259,3 +259,200 @@ Hard:
 
 9. Pomodoro (some advanced features)
  -> 
+
+ <html>
+<head>
+    <title>Friendly Bot</title>
+    <style>
+      p {
+          font-family:'Times New Roman',;
+          font-size: 0.50cm ;
+      }
+      h5 {
+          font-size: 0.50cm;
+          font-family: 'Times New Roman',;
+      }
+      h4 {
+        font-size: 0.50cm;
+          font-family: 'Times New Roman',;
+      }
+
+      h2 {
+          font-family: 'Times New Roman',; 
+      }
+
+      </style>
+
+</head>
+<body>
+   <h1>Friendly Bot</h1> 
+   <p>
+    Hello, this is a multi Functioning bot used for all your study needs.
+    You can make a good productive community using this bot. 
+    <br>
+    I wish this bot will help you in increase your productivity level, using various commands. 
+</p>
+<h4> <b>Few Main Features:- </b> <br>
+    (To get all commands type "!help", Prefix can be changed according to the owners choice)
+</h4>
+    <ol> 
+        <li>
+            <h5>Forest</h5>
+                <p>You can share your forest code within the server so others can join your tree</p>
+        </li>
+        <li>
+            <h5>Teams</h5>
+            <p> You can create teams within the server with your friends,making it easier to study together also you dont need to hover around multiple channels to use timers for your sessions.
+            </p>
+         </li>
+         <li>
+             <h5>Team Voice Channels</h5>
+             <p>When you join a team by reacting on the embed a VC will be created so that you and your team buddies can join in and study together</p>
+         </li>
+         <li>
+             <h5>Inbuilt Google Search</h5>
+             <p>This bot comes with a inbuilt mini search engine which provides the top results by Google.
+                 <br>
+                <b>Note: People can use it in wrong way too, So please take care if the channel is not a NSFW . or else bot's command won't work in normal channels. </b>
+               <b> use !google "search" </b>
+              
+             </p>
+         </li>
+         <li>
+             <h5>To-Do List feature!!</h5>
+             <p> bot has a feature for todo-list</p>
+             <br>
+            <b>!todo add </b> -->  adds your task in to-do list  
+            <br>
+             <b>**Note:** There is reminder feature too. Which helps you to remind you in particular time. Time is only in **Hours**.  React when bot asks. </b> 
+             <br>   
+             *Usage:* `!todo add Maths` 
+             <br>
+             <b>!todo list</b>>  -->  Shows your to-do list!! 
+
+             <br>
+             <b>!todo reset</b> --> Resets the whole to-do
+             <br>
+             <b>!todo remove</b> --> Remove the particular task using its number. 
+                 <br>                                     **Note:** This might change your reminding task number too. If you asked bot to remind you for a task!! Will be updated in further updates!!
+                     <br>                                *Usage:* `!todo remove 2`
+                    </li>
+
+    </ol>
+    <h2>
+        Stay tuned for more exciting updates! </h2>
+
+<br> 
+1. Moderators Commands:
+(a) Warning:
+➡️ To warn any user in your server.
+➡️ To check list of warning on particular user !lw @user. 
+➡️ If user has/have no warnings then it will return null.
+➡️ Reason is not necessary, use it according to your choice. 
+
+(b) Give Role:
+➡️ Gives the target user the mentioned role. 
+➡️ Usage: !giverole @user role-name.
+
+(c) Ban/kick:
+➡️ Bans/kicks the target user. 
+➡️ Usage: !ban @user or !kick @user.
+
+(d) Server-Invites:
+➡️ To check your servers invites. 
+➡️ Only top 5 invites will be shown. 
+ 
+(e) Clear messages:
+➡️ Clears the amount of messages in a channel mentioned. 
+➡️ Usage: !clear 25 Will clear 25 messages. 
+
+(f) Close Ticket: 
+➡️ It closes the support ticket/channel if you have used !setup in your server. 
+➡️ Usage: !close @user.
+
+2. Admin Commands:
+(a) Server Setup:
+➡️ Our bot comes with advanced setup command, which creates automatically required channels. 
+➡️ Usage: !setup.
+➡️ It creates following things: 
+-> Tickets Category.
+-> Forest Channel 
+-> Schedule Channel
+-> Birthday-Wishes Channel
+-> Moderators Log Channel.
+
+(b) Prefix:
+➡️ There has been development in bot now you can change the prefix of bot for your sever
+➡️ Usage: !setprefix ?
+3. User Commands:
+(a) Fun:
+➡️ Play with coins. *Usage: !addbal @user 4000 * (Only by mod)
+➡️ Check your balance Usage !balance
+➡️ For any animals images !fun cat !fun dog !fun bunny !fun rabbit !fun duck !fun fox !fun lizard 
+ !fun shiba !fun koala !fun panda accordingly image will be displayed. 
+
+(b) Maths:
+➡️ Addition Usage: !maths add 10 15
+➡️ Subtraction Usage: !maths subtract 40 10
+➡️ Multiply Usage !maths multiply 20 4
+➡️ Division Usage !maths divide 60 5
+
+(c) Poll:
+➡️ Creates a poll for users to vote.
+➡️ Usage !poll Yes or No. 
+ 
+(d) Quote:
+➡️ Displays the quote. 
+➡️ Usage !quote
+ 
+(e) Support Channel:
+➡️ Creates a support channel. 
+➡️ Usage !ticket
+
+(f) Forest:
+➡️ Creates an embed for forest app. 
+➡️ Usage !code TEST 40 20 -- !code <Code> <Duration> <Start-Time>
+
+(g) Birthday:
+➡️ Creates an embed for wishing birthday. 
+➡️ Usage !bday Message. 
+
+(h) Schedule:
+➡️ You can use it to create a to-do. 
+➡️ Usage !schedule 1. Make Notes....
+4. Extra Features: 
+
+(a) Event:
+➡️ Now you can schedule events in your server using our Bot. 
+➡️ Bot will schedule it according to your choice, Time. 
+➡️ You can schedule channels (e.g. Text, Voice or both) accordingly. 
+
+(b) To-do:
+➡️ You can make a to-do list in which you can tick-off tasks also create them easily.
+➡️ For usage please refer to !todo.
+ 
+(c)Google Search:
+➡️ You can search anything on google using bot. 
+➡️ Usage !google Youtube (Note: Works only in NSFW channels (discord guidelines)).
+
+(d) Welcome Feature
+➡️ Welcome your members with our bot 
+➡️ Voice Channel displaying member-count. 
+➡️ For more info use !setw. 
+
+(e) Voice Time Count:
+➡️ Now bot counts the time in voice channel. 
+➡️ for more info use !study
+
+(f) Announcement:
+➡️ register your server for new announcements of bot updates. 
+➡️ !announce register
+5. Premium Features:
+➡️ Soon more amazing features will be added like making a particular command for a particular command. 
+➡️ More enhancements will be done to these already added features, providing users more options. 
+
+6. Website Updates:
+➡️ Website will be up and working till 15 October. 
+➡️ If there is any developers among anyone here in the community please contact me ( @AryanAg )
+</body>
+</html>

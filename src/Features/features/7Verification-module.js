@@ -176,18 +176,17 @@ module.exports  = (client) => {
                         
 
                         if (BID === `AC${auth}`) {
-                            try {
-                                interaction.guild.members.cache.get(auth).roles.add(Role);
-                                const USer = interaction.guild.members.cache.get(auth);
+                            interaction.guild.members.cache.get(auth).roles.add(Role);
+                            const USer = interaction.guild.members.cache.get(auth);
 
-                                USer.send(" Hi! A mod just verified you for access on the Server. \nWe wish you good luck with your studies and a happy stay! \n Don't forget to have a look at the toolbox-channel to unlock different toolbox-clubs!")
-                                .catch(() => console.log("Can't send this user dm!!"));
-                                 interaction.reply({
-                                    content: "Verification Done!!",
-                                    ephemeral: true,
-                                })
+                            USer.send(" Hi! A mod just verified you for access on the Server. \nWe wish you good luck with your studies and a happy stay! \n Don't forget to have a look at the toolbox-channel to unlock different toolbox-clubs!")
+                            .catch(() => console.log("Can't send this user dm!!"));
+                             interaction.reply({
+                                content: "Verification Done!!",
+                                ephemeral: true,
+                            })
 
-                                const { MessageButton, MessageActionRow } = require("discord.js");
+                            const { MessageButton, MessageActionRow } = require("discord.js");
                               
                             const row = new MessageActionRow()
                             .addComponents(
@@ -212,13 +211,6 @@ module.exports  = (client) => {
                             return interaction.message.edit({
                                 components: [row],
                             })
-                            } catch (err) { 
-                                console.log(err);
-                            }
-                            
-                           
-
-                            
                         }
                     }
                         if (BID === `DN${auth}`) {

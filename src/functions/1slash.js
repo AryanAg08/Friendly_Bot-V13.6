@@ -830,7 +830,6 @@ async function BdayList(interaction) {
                 GG: guild.id,
                 Month: current_month,
             });
-            console.log(T4);
             if (T4) { 
                 if (T4 && T4.length > 0 ) {
                     let reply = `Birthdays: \n\n`
@@ -857,11 +856,7 @@ async function BdayList(interaction) {
                     
                     }
              
-        } else {
-            console.log("No bday here!!");
-            return interaction.reply("No bday in given month!!");
-            
-        }
+        } else return interaction.reply("No bday in given month!!");
 
         }
 
@@ -1492,9 +1487,7 @@ async function StudyTime(interaction) {
                     .setTitle(`⏰ Your study time`)
                     .setColor('#FDF9F9')
                     .setDescription(`${reply}`)
-                    .setFooter({
-                        text: `Study time for: ${interaction.member.user.username} \n by @Friendly_Bot`
-                    })
+                    .setFooter(`Study time for: ${interaction.member.username} \n by @Friendly_Bot`)
                     .setTimestamp()
 
                 await interaction.reply({ embeds: [logembed] });
