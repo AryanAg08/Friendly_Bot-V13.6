@@ -20,6 +20,9 @@ module.exports = (client) =>  {
            const channel = client.channels.cache.get("1090928183274123285");
 
            channel.send({ embeds: [embed] });
+           member.roles.add("1090710287142883468");
+           // 1090710287142883468
+           
        }
 
        const systemChan = member.guild.channels.cache.get(systemChannel);
