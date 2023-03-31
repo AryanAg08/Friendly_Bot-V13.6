@@ -119,6 +119,7 @@ module.exports  = (client) => {
                             const Gd = await CHannel.send({
                                 embeds: [Embed],
                                 components: [row],
+                                content: `Copy this: ${message.author.id}`
                             });
 
                             const ID = Gd.id
