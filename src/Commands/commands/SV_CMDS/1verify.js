@@ -8,8 +8,18 @@ module.exports = {
 
         const userr = arguments[0];
 
-        console.log(userr);
+        try {
+            const check = message.guild.members.cache.get(userr);
 
+            if (check) {
+                check.roles.add("707547622591692911");
+                check.roles.remove("739920051208978495");
+                message.reply("verified ;)");
+            }
+        } 
+        catch (err) {
+            console.log(err);
+        }
 
  
         
