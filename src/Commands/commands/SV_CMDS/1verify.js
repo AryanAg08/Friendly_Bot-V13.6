@@ -6,7 +6,7 @@ module.exports = {
     callback: async (message, arguments) => {
         const { author, guild } = message;
 
-        const userr = arguments[1];
+        const userr = arguments[0];
 
         console.log(userr);
 
