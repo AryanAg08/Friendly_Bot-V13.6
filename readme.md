@@ -9,7 +9,7 @@
   >>> Category:   ✅
     >> Member-count  -- total one  ✅
     >> Bots ✅
-    - Extra [make_a-seperate_cmd]
+    >>> Extra [make_a-seperate_cmd]
         >> Role count
         >> Online Members
         >> VC members

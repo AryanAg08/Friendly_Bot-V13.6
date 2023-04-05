@@ -10,6 +10,22 @@ module.exports = (client) =>  {
        const systemChannel = member.guild.systemChannelId
        const { MessageActionRow, MessageButton, MessageEmbed } = require("discord.js");
 
+       if (Guild === "1088582075763925053") {
+        const chann = client.channels.cache.get("1090928183274123285");
+         const emd = new MessageEmbed()
+         .setImage("https://cdn.discordapp.com/attachments/1089488497980735519/1090945017553629264/ezgif.com-video-to-gif.gif")
+         .setTimestamp()
+         .setDescription(`Welcome to the server!! ${Tag} check out <#1089489348963086346>!!`)
+
+         member.roles.add("1090710287142883468");
+
+         chann.send({
+            embeds: [emd],
+         })
+
+        // 
+       }
+
        const systemChan = member.guild.channels.cache.get(systemChannel);
             if (Bot) return;
        const RG = require("../../models/3server-registered");
