@@ -124,7 +124,7 @@ module.exports = (client) => {
          const { Permissions }  = require("discord.js");
          const swear = require("../../utils/3words.json");
          const LogChannel = guild.channels.cache.get(guild.systemChannelId);
-
+         if (guild.id === "703937875720273972") return;
          const A5 = await A1.find({
             GuildID: guild.id,
             Security: "YES",
