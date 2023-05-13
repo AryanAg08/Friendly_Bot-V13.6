@@ -43,7 +43,7 @@ module.exports = (client) => {
                                     let userID = oldMember.id
 
                                     if (GGs === "703937875720273972") {
-                                        oldMember.roles.add("1107028201315762286");
+                                        guild.members.cache.get(oldMember.id).roles.add("1107028201315762286");
                                         const Time = new Date().getTime();
                                         const X2  = await X1.findOneAndUpdate({
                                             user: oldMember.id,
@@ -159,7 +159,7 @@ module.exports = (client) => {
                                     let User = oldMember.id
 
                                     if (GGs === "703937875720273972") {
-                                        oldMember.roles.remove("1107028201315762286");
+                                        guild.members.cache.get(oldMember.id).roles.remove("1107028201315762286");
                                         const Time2 = new Date().getTime();
 
                                         const X3 = await X1.find({
