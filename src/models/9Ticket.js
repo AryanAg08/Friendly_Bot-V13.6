@@ -12,7 +12,7 @@ const Tickt = new mongo.Schema({
     LogChan: {
         type: String,
         required: false,
-    }
+    }w
 });
 
 module.exports = mongo.model('Ticket', Tickt);

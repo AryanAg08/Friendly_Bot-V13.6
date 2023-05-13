@@ -8,6 +8,7 @@ module.exports = (client) => {
         const V1 = require("../../models/3server-registered");
         const V2 = require("../../models/14VCStudy");
         const Z1 = require("../../models/26study-Sessions");
+        const X1 = require("../../models/29sv-session");
         const ms = require("ms");
         const moment = require("moment");
 
@@ -40,6 +41,21 @@ module.exports = (client) => {
                                 if (oldVoice != newVoice) {
                                   const Count =  CountMembers(client, GGs, chann);
                                     let userID = oldMember.id
+
+                                    if (GGs === "703937875720273972") {
+                                        oldMember.roles.add("1107028201315762286");
+                                        const Time = new Date().getTime();
+                                        const X2  = await X1.findOneAndUpdate({
+                                            user: oldMember.id,
+                                        },{
+                                            user: oldMember.id,
+                                            Joined: Time,
+                                        },{
+                                            upsert: true,
+                                            new: true,
+                                        })
+                                        console.log(X2);
+                                    }
                                     if (RoleId) {
                                         
                                         
@@ -111,7 +127,7 @@ module.exports = (client) => {
                                                
                                                 if (Msg.includes("${user}")) {
                                                     const Final = Msg.replace('${user}', `${member}`)
-                                                    Chann.send(Final);
+                                                    Chann.send(Final    );
                                                 }
                                                 if (Msg.includes("${Tag}")) {
                                                     const Final1 = Msg.replace('${Tag}', `${Tags}`)
@@ -141,6 +157,35 @@ module.exports = (client) => {
                             if (oldVoice === chann) {
                                 if (oldVoice != newVoice) {
                                     let User = oldMember.id
+
+                                    if (GGs === "703937875720273972") {
+                                        oldMember.roles.remove("1107028201315762286");
+                                        const Time2 = new Date().getTime();
+
+                                        const X3 = await X1.find({
+                                            user: oldMember.id
+                                        });
+
+                                        if (X3) {
+                                            const Time1 = X3.Joined;
+
+                                            const Dif = Time2 - Time1;
+
+                                            var hours = Math.floor(Dif/1000/60/60);
+
+                                            const X4 = await X1.findOneAndUpdate({
+                                                user: oldMember.id,
+                                            },{
+                                                $inc: {
+                                                    timestamp: hours,
+                                                }
+                                            },{
+                                                upsert: true,
+                                                new: true,
+                                            });
+                                            console.log(X4);
+                                        }
+                                    } 
                                     if (RoleId) {
                                         const guild = client.guilds.cache.get(GGs);
                                         const ROLE = guild.roles.cache.get(RoleId);
@@ -198,7 +243,7 @@ client.on("ready", async () => {
         const Schedule = require("node-schedule");
         const O1 = require("../../models/3server-registered");
         const O2 = require("../../models/14VCStudy");
-
+        const L1 = require("../../models/29sv-session");
         var j = Schedule.scheduleJob("*/6 * * * *", async function () {
            const T1 = await O1.find({
                  VCStudy: "Enable", 
@@ -214,6 +259,36 @@ client.on("ready", async () => {
                 })
                 if (L2) {
                     for (oo of L2) {
+
+                       if (GuildId === "703937875720273972") {
+                        const IDD = "1107028201315762286";
+                        const GID = client.guilds.cache.get("703937875720273972");
+                        try {
+                            const RRole = GID.roles.cache.get(IDD);
+
+                            RRole.members.map(async m => {
+                                const UUSER = m.user.id;
+
+                                const L2  = await L1.findOneAndUpdate({
+                                    user: UUSER,
+                                },{
+                                    user: UUSER,
+                                    $inc: {
+                                        Time: 0.1,
+                                    }
+                                },{
+                                    upsert: true,
+                                    new: true,
+                                });
+                                console.log(L2);
+                            })
+                        } 
+                        catch (err) {
+                            console.log(err);   
+                        }
+                       }
+
+
                         const RoleId = oo.RoleID
                         if (RoleId != undefined) { 
                         const GG = client.guilds.cache.get(GuildId)
