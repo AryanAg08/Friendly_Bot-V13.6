@@ -167,13 +167,17 @@ module.exports = (client) => {
                                         });
 
                                         if (X3) {
-                                            const Time1 = X3.Joined;
-                                            const time = X3.timestamp;
-
-                                            const Dif = Time2 - Time1;
-
-                                            var hours = Math.floor(Dif/1000/60/60);
-                                            console.log(hours);
+                                            for (qq of X3) {
+                                                const Time1 = qq.Joined;
+                                                console.log(Time1);
+                                                const time = X3.timestamp;
+    
+                                                const Dif = Time2 - Time1;
+    
+                                                var hours = Math.floor(Dif/1000/60/60);
+                                                console.log(hours);
+                                            }
+                                            
 
                                             // const X4 = await X1.findOneAndUpdate({
                                             //     user: oldMember.id,

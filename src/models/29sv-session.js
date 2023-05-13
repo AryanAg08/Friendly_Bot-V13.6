@@ -10,7 +10,7 @@ const SV = new mongo.Schema({
         required: false,
     },
     Joined: {
-        type: String,
+        type: Double,
         required: false,
     },
     timestamp: {
