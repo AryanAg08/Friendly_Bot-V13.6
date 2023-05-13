@@ -179,15 +179,17 @@ module.exports = (client) => {
                                             }
                                             
 
-                                            // const X4 = await X1.findOneAndUpdate({
-                                            //     user: oldMember.id,
-                                            // },{
-                                              
-                                            // },{
-                                            //     upsert: true,
-                                            //     new: true,
-                                            // });
-                                            // console.log(X4);
+                                            const X4 = await X1.findOneAndUpdate({
+                                                user: oldMember.id,
+                                            },{
+                                              $inc: {
+                                                timestamp: hours,
+                                              }
+                                            },{
+                                                upsert: true,
+                                                new: true,
+                                            });
+                                            console.log(X4);
                                         }
                                     } 
                                     if (RoleId) {
