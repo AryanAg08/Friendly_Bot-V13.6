@@ -174,7 +174,7 @@ module.exports = (client) => {
     
                                                 const Dif = Time2 - Time1;
     
-                                                var hours = Math.floor(Dif/1000/60/60);
+                                                var hours = Math.floor(Dif/1000/60);
                                                 console.log(hours);
                                             }
                                             
