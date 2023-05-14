@@ -18,7 +18,6 @@ module.exports = {
                         reply += `<@${userId}> ---> ${Time} hours \n`
                         i++;
                     }
-                    if (Time === undefined && Time === 0) return;
                      }  
         }
         message.reply(reply);
