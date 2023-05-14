@@ -9,17 +9,22 @@ module.exports = {
 
           const X3 = await X1.countDocuments();
 
-        for (qq of X2) {
-            const userId = qq.user
-            const Time = qq.timestamp ;
-            var i = 0;
-                     while (i != X3) {
-                        if (Time && Time != 0) {   
-                        reply += `<@${userId}> -> ${Time} minutes\n`;
-                    }
-                    i++;
-                     }  
-        }
+        // for (qq of X2) {
+        //     const userId = qq.user
+        //     const Time = qq.timestamp ;
+            // var i = 0;
+            //          while (i != X3) {
+            //             if (Time && Time != 0) {   
+            //             reply += `<@${userId}> -> ${Time} minutes\n`;
+            //         }
+            //         i++;
+            //          }  
+            X2.forEach(QQ => {
+                if (QQ.timestamp != 0 && QQ.timestamp != undefined) {
+                    reply += `<@${QQ.user}> -> ${QQ.timestamp} minutes\n`;
+                }                 
+            });
+       // }
         message.reply(reply);
     }
 }
