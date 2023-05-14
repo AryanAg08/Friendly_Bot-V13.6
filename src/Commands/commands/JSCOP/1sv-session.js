@@ -11,11 +11,14 @@ module.exports = {
 
         for (qq of X2) {
             const userId = qq.user
-            const Time = qq.timestamp
+            const Time = qq.timestamp / 60;
             var i = 0;
                      while (i != X3) {
-                        reply += `<@${userId}> ---> ${Time}minutes \n`
+                        if (Time && Time != 0) {   
+                        reply += `<@${userId}> ---> ${Time} hours \n`
                         i++;
+                    }
+                    if (Time === undefined && Time === 0) return;
                      }  
         }
         message.reply(reply);
