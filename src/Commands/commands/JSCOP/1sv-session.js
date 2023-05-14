@@ -15,9 +15,9 @@ module.exports = {
             var i = 0;
                      while (i != X3) {
                         if (Time && Time != 0) {   
-                        reply += `<@${userId}> -> ${Time} minutes\n`
-                        i++;
+                        reply += `<@${userId}> -> ${Time} minutes\n`;
                     }
+                    i++;
                      }  
         }
         message.reply(reply);
