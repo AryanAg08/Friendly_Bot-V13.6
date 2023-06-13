@@ -177,6 +177,7 @@ module.exports  = (client) => {
                         
 
                         if (BID === `AC${auth}`) {
+                            try {
                             interaction.guild.members.cache.get(auth).roles.add(Role);
                             const USer = interaction.guild.members.cache.get(auth);
 
@@ -187,6 +188,7 @@ module.exports  = (client) => {
                                 ephemeral: true,
                             })
 
+                        
                             const { MessageButton, MessageActionRow } = require("discord.js");
                               
                             const row = new MessageActionRow()
@@ -212,6 +214,29 @@ module.exports  = (client) => {
                             return interaction.message.edit({
                                 components: [row],
                             })
+                        }
+                        catch (err) {
+                            const row = new MessageActionRow()
+                            .addComponents(
+                                new MessageButton()
+                                .setCustomId(`AC${interaction.user.id}`)
+                                .setLabel("Accept")
+                                .setStyle("SUCCESS")
+                                .setDisabled(true),
+
+                                new MessageButton()
+                                .setCustomId(`DN${interaction.user.id}`)
+                                .setLabel("Deny")
+                                .setStyle("DANGER")
+                                .setDisabled(true)
+                            );
+
+                            return interaction.message.edit({
+                                content: "Member left the server!!",
+                                components: [row],
+                            }) 
+                            
+                        }
                         }
                     }
                         if (BID === `DN${auth}`) {
