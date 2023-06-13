@@ -211,12 +211,17 @@ module.exports  = (client) => {
                                 interaction.guild.members.cache.get(auth).roles.remove("829989087494537216");
                             }
 
-                            return interaction.message.edit({
+                            await interaction.message.edit({
                                 components: [row],
                             })
+
+                            return interaction.reply({
+                                ephemeral: true,
+                                content: "Verification Done ✅",
+                            });
                         }
                         catch (err) {
-                            
+
                             const { MessageButton, MessageActionRow } = require("discord.js");
 
                             const row = new MessageActionRow()
@@ -234,11 +239,15 @@ module.exports  = (client) => {
                                 .setDisabled(true)
                             );
 
-                            return interaction.message.edit({
+                             await interaction.message.edit({
                                 content: "Member left the server!!",
                                 components: [row],  
                             }) 
-                            
+
+                           return await interaction.reply({
+                                content: "Error!!",
+                                ephemeral: true
+                            })
                         }
                         }
                     }
