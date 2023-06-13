@@ -216,6 +216,9 @@ module.exports  = (client) => {
                             })
                         }
                         catch (err) {
+                            
+                            const { MessageButton, MessageActionRow } = require("discord.js");
+
                             const row = new MessageActionRow()
                             .addComponents(
                                 new MessageButton()
@@ -233,7 +236,7 @@ module.exports  = (client) => {
 
                             return interaction.message.edit({
                                 content: "Member left the server!!",
-                                components: [row],
+                                components: [row],  
                             }) 
                             
                         }
