@@ -213,6 +213,7 @@ module.exports  = (client) => {
 
                             await interaction.message.edit({
                                 components: [row],
+                                content: `Verified by ${interaction.user.username}`,
                             })
 
                             return interaction.reply({
