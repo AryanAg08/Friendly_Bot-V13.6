@@ -46,7 +46,7 @@ client.on('ready', async () => {
 });
 
 console.log(`Bot is online`);
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEENN);
 
 // Main Bot Token = NzkwNTAzMTk1NjIwNjcxNDk4.X-BjeA.4SDiHHlur2HSgXAlzLE9rlv6dtc
 

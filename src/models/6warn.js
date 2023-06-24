@@ -13,6 +13,6 @@ const warnSchema = mongoose.Schema({
         type: [Object],
         required: true,
     },
-})
+});
 
-module.exports = mongoose.model('1warnings', warnSchema)
+module.exports = mongoose.model('1warnings', warnSchema);
