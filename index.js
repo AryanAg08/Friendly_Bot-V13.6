@@ -37,12 +37,6 @@ client.on('ready', async () => {
     console.log(`Checking Mongo`);
     client.user.setActivity(`Working on my logic!!`);
     client.user.setStatus('online');
-    // const guild = client.guilds.cache.get("806504713935781958");
-    // const role = guild.roles.cache.forEach(role => {
-    //     if (role.permissions.has("BAN_MEMBERS")) {
-    //         console.log(role.name);
-    //     } else return;
-    // });
 });
 
 console.log(`Bot is online`);
