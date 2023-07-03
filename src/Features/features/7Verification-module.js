@@ -118,8 +118,8 @@ module.exports  = (client) => {
                             
                             const Gd = await CHannel.send({
                                 embeds: [Embed],
-                               // components: [row],
-                                content: `Copy this: ${message.author.id}`
+                               components: [row],
+                               // content: `Copy this: ${message.author.id}`
                             });
 
                             const ID = Gd.id
@@ -177,6 +177,7 @@ module.exports  = (client) => {
                         
 
                         if (BID === `AC${auth}`) {
+                            try {
                             interaction.guild.members.cache.get(auth).roles.add(Role);
                             const USer = interaction.guild.members.cache.get(auth);
 
@@ -187,6 +188,7 @@ module.exports  = (client) => {
                                 ephemeral: true,
                             })
 
+                        
                             const { MessageButton, MessageActionRow } = require("discord.js");
                               
                             const row = new MessageActionRow()
@@ -209,9 +211,45 @@ module.exports  = (client) => {
                                 interaction.guild.members.cache.get(auth).roles.remove("829989087494537216");
                             }
 
-                            return interaction.message.edit({
+                            await interaction.message.edit({
                                 components: [row],
+                                content: `Verified by ${interaction.user.username}`,
                             })
+
+                            return interaction.reply({
+                                ephemeral: true,
+                                content: "Verification Done ✅",
+                            });
+                        }
+                        catch (err) {
+
+                            const { MessageButton, MessageActionRow } = require("discord.js");
+
+                            const row = new MessageActionRow()
+                            .addComponents(
+                                new MessageButton()
+                                .setCustomId(`AC${interaction.user.id}`)
+                                .setLabel("Accept")
+                                .setStyle("SUCCESS")
+                                .setDisabled(true),
+
+                                new MessageButton()
+                                .setCustomId(`DN${interaction.user.id}`)
+                                .setLabel("Deny")
+                                .setStyle("DANGER")
+                                .setDisabled(true)
+                            );
+
+                             await interaction.message.edit({
+                                content: "Member left the server!!",
+                                components: [row],  
+                            }) 
+
+                           return await interaction.reply({
+                                content: "Error!!",
+                                ephemeral: true
+                            })
+                        }
                         }
                     }
                         if (BID === `DN${auth}`) {
