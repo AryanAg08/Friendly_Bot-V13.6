@@ -2,6 +2,7 @@ const { security } = require("../functions/11Security");
 const { daily } = require("../functions/12daily");
 const { timer, showtimer } = require("../functions/13timers");
 const { SetupPom, CreatePom } = require("../functions/16Pom");
+const { VotingSetup, Voting } = require("../functions/18voting");
 const { Verification, HELP, Deadlines } = require("../functions/3Slash(b)");
 const { DeadlineADD, DeadlineList, Deadlineclear, DeadlineRemove } = require("../functions/6Deadline_Module");
 const { BotCount_chan, Count_goodies } = require("../functions/7Bot_Counting");
@@ -98,6 +99,9 @@ module.exports = (client) => {
             }
             if (SUB === "pom-session") {
                 SetupPom(interaction);
+            }
+            if (SUB === "voting") {
+                VotingSetup(interaction);
             }
         } else return await interaction.reply(`You do not have perms to run this cmd!!`)
         }
@@ -285,6 +289,10 @@ module.exports = (client) => {
             if (interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
                 daily(interaction);
             } else return await interaction.reply("Requires admin perms!!")
+        }
+
+        if (commandName === "vote") {
+            Voting(interaction);
         }
 
     });

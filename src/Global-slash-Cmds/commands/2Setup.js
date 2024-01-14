@@ -184,5 +184,32 @@ module.exports = {
         .setRequired(false)
         )
         )
+        .addSubcommand((cmd) => 
+        cmd
+        .setName("voting")
+        .setDescription("Enables Voting System!")
+        .addChannelOption((opt) => 
+        opt
+        .setName("voting-channel")
+        .setDescription("Set the voting channel!")
+        .setRequired(true)
+        )
+        .addIntegerOption((opt) => 
+        opt
+        .setName("totalitems")
+        .setDescription("Enter The Number of Items on which voting will happen")
+        .setRequired(true)
+        .setMinValue(1)
+        .setMaxValue(20)
+        )
+        .addIntegerOption((option) => 
+        option
+        .setName("votelimit")
+        .setDescription("Enter The Limit of vote per user!")
+        .setRequired(true)
+        .setMinValue(1)
+        .setMaxValue(5)
+        )
+        )
 };
 //   const clientId = '788504398912290887'; // 790503195620671498  --> Friendly_bot

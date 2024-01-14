@@ -37,6 +37,11 @@ client.on('ready', async () => {
     console.log(`Checking Mongo`);
     client.user.setActivity(`Working on my logic!!`);
     client.user.setStatus('online');
+    const guild = client.guilds.cache.get("703937875720273972");
+    console.log(guild);
+    console.log("\n\n\ this is channel info!!\n\n\n");
+    const chan = client.channels.cache.get("997941830396170340");
+    console.log(chan);
 });
 
 console.log(`Bot is online`);
@@ -45,3 +50,6 @@ client.login(process.env.TOKEN);
 // Main Bot Token = NzkwNTAzMTk1NjIwNjcxNDk4.X-BjeA.4SDiHHlur2HSgXAlzLE9rlv6dtc
 
 // TOKEN=Nzg4NTA0Mzk4OTEyMjkwODg3.GUoPhM.3setqgDtNHkeOJgQ8DF7ke2nOAWfmPOtr9GgsE
+
+
+// Final = NzkwNTAzMTk1NjIwNjcxNDk4.Gz_34v.xVjojiGlmNEQuP7SWXMsKqt9MUUMhUWu8_jsZg
