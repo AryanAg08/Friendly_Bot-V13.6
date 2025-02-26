@@ -53,3 +53,36 @@ client.login(process.env.TOKEN);
 
 
 // Final = NzkwNTAzMTk1NjIwNjcxNDk4.Gz_34v.xVjojiGlmNEQuP7SWXMsKqt9MUUMhUWu8_jsZg
+
+
+const express = require("express");
+const fetch = require("node-fetch");
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Function to ping Google
+const pingGoogle = async () => {
+    try {
+        const response = await fetch("https://www.google.com");
+        if (response.ok) {
+            console.log("Ping successful at", new Date().toLocaleTimeString());
+        } else {
+            console.log("Ping failed with status:", response.status);
+        }
+    } catch (error) {
+        console.log("Error pinging Google:", error.message);
+    }
+};
+
+// Ping Google every 1 minute
+setInterval(pingGoogle, 60000);
+
+// Root route
+app.get("/", (req, res) => {
+    res.send("Server is running...");
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+    pingGoogle(); // Initial ping on startup
+});
