@@ -75,7 +75,7 @@ const pingGoogle = async () => {
 };
 
 // Ping Google every 1 minute
-setInterval(pingGoogle, 60000);
+setInterval(pingGoogle, 30000);
 
 // Root route
 app.get("/", (req, res) => {
