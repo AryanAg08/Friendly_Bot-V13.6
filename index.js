@@ -1,5 +1,9 @@
 require('dotenv').config();
-const { Intents, Client, Collection, RoleManager } = require("discord.js");
+const { Intents, Client, Collection } = require("discord.js");
+const express = require("express");
+const fetch = require("node-fetch");
+
+// All required intents
 const allIntents = [
     Intents.FLAGS.GUILDS,
     Intents.FLAGS.GUILD_MESSAGES,
@@ -13,8 +17,14 @@ const allIntents = [
     Intents.FLAGS.DIRECT_MESSAGES,
     Intents.FLAGS.DIRECT_MESSAGE_TYPING,
     Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
-]
-const client = new Client({ intents: allIntents, partials: ['MESSAGE', 'CHANNEL', 'GUILD_MEMBER', 'REACTION', 'USER'] });
+];
+
+const client = new Client({ 
+    intents: allIntents, 
+    partials: ['MESSAGE', 'CHANNEL', 'GUILD_MEMBER', 'REACTION', 'USER'] 
+});
+
+// Load modules
 const features = require("./src/Features/load-features");
 const commands = require("./src/Commands/load-commands");
 const globalSlash = require("./src/Global-slash-Cmds/load-slash");
@@ -32,50 +42,32 @@ Global(client);
 PandaCMD(client);
 PandaFeature(client);
 
+// Bot startup logic
 client.on('ready', async () => {
     await mongo();
-    console.log(`Checking Mongo`);
+    console.log("Connected to MongoDB");
+
     client.user.setActivity(`Working on my logic!!`);
     client.user.setStatus('online');
+
     const guild = client.guilds.cache.get("703937875720273972");
-    console.log(guild);
-    console.log("\n\n\ this is channel info!!\n\n\n");
     const chan = client.channels.cache.get("997941830396170340");
-    console.log(chan);
+
+    console.log("Guild:", guild?.name || "Not found");
+    console.log("Channel:", chan?.name || "Not found");
 });
 
-console.log(`Bot is online`);
 client.login(process.env.TOKEN);
+console.log("Bot is online...");
 
-
-const express = require("express");
-const fetch = require("node-fetch");
+// --- Express Web Server to keep Render app alive ---
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Function to ping Google
-const pingGoogle = async () => {
-    try {
-        const response = await fetch("https://www.google.com");
-        if (response.ok) {
-            console.log("Ping successful at", new Date().toLocaleTimeString());
-        } else {
-            console.log("Ping failed with status:", response.status);
-        }
-    } catch (error) {
-        console.log("Error pinging Google:", error.message);
-    }
-};
-
-// Ping Google every 1 minute
-setInterval(pingGoogle, 30000);
-
-// Root route
 app.get("/", (req, res) => {
-    res.send("Server is running...");
+    res.send("Bot is alive!");
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-    pingGoogle(); // Initial ping on startup
+    console.log(`Web server running on port ${PORT}`);
 });

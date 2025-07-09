@@ -958,7 +958,7 @@ async function ServerInvites(interaction) {
         const inviteCounter = {}
 
         invites.forEach(async (invite) => {
-            const { uses, inviter } = invite
+            const { uses ,inviter } = invite
             const { username, discriminator } = inviter
 
             const name = `${username}#${discriminator}`
