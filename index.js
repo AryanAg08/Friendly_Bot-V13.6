@@ -32,6 +32,7 @@ const mongo = require("./src/utils/mongo");
 const Global = require("./src/utils/Slash-Integration");
 const PandaCMD = require("./The pandamonium/Commands/load-commands");
 const PandaFeature = require("./The pandamonium/Features/load-Features");
+const startContinuousPomodoro = require('./src/utils/pomodoro');
 
 client.commands = new Collection();
 
@@ -49,12 +50,13 @@ client.on('ready', async () => {
 
     client.user.setActivity(`Working on my logic!!`);
     client.user.setStatus('online');
+    startContinuousPomodoro();
 
-    const guild = client.guilds.cache.get("703937875720273972");
-    const chan = client.channels.cache.get("997941830396170340");
+    // const guild = client.guilds.cache.get("703937875720273972");
+    // const chan = client.channels.cache.get("997941830396170340");
 
-    console.log("Guild:", guild?.name || "Not found");
-    console.log("Channel:", chan?.name || "Not found");
+    // console.log("Guild:", guild?.name || "Not found");
+    // console.log("Channel:", chan?.name || "Not found");
 });
 
 client.login(process.env.TOKEN);
