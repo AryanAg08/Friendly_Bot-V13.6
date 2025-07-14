@@ -1,4 +1,4 @@
-
+const { MessageEmbed } = require("discord.js");
 
 const VOICE_CHANNEL_ID = '860931349993357372'; // Replace with your voice channel ID
 const TEXT_CHANNEL_ID = '1107199740287922186';   // Replace with your text channel ID
@@ -31,7 +31,7 @@ async function runPhase(phase, minutes, voiceChannel, textChannel) {
         const min = Math.floor(remaining / 60);
         const sec = remaining % 60;
 
-        const embed = new EmbedBuilder()
+        const embed = new MessageEmbed()
             .setColor(phase === "Session" ? 0x1abc9c : 0xe74c3c)
             .setTitle(`${phase} Time!`)
             .setDescription(`⏳ **Time Left:** ${min}m ${sec}s\n👥 **Members:**\n${mentions}`)
