@@ -3,7 +3,7 @@
 const VOICE_CHANNEL_ID = '860931349993357372'; // Replace with your voice channel ID
 const TEXT_CHANNEL_ID = '1107199740287922186';   // Replace with your text channel ID
 
-async function startContinuousPomodoro() {
+async function startContinuousPomodoro(client) {
     const guild = client.guilds.cache.get("703937875720273972"); // Adjust if multiple guilds
     const voiceChannel = guild.channels.cache.get(VOICE_CHANNEL_ID);
     const textChannel = guild.channels.cache.get(TEXT_CHANNEL_ID);

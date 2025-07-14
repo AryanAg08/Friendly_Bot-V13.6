@@ -50,7 +50,7 @@ client.on('ready', async () => {
 
     client.user.setActivity(`Working on my logic!!`);
     client.user.setStatus('online');
-    startContinuousPomodoro();
+    startContinuousPomodoro(client);
 
     // const guild = client.guilds.cache.get("703937875720273972");
     // const chan = client.channels.cache.get("997941830396170340");
